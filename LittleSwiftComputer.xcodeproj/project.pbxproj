@@ -11,7 +11,24 @@
 		ABBC7EEE2613B3A8003C6047 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7EED2613B3A8003C6047 /* ContentView.swift */; };
 		ABBC7EF02613B3AA003C6047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBC7EEF2613B3AA003C6047 /* Assets.xcassets */; };
 		ABBC7EF32613B3AA003C6047 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBC7EF22613B3AA003C6047 /* Preview Assets.xcassets */; };
+		ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7EFF2613B400003C6047 /* assembled-instruction.swift */; };
+		ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F022613B41D003C6047 /* assembly-operators.swift */; };
+		ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F052613B435003C6047 /* safe-array-access.swift */; };
+		ABBC7F092613B444003C6047 /* assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F082613B444003C6047 /* assembler.swift */; };
+		ABBC7F122613B4BD003C6047 /* LittleSwiftComputerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */; };
+		ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */; };
+		ABBC7F232613B824003C6047 /* assembled-code-type.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F222613B824003C6047 /* assembled-code-type.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABBC7F142613B4BD003C6047 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABBC7EE02613B3A8003C6047 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABBC7EE72613B3A8003C6047;
+			remoteInfo = LittleSwiftComputer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		ABBC7EE82613B3A8003C6047 /* LittleSwiftComputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleSwiftComputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,10 +38,26 @@
 		ABBC7EF22613B3AA003C6047 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABBC7EF42613B3AA003C6047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBC7EF52613B3AA003C6047 /* LittleSwiftComputer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LittleSwiftComputer.entitlements; sourceTree = "<group>"; };
+		ABBC7EFF2613B400003C6047 /* assembled-instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembled-instruction.swift"; sourceTree = "<group>"; };
+		ABBC7F022613B41D003C6047 /* assembly-operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-operators.swift"; sourceTree = "<group>"; };
+		ABBC7F052613B435003C6047 /* safe-array-access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "safe-array-access.swift"; sourceTree = "<group>"; };
+		ABBC7F082613B444003C6047 /* assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assembler.swift; sourceTree = "<group>"; };
+		ABBC7F0F2613B4BD003C6047 /* LittleSwiftComputerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleSwiftComputerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSwiftComputerTests.swift; sourceTree = "<group>"; };
+		ABBC7F132613B4BD003C6047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "branch-placeholder.swift"; sourceTree = "<group>"; };
+		ABBC7F222613B824003C6047 /* assembled-code-type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembled-code-type.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		ABBC7EE52613B3A8003C6047 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABBC7F0C2613B4BD003C6047 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBC7EEA2613B3A8003C6047 /* LittleSwiftComputer */,
+				ABBC7F102613B4BD003C6047 /* LittleSwiftComputerTests */,
 				ABBC7EE92613B3A8003C6047 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBC7EE82613B3A8003C6047 /* LittleSwiftComputer.app */,
+				ABBC7F0F2613B4BD003C6047 /* LittleSwiftComputerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +88,7 @@
 		ABBC7EEA2613B3A8003C6047 /* LittleSwiftComputer */ = {
 			isa = PBXGroup;
 			children = (
+				ABBC7EFC2613B3CC003C6047 /* Sources */,
 				ABBC7EEB2613B3A8003C6047 /* LittleSwiftComputerApp.swift */,
 				ABBC7EED2613B3A8003C6047 /* ContentView.swift */,
 				ABBC7EEF2613B3AA003C6047 /* Assets.xcassets */,
@@ -69,6 +105,52 @@
 				ABBC7EF22613B3AA003C6047 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABBC7EFC2613B3CC003C6047 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				ABBC7EFE2613B3E9003C6047 /* Assembling */,
+				ABBC7EFD2613B3D7003C6047 /* Utilities */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		ABBC7EFD2613B3D7003C6047 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ABBC7F052613B435003C6047 /* safe-array-access.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ABBC7EFE2613B3E9003C6047 /* Assembling */ = {
+			isa = PBXGroup;
+			children = (
+				ABBC7F262613B82E003C6047 /* Types */,
+				ABBC7F022613B41D003C6047 /* assembly-operators.swift */,
+				ABBC7F082613B444003C6047 /* assembler.swift */,
+			);
+			path = Assembling;
+			sourceTree = "<group>";
+		};
+		ABBC7F102613B4BD003C6047 /* LittleSwiftComputerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */,
+				ABBC7F132613B4BD003C6047 /* Info.plist */,
+			);
+			path = LittleSwiftComputerTests;
+			sourceTree = "<group>";
+		};
+		ABBC7F262613B82E003C6047 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */,
+				ABBC7F222613B824003C6047 /* assembled-code-type.swift */,
+				ABBC7EFF2613B400003C6047 /* assembled-instruction.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +173,24 @@
 			productReference = ABBC7EE82613B3A8003C6047 /* LittleSwiftComputer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ABBC7F0E2613B4BD003C6047 /* LittleSwiftComputerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABBC7F162613B4BD003C6047 /* Build configuration list for PBXNativeTarget "LittleSwiftComputerTests" */;
+			buildPhases = (
+				ABBC7F0B2613B4BD003C6047 /* Sources */,
+				ABBC7F0C2613B4BD003C6047 /* Frameworks */,
+				ABBC7F0D2613B4BD003C6047 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABBC7F152613B4BD003C6047 /* PBXTargetDependency */,
+			);
+			name = LittleSwiftComputerTests;
+			productName = LittleSwiftComputerTests;
+			productReference = ABBC7F0F2613B4BD003C6047 /* LittleSwiftComputerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -102,6 +202,10 @@
 				TargetAttributes = {
 					ABBC7EE72613B3A8003C6047 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					ABBC7F0E2613B4BD003C6047 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = ABBC7EE72613B3A8003C6047;
 					};
 				};
 			};
@@ -119,6 +223,7 @@
 			projectRoot = "";
 			targets = (
 				ABBC7EE72613B3A8003C6047 /* LittleSwiftComputer */,
+				ABBC7F0E2613B4BD003C6047 /* LittleSwiftComputerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +238,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABBC7F0D2613B4BD003C6047 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,11 +253,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBC7EEE2613B3A8003C6047 /* ContentView.swift in Sources */,
+				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
+				ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */,
+				ABBC7F232613B824003C6047 /* assembled-code-type.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
+				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
+				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
+				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABBC7F0B2613B4BD003C6047 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABBC7F122613B4BD003C6047 /* LittleSwiftComputerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABBC7F152613B4BD003C6047 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABBC7EE72613B3A8003C6047 /* LittleSwiftComputer */;
+			targetProxy = ABBC7F142613B4BD003C6047 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ABBC7EF62613B3AA003C6047 /* Debug */ = {
@@ -311,6 +445,46 @@
 			};
 			name = Release;
 		};
+		ABBC7F172613B4BD003C6047 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NBY2AG34M4;
+				INFOPLIST_FILE = LittleSwiftComputerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cjw.LittleSwiftComputerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LittleSwiftComputer.app/Contents/MacOS/LittleSwiftComputer";
+			};
+			name = Debug;
+		};
+		ABBC7F182613B4BD003C6047 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NBY2AG34M4;
+				INFOPLIST_FILE = LittleSwiftComputerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cjw.LittleSwiftComputerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LittleSwiftComputer.app/Contents/MacOS/LittleSwiftComputer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +502,15 @@
 			buildConfigurations = (
 				ABBC7EF92613B3AA003C6047 /* Debug */,
 				ABBC7EFA2613B3AA003C6047 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABBC7F162613B4BD003C6047 /* Build configuration list for PBXNativeTarget "LittleSwiftComputerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABBC7F172613B4BD003C6047 /* Debug */,
+				ABBC7F182613B4BD003C6047 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
