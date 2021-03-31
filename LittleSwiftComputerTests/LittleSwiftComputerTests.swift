@@ -20,8 +20,9 @@ last add three
     func testExample() throws {
         print("\n\n\n\n")
         let result = Assembler().assemble(code: input)
-        let executor = Executor(assembledCode: result)
-        XCTAssertNoThrow(try executor.checkIfAssembledCodeIsValid())
+        let executor = Executor(assembledCode: result, variableDeclarationsUnparsed: "da five 5")
+        executor.execute()
+        print("\n\n\n\n")
     }
 
 

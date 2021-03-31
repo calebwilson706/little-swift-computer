@@ -13,7 +13,7 @@ class Assembler {
     func assemble(code : String) -> AssembledCode {
         var assembledLines = [AssembledInstruction?]()
         var placeholdersForBranches = [BranchPlaceholder]()
-        let inputLines = Array(code.components(separatedBy: .newlines).enumerated())
+        let inputLines = code.convertToEnumeratedArrayOfLines()
         
         inputLines.forEach { index, lineOfCode in
             let parsedInstructionLine = getFullInstruction(from: lineOfCode)
@@ -40,7 +40,7 @@ class Assembler {
     }
     
     private func getFullInstruction(from fullString : String) -> ParsedInstructionPair? {
-        var parts = fullString.components(separatedBy: " ")
+        var parts = fullString.components(separatedBy: .whitespaces)
         
         let locationAtStart : String? =  (parts.count == 3 || parts.contains("out")) ? parts.first : nil
         
