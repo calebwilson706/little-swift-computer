@@ -24,6 +24,7 @@
 		ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBB22614C20A0095BB70 /* variable-declaration-parsing.swift */; };
 		ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBBC2614C3E10095BB70 /* declared-variable.swift */; };
 		ABC5FBC42614C5170095BB70 /* string-to-enumerated-lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBC32614C5170095BB70 /* string-to-enumerated-lines.swift */; };
+		ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBC72614EFBA0095BB70 /* string-split-into-components-remove-empties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		ABC5FBB22614C20A0095BB70 /* variable-declaration-parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "variable-declaration-parsing.swift"; sourceTree = "<group>"; };
 		ABC5FBBC2614C3E10095BB70 /* declared-variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "declared-variable.swift"; sourceTree = "<group>"; };
 		ABC5FBC32614C5170095BB70 /* string-to-enumerated-lines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "string-to-enumerated-lines.swift"; sourceTree = "<group>"; };
+		ABC5FBC72614EFBA0095BB70 /* string-split-into-components-remove-empties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "string-split-into-components-remove-empties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +134,8 @@
 		ABBC7EFD2613B3D7003C6047 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				ABC5FBCB2614EFF60095BB70 /* String-Extensions */,
 				ABBC7F052613B435003C6047 /* safe-array-access.swift */,
-				ABC5FBC32614C5170095BB70 /* string-to-enumerated-lines.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -193,6 +195,15 @@
 				ABBC7F262613B82E003C6047 /* Types */,
 			);
 			path = CodeAssembly;
+			sourceTree = "<group>";
+		};
+		ABC5FBCB2614EFF60095BB70 /* String-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABC5FBC32614C5170095BB70 /* string-to-enumerated-lines.swift */,
+				ABC5FBC72614EFBA0095BB70 /* string-split-into-components-remove-empties.swift */,
+			);
+			path = "String-Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
 				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,
 				ABC5FBC42614C5170095BB70 /* string-to-enumerated-lines.swift in Sources */,
+				ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,

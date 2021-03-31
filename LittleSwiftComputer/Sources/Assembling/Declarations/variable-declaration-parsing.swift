@@ -26,7 +26,7 @@ class DeclarationParser {
     }
     
     private func parseDeclarationLine(declaration : String, index : Int) throws -> DeclaredVariable {
-        let parts = declaration.components(separatedBy: .whitespaces)
+        let parts = declaration.splitBySpacesAndRemoveBlanks()
         
         guard let indexOfKeyword = parts.firstIndex(of : "dat") else {
             throw DeclarationErrors.keywordMissing(at: index)

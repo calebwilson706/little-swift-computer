@@ -29,9 +29,7 @@ class Assembler {
             }
         }
         
-        assembledLines = replaceInvalidInstructionsWithNil(from: assembledLines)
         return AssembledCode(lines: assembledLines, placeholdersForBranches: placeholdersForBranches)
-        
     }
     
     
@@ -40,9 +38,9 @@ class Assembler {
     }
     
     private func getFullInstruction(from fullString : String) -> ParsedInstructionPair? {
-        var parts = fullString.components(separatedBy: .whitespaces)
+        var parts = fullString.splitBySpacesAndRemoveBlanks()
         
-        let locationAtStart : String? =  (parts.count == 3 || parts.contains("out")) ? parts.first : nil
+        let locationAtStart : String? =  (parts.count == 3 || parts.dropFirst().contains("out")) ? parts.first : nil
         
         if locationAtStart != nil {
             parts.remove(at: 0)
@@ -58,16 +56,6 @@ class Assembler {
             placeholderStringForBranch: locationAtStart,
             parsedAssemblyInstruction: AssembledInstruction(theOperator: theOperator, theOperand: theOperand)
         )
-    }
-    
-    private func replaceInvalidInstructionsWithNil(from list : [AssembledInstruction?]) -> [AssembledInstruction?] {
-        return list.map {
-            if ($0?.isInstructionValid() ?? true) {
-                return $0
-            } else {
-                return nil
-            }
-        }
     }
     
     private struct ParsedInstructionPair {

@@ -27,4 +27,9 @@ struct AssembledCode {
     var indexOfFirstInvalidLine : Int? {
         lines.firstIndex { $0 == nil }
     }
+    
+    var indexOfFirstLineWithMissingRequiredOperand : Int? {
+        lines.firstIndex { !($0?.isInstructionValid() ?? false) }
+    }
+    
 }

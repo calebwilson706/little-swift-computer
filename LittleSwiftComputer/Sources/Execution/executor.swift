@@ -26,7 +26,6 @@ class Executor : ObservableObject {
             runAssembledCode(initialVariables: initializedVariables)
         } catch {
             errorMessageString = error.localizedDescription
-            print(errorMessageString!)
             return
         }
     }
@@ -38,6 +37,9 @@ class Executor : ObservableObject {
     private func checkIfAssembledCodeIsValid() throws {
         if let indexOfFirstInvalidLine = assembledCode.indexOfFirstInvalidLine {
             throw AssemblyCodeErrors.invalidInstruction(at: indexOfFirstInvalidLine)
+        }
+        if let indexWithMissingOperand = assembledCode.indexOfFirstLineWithMissingRequiredOperand {
+            throw AssemblyCodeErrors.missingOperand(at: indexWithMissingOperand)
         }
         if let repeatedPlaceholder = assembledCode.repeatedPlaceholder {
             throw AssemblyCodeErrors.repetitionOfPlaceholder(placeholder: repeatedPlaceholder)
