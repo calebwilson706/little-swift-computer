@@ -19,4 +19,12 @@ struct AssembledCode {
             return working
         })
     }
+    
+    var repeatedPlaceholder : String? {
+        placeholdersForBranches.first { $0.indexOfString != dictionaryOfBranchesToIndices[$0.placeholderString] }?.placeholderString
+    }
+    
+    var indexOfFirstInvalidLine : Int? {
+        lines.firstIndex { $0 == nil }
+    }
 }

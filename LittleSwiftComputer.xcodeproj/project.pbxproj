@@ -18,6 +18,8 @@
 		ABBC7F122613B4BD003C6047 /* LittleSwiftComputerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */; };
 		ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */; };
 		ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F222613B824003C6047 /* assembled-code.swift */; };
+		ABC5FBA62614A2710095BB70 /* executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBA52614A2710095BB70 /* executor.swift */; };
+		ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBA92614A2ED0095BB70 /* errors-from-assembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		ABBC7F132613B4BD003C6047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "branch-placeholder.swift"; sourceTree = "<group>"; };
 		ABBC7F222613B824003C6047 /* assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembled-code.swift"; sourceTree = "<group>"; };
+		ABC5FBA52614A2710095BB70 /* executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = executor.swift; sourceTree = "<group>"; };
+		ABC5FBA92614A2ED0095BB70 /* errors-from-assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "errors-from-assembly.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBC7EFE2613B3E9003C6047 /* Assembling */,
+				ABC5FBA22614A24F0095BB70 /* Execution */,
 				ABBC7EFD2613B3D7003C6047 /* Utilities */,
 			);
 			path = Sources;
@@ -151,6 +156,15 @@
 				ABBC7EFF2613B400003C6047 /* assembled-instruction.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		ABC5FBA22614A24F0095BB70 /* Execution */ = {
+			isa = PBXGroup;
+			children = (
+				ABC5FBA52614A2710095BB70 /* executor.swift */,
+				ABC5FBA92614A2ED0095BB70 /* errors-from-assembly.swift */,
+			);
+			path = Execution;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,11 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC5FBA62614A2710095BB70 /* executor.swift in Sources */,
 				ABBC7EEE2613B3A8003C6047 /* ContentView.swift in Sources */,
 				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
 				ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
+				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,

@@ -13,22 +13,15 @@ class LittleSwiftComputerTests: XCTestCase {
 sta five
 lda five
 sub five
-brz end
+frfr brz end
 end out
-ffrfrf
-rfr
-frfr add three
-rfrfrf
-rfrf
+last add three
 """
     func testExample() throws {
         print("\n\n\n\n")
         let result = Assembler().assemble(code: input)
-        result.lines.forEach { print($0 ?? "nil") }
-        print()
-        result.placeholdersForBranches.forEach { print($0) }
-        print(result.dictionaryOfBranchesToIndices)
-        print("\n\n\n\n")
+        let executor = Executor(assembledCode: result)
+        XCTAssertNoThrow(try executor.checkIfAssembledCodeIsValid())
     }
 
 
