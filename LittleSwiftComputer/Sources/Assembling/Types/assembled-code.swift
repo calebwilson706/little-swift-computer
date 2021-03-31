@@ -15,7 +15,7 @@ struct AssembledCode {
     var dictionaryOfBranchesToIndices : [String : Int] {
         placeholdersForBranches.reduce([String : Int](), { acc, next in
             var working = acc
-            working[next.string] = next.index
+            working[next.placeholderString] = next.indexOfString
             return working
         })
     }

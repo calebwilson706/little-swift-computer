@@ -8,6 +8,6 @@
 import Foundation
 
 struct BranchPlaceholder {
-    let index : Int
-    let string : String
+    let indexOfString : Int
+    let placeholderString : String
 }

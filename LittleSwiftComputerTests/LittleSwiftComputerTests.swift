@@ -9,21 +9,25 @@ import XCTest
 @testable import LittleSwiftComputer
 
 class LittleSwiftComputerTests: XCTestCase {
-
+    let input = """
+sta five
+lda five
+sub five
+brz end
+end out
+ffrfrf
+rfr
+frfr add three
+rfrfrf
+rfrf
+"""
     func testExample() throws {
         print("\n\n\n\n")
-        print(
-        Assembler().assemble(code: """
-add 5
-sub 10
-lda seven
-next out
-bra next
-hehhe
-e2uef
-add idh
-"""))
-        
+        let result = Assembler().assemble(code: input)
+        result.lines.forEach { print($0 ?? "nil") }
+        print()
+        result.placeholdersForBranches.forEach { print($0) }
+        print(result.dictionaryOfBranchesToIndices)
         print("\n\n\n\n")
     }
 

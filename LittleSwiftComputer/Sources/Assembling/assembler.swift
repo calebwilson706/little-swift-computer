@@ -15,15 +15,15 @@ class Assembler {
         var placeholdersForBranches = [BranchPlaceholder]()
         let inputLines = Array(code.components(separatedBy: .newlines).enumerated())
         
-        inputLines.forEach { index, element in
-            let (placeholderLocation, instruction) = getFullInstruction(from: element)
-            assembledLines.append(instruction)
+        inputLines.forEach { index, lineOfCode in
+            let parsedInstructionLine = getFullInstruction(from: lineOfCode)
+            assembledLines.append(parsedInstructionLine?.parsedAssemblyInstruction)
             
-            if let newPlaceholderString = placeholderLocation {
+            if let newPlaceholderString = parsedInstructionLine?.placeholderStringForBranch {
                 placeholdersForBranches.append(
                     BranchPlaceholder(
-                        index : index,
-                        string : newPlaceholderString
+                        indexOfString : index,
+                        placeholderString : newPlaceholderString
                     )
                 )
             }
@@ -39,7 +39,7 @@ class Assembler {
         return AssemblyOperators.allCases.first { $0.rawValue == string }
     }
     
-    private func getFullInstruction(from fullString : String) -> (String?, AssembledInstruction?) {
+    private func getFullInstruction(from fullString : String) -> ParsedInstructionPair? {
         var parts = fullString.components(separatedBy: " ")
         
         let locationAtStart : String? =  (parts.count == 3 || parts.contains("out")) ? parts.first : nil
@@ -49,12 +49,15 @@ class Assembler {
         }
         
         guard let theOperator = getOperatorFromStringCode(parts.first ?? "") else {
-            return (nil, nil)
+            return nil
         }
         
         let theOperand = parts[safe : 1]
         
-        return (locationAtStart, AssembledInstruction(theOperator: theOperator, theOperand: theOperand))
+        return ParsedInstructionPair(
+            placeholderStringForBranch: locationAtStart,
+            parsedAssemblyInstruction: AssembledInstruction(theOperator: theOperator, theOperand: theOperand)
+        )
     }
     
     private func replaceInvalidInstructionsWithNil(from list : [AssembledInstruction?]) -> [AssembledInstruction?] {
@@ -67,4 +70,8 @@ class Assembler {
         }
     }
     
+    private struct ParsedInstructionPair {
+        let placeholderStringForBranch : String?
+        let parsedAssemblyInstruction : AssembledInstruction
+    }
 }

@@ -15,7 +15,7 @@ struct AssembledInstruction {
         self.theOperator = theOperator
         self.theOperand = theOperand?.filter { $0.isNumber || $0.isLetter }
         
-        if self.theOperand?.count == 0 {
+        if self.theOperand?.count == 0 || self.theOperator == .output {
             self.theOperand = nil
         }
         

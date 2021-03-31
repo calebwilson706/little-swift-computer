@@ -17,7 +17,7 @@
 		ABBC7F092613B444003C6047 /* assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F082613B444003C6047 /* assembler.swift */; };
 		ABBC7F122613B4BD003C6047 /* LittleSwiftComputerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */; };
 		ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */; };
-		ABBC7F232613B824003C6047 /* assembled-code-type.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F222613B824003C6047 /* assembled-code-type.swift */; };
+		ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F222613B824003C6047 /* assembled-code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSwiftComputerTests.swift; sourceTree = "<group>"; };
 		ABBC7F132613B4BD003C6047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "branch-placeholder.swift"; sourceTree = "<group>"; };
-		ABBC7F222613B824003C6047 /* assembled-code-type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembled-code-type.swift"; sourceTree = "<group>"; };
+		ABBC7F222613B824003C6047 /* assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembled-code.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */,
-				ABBC7F222613B824003C6047 /* assembled-code-type.swift */,
+				ABBC7F222613B824003C6047 /* assembled-code.swift */,
 				ABBC7EFF2613B400003C6047 /* assembled-instruction.swift */,
 			);
 			path = Types;
@@ -255,7 +255,7 @@
 				ABBC7EEE2613B3A8003C6047 /* ContentView.swift in Sources */,
 				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
 				ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */,
-				ABBC7F232613B824003C6047 /* assembled-code-type.swift in Sources */,
+				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
