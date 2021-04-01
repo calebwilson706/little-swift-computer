@@ -9,18 +9,22 @@ import SwiftUI
 
 struct LittleSwiftComputerView: View {
     @ObservedObject var assemblyViewController = AssemblyViewController()
+    @ObservedObject var executor = Executor()
     
     var body: some View {
         VStack {
             HStack {
                 Text(assemblyViewController.errorMessageFromAssembly ?? "")
+                Text("\(self.executor.accumulator)")
                 VStack {
                     Text("Write Code Below:")
                     TextEditor(text: $assemblyViewController.mainCodeBlockString)
                     Text("Declare Variables Below:")
                     TextEditor(text: $assemblyViewController.declarationBlockString)
                     Button(action : {
-                        let _ = assemblyViewController.assembleUserInput()
+                        if let assembledCode = assemblyViewController.assembleUserInput() {
+                            executor.execute(assembledCode)
+                        }
                     }){
                         Text("Run Code")
                     }

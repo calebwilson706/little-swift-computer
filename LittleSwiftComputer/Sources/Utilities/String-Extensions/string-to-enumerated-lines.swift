@@ -9,6 +9,6 @@ import Foundation
 
 extension String {
     func convertToEnumeratedArrayOfLines() -> Array<(offset: Int, element: String)> {
-        return Array(self.components(separatedBy: "\n").enumerated())
+        return Array(self.components(separatedBy: "\n").filter {$0 != "" }.enumerated())
     }
 }

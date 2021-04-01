@@ -19,5 +19,9 @@ enum AssemblyOperators : String, CaseIterable {
          branch_always = "bra",
          branch_if_zero = "brz",
          branch_if_positive = "brp"
+    
+    func requiresIncrementation() -> Bool {
+        [.add, .subtract, .store, .load, .output].contains(self)
+    }
          
 }
