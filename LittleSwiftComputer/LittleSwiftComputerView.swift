@@ -28,8 +28,13 @@ struct LittleSwiftComputerView: View {
                     }){
                         Text("Run Code")
                     }
+                    Button(action: {
+                        executor.resetProgram()
+                    }){
+                        Text("Cancel Running")
+                    }
                 }.padding(.all)
-                Spacer()
+                Text(executor.executionError ?? "")
             }.padding()
         }
     }

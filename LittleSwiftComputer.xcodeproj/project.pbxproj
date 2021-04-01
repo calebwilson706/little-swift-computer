@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				ABC5FBA52614A2710095BB70 /* executor.swift */,
 				AB9D50C42616034500AE7B6B /* register-data.swift */,
+				AB27330C26161C50000FE5E3 /* execution-errors.swift */,
 			);
 			path = Execution;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
 				ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */,
 				ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */,
+				AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
 				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,

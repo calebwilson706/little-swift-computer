@@ -12,50 +12,64 @@ class Executor : ObservableObject {
     @Published var accumulator : Int = 0
     @Published var indexOfCurrentInstruction : Int = 0
     @Published var registers = [String : RegisterData]()
+    @Published var executionError : String? = nil
+    
+    var assembledCodeSource : PreparedAndAssembledCode? = nil
+    var timer = Timer()
     
     func execute(_ assembledCode : PreparedAndAssembledCode) {
-        self.accumulator = 0
-        self.indexOfCurrentInstruction = 0
+        resetProgram()
+        self.assembledCodeSource = assembledCode
+        
         fillRegistersWithInitialValues(variables: assembledCode.initializedVariables)
-        runAssembledCode(assembledCode: assembledCode)
+        timer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
     }
     
-    func runAssembledCode(assembledCode : PreparedAndAssembledCode) {
+    @objc func runLineOfAssembledCode() {
+        let assembledCode = self.assembledCodeSource!
         let codeLines = assembledCode.mainCodeBlock.lines
+        let currentInstruction = codeLines[indexOfCurrentInstruction]
         
-        while indexOfCurrentInstruction < codeLines.count {
-            let currentInstruction = codeLines[indexOfCurrentInstruction]
-            
+        do {
             switch currentInstruction.theOperator {
             case .add:
-                accumulator += getValueFromRegister(identifier: currentInstruction.theOperand)
+                accumulator += try getValueFromRegister(identifier: currentInstruction.theOperand)
             case .subtract:
-                accumulator -= getValueFromRegister(identifier: currentInstruction.theOperand)
+                accumulator -= try getValueFromRegister(identifier: currentInstruction.theOperand)
             case .store:
                 registers[currentInstruction.theOperand!] = RegisterData(
                     indexForDisplay: registers[currentInstruction.theOperand!]?.indexForDisplay ?? registers.count,
                     value: accumulator
                 )
             case .load:
-                accumulator = getValueFromRegister(identifier: currentInstruction.theOperand)
+                accumulator = try getValueFromRegister(identifier: currentInstruction.theOperand)
             case .output:
                 print(accumulator)
                 //do something else here
             case .halt:
                 return
             case .branch_always:
-                self.indexOfCurrentInstruction = getNextIndexFromBranch(condition: true, placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
+                self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: true, placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             case .branch_if_zero:
-                self.indexOfCurrentInstruction = getNextIndexFromBranch(condition: (accumulator == 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
+                self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator == 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             case .branch_if_positive:
-                self.indexOfCurrentInstruction = getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
+                self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             }
             
             if currentInstruction.theOperator.requiresIncrementation() {
                 indexOfCurrentInstruction += 1
             }
+        } catch {
+            self.executionError = error.localizedDescription
+            return
         }
-        
+    }
+    
+    func resetProgram() {
+        self.accumulator = 0
+        self.indexOfCurrentInstruction = 0
+        self.executionError = nil
+        timer.invalidate()
     }
     
     private func fillRegistersWithInitialValues(variables : [DeclaredVariable]) {
@@ -64,21 +78,25 @@ class Executor : ObservableObject {
         }
     }
     
-    private func getValueFromRegister(identifier : String?) -> Int {
-        registers[identifier ?? ""]?.value ?? 0
+    private func getValueFromRegister(identifier : String?) throws -> Int {
+        guard let value = registers[identifier ?? ""]?.value else {
+            throw ExecutionErrors.undeclaredVariableAccess(at: indexOfCurrentInstruction)
+        }
+        return value
     }
     
-    private func getIndexOfPlaceholder(placeholder : String?, placeholderDictionary : [String : Int]) -> Int {
-        guard let stringToFind = placeholder else {
-            return self.indexOfCurrentInstruction + 1
-        }
-        guard let indexOfPlaceholder = placeholderDictionary[stringToFind] else  {
-            return self.indexOfCurrentInstruction + 1
+    private func getIndexOfPlaceholder(placeholder : String?, placeholderDictionary : [String : Int]) throws -> Int {
+        guard let indexOfPlaceholder = placeholderDictionary[placeholder ?? ""] else  {
+            throw ExecutionErrors.missingPlaceholder(at: indexOfCurrentInstruction)
         }
         return indexOfPlaceholder
     }
     
-    private func getNextIndexFromBranch(condition : Bool, placeholder : String?, placeholderDictionary : [String : Int]) -> Int {
-        condition ? getIndexOfPlaceholder(placeholder: placeholder, placeholderDictionary: placeholderDictionary) : self.indexOfCurrentInstruction + 1
+    private func getNextIndexFromBranch(condition : Bool, placeholder : String?, placeholderDictionary : [String : Int]) throws -> Int {
+        do {
+            return condition ? try getIndexOfPlaceholder(placeholder: placeholder, placeholderDictionary: placeholderDictionary) : self.indexOfCurrentInstruction + 1
+        } catch {
+            throw error
+        }
     }
 }
