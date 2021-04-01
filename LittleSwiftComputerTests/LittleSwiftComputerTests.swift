@@ -14,21 +14,24 @@ sta five
 lda five
 frfr sub two
 out
-frfr brz end
+brz end
 end out
 last add three
 """
-    func testExample() throws {
-        print("\n\n\n\n")
-        let result = Assembler().assemble(code: input)
-        let executor = Executor(assembledCode: result, variableDeclarationsUnparsed: """
+let declarations = """
 dat five 5
 dat three 3
 dat two
 dat t
-""")
-        executor.execute()
-        print(executor.errorMessageString ?? "continue")
+"""
+    func testExample() throws {
+        print("\n\n\n\n")
+        do {
+            let code = try AssemblyServices().prepareCodeForRunning(mainCodeBlock: input, variableBlock: declarations)
+            code.mainCodeBlock.lines.forEach { print($0) }
+        } catch {
+            print(error.localizedDescription)
+        }
         print("\n\n\n\n")
     }
 

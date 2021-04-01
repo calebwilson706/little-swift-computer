@@ -11,7 +11,7 @@ import SwiftUI
 struct LittleSwiftComputerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LittleSwiftComputerView()
         }
     }
 }

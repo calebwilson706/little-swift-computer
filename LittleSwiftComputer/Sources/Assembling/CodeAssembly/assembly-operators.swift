@@ -12,9 +12,12 @@ enum AssemblyOperators : String, CaseIterable {
          subtract = "sub",
          store = "sta",
          load = "lda",
+         //operands below have no operand
          output = "out",
+         halt = "hlt",
          //operands for those below will be placeholders
          branch_always = "bra",
          branch_if_zero = "brz",
          branch_if_positive = "brp"
+         
 }

@@ -11,8 +11,8 @@ class DeclarationParser {
     
     func getDeclaredVariables(declarationString : String) throws -> [DeclaredVariable] {
         var declaredVariables = [DeclaredVariable]()
-        let lines = declarationString.convertToEnumeratedArrayOfLines()
-        
+        let lines = declarationString.convertToEnumeratedArrayOfLines().filter { $0.element != "" }
+       
         try lines.forEach { index, declaration in
             do {
                 let newInstruction = try parseDeclarationLine(declaration: declaration, index: index)

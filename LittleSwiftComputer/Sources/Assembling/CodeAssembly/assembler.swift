@@ -50,11 +50,11 @@ class Assembler {
             return nil
         }
         
-        let theOperand = parts[safe : 1]
+        let theOperand = parts[safe : 1]?.filter { $0.isLetter }
         
         return ParsedInstructionPair(
             placeholderStringForBranch: locationAtStart,
-            parsedAssemblyInstruction: AssembledInstruction(theOperator: theOperator, theOperand: theOperand)
+            parsedAssemblyInstruction: AssembledInstruction(theOperator: theOperator, theOperand: (theOperand == "") ? nil : theOperand)
         )
     }
     
