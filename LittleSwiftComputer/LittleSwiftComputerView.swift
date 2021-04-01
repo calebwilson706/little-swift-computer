@@ -17,25 +17,36 @@ struct LittleSwiftComputerView: View {
                 Text(assemblyViewController.errorMessageFromAssembly ?? "")
                 Text("\(self.executor.accumulator)")
                 VStack {
-                    Text("Write Code Below:")
-                    TextEditor(text: $assemblyViewController.mainCodeBlockString)
-                    Text("Declare Variables Below:")
-                    TextEditor(text: $assemblyViewController.declarationBlockString)
-                    Button(action : {
-                        if let assembledCode = assemblyViewController.assembleUserInput() {
-                            executor.execute(assembledCode)
-                        }
-                    }){
-                        Text("Run Code")
-                    }
-                    Button(action: {
-                        executor.resetProgram()
-                    }){
-                        Text("Cancel Running")
-                    }
+                    codeAssemblyView
+                    runAndCancelButtons
                 }.padding(.all)
                 Text(executor.executionError ?? "")
             }.padding()
+        }
+    }
+    
+    var codeAssemblyView : some View {
+        VStack {
+            Text("Write Code Below:")
+            TextEditor(text: $assemblyViewController.mainCodeBlockString)
+            Text("Declare Variables Below:")
+            TextEditor(text: $assemblyViewController.declarationBlockString)
+        }
+    }
+    var runAndCancelButtons : some View {
+        VStack {
+            Button(action : {
+                if let assembledCode = assemblyViewController.assembleUserInput() {
+                    executor.execute(assembledCode)
+                }
+            }){
+                Text("Run Code")
+            }
+            Button(action: {
+                executor.resetProgram()
+            }){
+                Text("Cancel Running")
+            }
         }
     }
 }
