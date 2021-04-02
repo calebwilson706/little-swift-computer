@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LittleSwiftComputerView: View {
-    @ObservedObject var assemblyViewController = AssemblyViewController()
-    @ObservedObject var executor = Executor()
+    @ObservedObject var assemblyViewController = AssemblyController()
+    @ObservedObject var executor = ExecutionController()
     
     var body: some View {
         VStack {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AssemblyViewController : ObservableObject {
+class AssemblyController : ObservableObject {
     @Published var mainCodeBlockString = ""
     @Published var declarationBlockString = ""
     @Published var errorMessageFromAssembly : String? = nil

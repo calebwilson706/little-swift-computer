@@ -1,22 +1,13 @@
 //
-//  executor.swift
+//  execution.swift
 //  LittleSwiftComputer
 //
-//  Created by Caleb Wilson on 31/03/2021.
+//  Created by Caleb Wilson on 03/04/2021.
 //
 
 import Foundation
 
-class Executor : ObservableObject {
-    
-    @Published var accumulator : Int = 0
-    @Published var indexOfCurrentInstruction : Int = 0
-    @Published var registers = [String : RegisterData]()
-    @Published var executionError : String? = nil
-    
-    var assembledCodeSource : PreparedAndAssembledCode? = nil
-    var timer = Timer()
-    
+extension ExecutionController {
     func execute(_ assembledCode : PreparedAndAssembledCode) {
         resetProgram()
         self.assembledCodeSource = assembledCode
@@ -47,6 +38,7 @@ class Executor : ObservableObject {
                 print(accumulator)
                 //do something else here
             case .halt:
+                resetProgram()
                 return
             case .branch_always:
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: true, placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)

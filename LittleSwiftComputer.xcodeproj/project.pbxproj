@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2356F02617E5EB000C59C7 /* execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356EF2617E5EB000C59C7 /* execution.swift */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
-		ABA880A32615CF730001817C /* assembly-view-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880A22615CF730001817C /* assembly-view-controller.swift */; };
+		ABA880A32615CF730001817C /* assembly-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880A22615CF730001817C /* assembly-controller.swift */; };
 		ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7EEB2613B3A8003C6047 /* LittleSwiftComputerApp.swift */; };
 		ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7EED2613B3A8003C6047 /* LittleSwiftComputerView.swift */; };
 		ABBC7EF02613B3AA003C6047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBC7EEF2613B3AA003C6047 /* Assets.xcassets */; };
@@ -23,7 +24,7 @@
 		ABBC7F122613B4BD003C6047 /* LittleSwiftComputerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F112613B4BD003C6047 /* LittleSwiftComputerTests.swift */; };
 		ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */; };
 		ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBC7F222613B824003C6047 /* assembled-code.swift */; };
-		ABC5FBA62614A2710095BB70 /* executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBA52614A2710095BB70 /* executor.swift */; };
+		ABC5FBA62614A2710095BB70 /* execution-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBA52614A2710095BB70 /* execution-controller.swift */; };
 		ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBA92614A2ED0095BB70 /* errors-from-assembly.swift */; };
 		ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBAD2614C19D0095BB70 /* errors-from-declarations.swift */; };
 		ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC5FBB22614C20A0095BB70 /* variable-declaration-parsing.swift */; };
@@ -43,11 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB2356EF2617E5EB000C59C7 /* execution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = execution.swift; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
-		ABA880A22615CF730001817C /* assembly-view-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-view-controller.swift"; sourceTree = "<group>"; };
+		ABA880A22615CF730001817C /* assembly-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-controller.swift"; sourceTree = "<group>"; };
 		ABBC7EE82613B3A8003C6047 /* LittleSwiftComputer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleSwiftComputer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBC7EEB2613B3A8003C6047 /* LittleSwiftComputerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSwiftComputerApp.swift; sourceTree = "<group>"; };
 		ABBC7EED2613B3A8003C6047 /* LittleSwiftComputerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleSwiftComputerView.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		ABBC7F132613B4BD003C6047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABBC7F1C2613B810003C6047 /* branch-placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "branch-placeholder.swift"; sourceTree = "<group>"; };
 		ABBC7F222613B824003C6047 /* assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembled-code.swift"; sourceTree = "<group>"; };
-		ABC5FBA52614A2710095BB70 /* executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = executor.swift; sourceTree = "<group>"; };
+		ABC5FBA52614A2710095BB70 /* execution-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-controller.swift"; sourceTree = "<group>"; };
 		ABC5FBA92614A2ED0095BB70 /* errors-from-assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "errors-from-assembly.swift"; sourceTree = "<group>"; };
 		ABC5FBAD2614C19D0095BB70 /* errors-from-declarations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "errors-from-declarations.swift"; sourceTree = "<group>"; };
 		ABC5FBB22614C20A0095BB70 /* variable-declaration-parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "variable-declaration-parsing.swift"; sourceTree = "<group>"; };
@@ -91,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB2356E82617E570000C59C7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABA880A22615CF730001817C /* assembly-controller.swift */,
+				ABC5FBA52614A2710095BB70 /* execution-controller.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		ABA880912615C93A0001817C /* Preperation-For-Execution */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +109,6 @@
 				ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */,
 			);
 			path = "Preperation-For-Execution";
-			sourceTree = "<group>";
-		};
-		ABA880A12615CF540001817C /* UI-Components */ = {
-			isa = PBXGroup;
-			children = (
-				ABA880A22615CF730001817C /* assembly-view-controller.swift */,
-			);
-			path = "UI-Components";
 			sourceTree = "<group>";
 		};
 		ABBC7EDF2613B3A8003C6047 = {
@@ -151,7 +154,7 @@
 		ABBC7EFC2613B3CC003C6047 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				ABA880A12615CF540001817C /* UI-Components */,
+				AB2356E82617E570000C59C7 /* Controllers */,
 				ABBC7EFE2613B3E9003C6047 /* Assembling */,
 				ABC5FBA22614A24F0095BB70 /* Execution */,
 				ABBC7EFD2613B3D7003C6047 /* Utilities */,
@@ -200,9 +203,9 @@
 		ABC5FBA22614A24F0095BB70 /* Execution */ = {
 			isa = PBXGroup;
 			children = (
-				ABC5FBA52614A2710095BB70 /* executor.swift */,
 				AB9D50C42616034500AE7B6B /* register-data.swift */,
 				AB27330C26161C50000FE5E3 /* execution-errors.swift */,
+				AB2356EF2617E5EB000C59C7 /* execution.swift */,
 			);
 			path = Execution;
 			sourceTree = "<group>";
@@ -336,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC5FBA62614A2710095BB70 /* executor.swift in Sources */,
+				ABC5FBA62614A2710095BB70 /* execution-controller.swift in Sources */,
 				ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */,
 				ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */,
 				ABA880932615C98D0001817C /* assembly-services.swift in Sources */,
@@ -345,12 +348,13 @@
 				ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */,
 				AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
+				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
 				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,
 				AB9D50C52616034500AE7B6B /* register-data.swift in Sources */,
 				ABC5FBC42614C5170095BB70 /* string-to-enumerated-lines.swift in Sources */,
 				ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */,
-				ABA880A32615CF730001817C /* assembly-view-controller.swift in Sources */,
+				ABA880A32615CF730001817C /* assembly-controller.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,
