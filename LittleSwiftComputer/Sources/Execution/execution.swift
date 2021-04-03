@@ -19,7 +19,11 @@ extension ExecutionController {
     @objc func runLineOfAssembledCode() {
         let assembledCode = self.assembledCodeSource!
         let codeLines = assembledCode.mainCodeBlock.lines
-        let currentInstruction = codeLines[indexOfCurrentInstruction]
+        
+        guard let currentInstruction = codeLines[safe : indexOfCurrentInstruction] else {
+            timer.invalidate()
+            return
+        }
         
         do {
             switch currentInstruction.theOperator {
@@ -38,7 +42,7 @@ extension ExecutionController {
                 print(accumulator)
                 //do something else here
             case .halt:
-                resetProgram()
+                indexOfCurrentInstruction = codeLines.count
                 return
             case .branch_always:
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: true, placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
