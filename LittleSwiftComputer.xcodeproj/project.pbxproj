@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB2356F02617E5EB000C59C7 /* execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356EF2617E5EB000C59C7 /* execution.swift */; };
+		AB2356F52618656D000C59C7 /* run-and-cancel-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */; };
+		AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		AB2356EF2617E5EB000C59C7 /* execution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = execution.swift; sourceTree = "<group>"; };
+		AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "run-and-cancel-button-style.swift"; sourceTree = "<group>"; };
+		AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "convert-rgb-value.swift"; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
@@ -100,6 +104,22 @@
 				ABC5FBA52614A2710095BB70 /* execution-controller.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB2356F326186544000C59C7 /* UI-Styled-Components */ = {
+			isa = PBXGroup;
+			children = (
+				AB2356FC26186A4B000C59C7 /* Run-And-Cancel-Buttons */,
+			);
+			path = "UI-Styled-Components";
+			sourceTree = "<group>";
+		};
+		AB2356FC26186A4B000C59C7 /* Run-And-Cancel-Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */,
+			);
+			path = "Run-And-Cancel-Buttons";
 			sourceTree = "<group>";
 		};
 		ABA880912615C93A0001817C /* Preperation-For-Execution */ = {
@@ -165,8 +185,10 @@
 		ABBC7EFD2613B3D7003C6047 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AB2356F326186544000C59C7 /* UI-Styled-Components */,
 				ABC5FBCB2614EFF60095BB70 /* String-Extensions */,
 				ABBC7F052613B435003C6047 /* safe-array-access.swift */,
+				AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -357,7 +379,9 @@
 				ABA880A32615CF730001817C /* assembly-controller.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
+				AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */,
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,
+				AB2356F52618656D000C59C7 /* run-and-cancel-button-style.swift in Sources */,
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,
 				ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */,
 			);

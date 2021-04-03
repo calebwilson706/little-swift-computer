@@ -11,6 +11,9 @@ struct LittleSwiftComputerView: View {
     @ObservedObject var assemblyViewController = AssemblyController()
     @ObservedObject var executor = ExecutionController()
     
+    @State var runButtonLabelString = ""
+    @State var cancelButtonLabelString = ""
+    
     var body: some View {
         VStack {
             HStack {
@@ -33,22 +36,35 @@ struct LittleSwiftComputerView: View {
             TextEditor(text: $assemblyViewController.declarationBlockString)
         }
     }
+    
     var runAndCancelButtons : some View {
-        VStack {
+        HStack {
             Button(action : {
                 if let assembledCode = assemblyViewController.assembleUserInput() {
                     executor.execute(assembledCode)
                 }
             }){
-                Text("Run Code")
-            }
+                Text("\(runButtonLabelString) \(Image(systemName: "play.fill"))")
+            }.buttonStyle(RunButtonStyle(methodForHovering: appendStringToStartOfRunButton))
             Button(action: {
                 executor.resetProgram()
             }){
-                Text("Cancel Running")
-            }
+                Text("\(cancelButtonLabelString) \(Image(systemName: "square.fill"))")
+            }.buttonStyle(CancelButtonStyle(methodForHovering: appendStringToStartOfCancelButton))
         }
     }
+    
+    func appendStringToStartOfRunButton(status : Bool) {
+        withAnimation {
+            self.runButtonLabelString = status ? "Execute Code" : ""
+        }
+    }
+    func appendStringToStartOfCancelButton(status : Bool) {
+        withAnimation {
+            self.cancelButtonLabelString = status ? "Stop Execution" : ""
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
