@@ -32,18 +32,22 @@ private struct BaseRunAndCancelButtonStyle : ViewModifier {
 
 struct RunButtonStyle : ButtonStyle {
     let methodForHovering : (Bool) -> Void
+    let disabled : Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .modifier(BaseRunAndCancelButtonStyle(onHoverCallback : methodForHovering))
-            .background(greenColorForRunButton.cornerRadius(5))
+            .background((!disabled ? greenColorForRunButton : Color.gray).cornerRadius(5))
     }
 }
 
 struct CancelButtonStyle : ButtonStyle {
     let methodForHovering : (Bool) -> Void
+    let disabled : Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .modifier(BaseRunAndCancelButtonStyle(onHoverCallback : methodForHovering))
-            .background(redColorForCancelButton.cornerRadius(5))
+            .background((!disabled ? redColorForCancelButton : Color.gray).cornerRadius(5))
     }
 }

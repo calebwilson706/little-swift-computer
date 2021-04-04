@@ -14,6 +14,7 @@ enum AssemblyOperators : String, CaseIterable {
          load = "lda",
          //operands below have no operand
          output = "out",
+         input = "inp",
          halt = "hlt",
          //operands for those below will be placeholders
          branch_always = "bra",

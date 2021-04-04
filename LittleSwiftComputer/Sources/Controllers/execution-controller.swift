@@ -13,8 +13,12 @@ class ExecutionController : ObservableObject {
     @Published var indexOfCurrentInstruction : Int = 0
     @Published var registers = [String : RegisterData]()
     @Published var executionError : String? = nil
+    @Published var outputs = [Int]()
+    @Published var requiresInput = false
     
     var assembledCodeSource : PreparedAndAssembledCode? = nil
     var timer = Timer()
-    
+    var isRunning : Bool {
+        timer.isValid
+    }
 }

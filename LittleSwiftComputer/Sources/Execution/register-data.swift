@@ -8,6 +8,7 @@
 import Foundation
 
 struct RegisterData {
+    let id = UUID()
     let indexForDisplay : Int
     var value : Int
     

@@ -39,8 +39,9 @@ class Assembler {
     
     private func getFullInstruction(from fullString : String) -> ParsedInstructionPair? {
         var parts = fullString.splitBySpacesAndRemoveBlanks()
+        let testPart = parts.dropFirst()
         
-        let locationAtStart : String? =  (parts.count == 3 || parts.dropFirst().contains("out")) ? parts.first : nil
+        let locationAtStart : String? =  (parts.count == 3 || testPart.contains("out") || testPart.contains("inp")) ? parts.first : nil
         
         if locationAtStart != nil {
             parts.remove(at: 0)

@@ -23,7 +23,7 @@ struct AssembledInstruction {
     
     func isInstructionValid() -> Bool {
         switch theOperator {
-        case .output, .halt   :
+        case .output, .halt, .input   :
             return true
         default :
             return (theOperand != nil)

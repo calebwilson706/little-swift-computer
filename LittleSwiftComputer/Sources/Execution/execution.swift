@@ -13,8 +13,9 @@ extension ExecutionController {
         self.assembledCodeSource = assembledCode
         
         fillRegistersWithInitialValues(variables: assembledCode.initializedVariables)
-        timer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
+        startTimer()
     }
+    
     
     @objc func runLineOfAssembledCode() {
         let assembledCode = self.assembledCodeSource!
@@ -39,8 +40,7 @@ extension ExecutionController {
             case .load:
                 accumulator = try getValueFromRegister(identifier: currentInstruction.theOperand)
             case .output:
-                print(accumulator)
-                //do something else here
+                self.outputs.append(accumulator)
             case .halt:
                 indexOfCurrentInstruction = codeLines.count
                 return
@@ -50,6 +50,9 @@ extension ExecutionController {
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator == 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             case .branch_if_positive:
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
+            case .input:
+                self.requiresInput = true
+                timer.invalidate()
             }
             
             if currentInstruction.theOperator.requiresIncrementation() {
@@ -57,14 +60,26 @@ extension ExecutionController {
             }
         } catch {
             self.executionError = error.localizedDescription
+            timer.invalidate()
             return
         }
+    }
+    
+    
+    func resumeAfterInput(inputNumber : Int) {
+        self.accumulator = inputNumber
+        self.indexOfCurrentInstruction += 1
+        self.requiresInput = false
+        
+        startTimer()
     }
     
     func resetProgram() {
         self.accumulator = 0
         self.indexOfCurrentInstruction = 0
+        self.registers.removeAll()
         self.executionError = nil
+        self.outputs.removeAll()
         timer.invalidate()
     }
     
@@ -94,5 +109,9 @@ extension ExecutionController {
         } catch {
             throw error
         }
+    }
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
     }
 }
