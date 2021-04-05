@@ -41,6 +41,7 @@ struct LittleSwiftComputerView: View {
                                  submitCallback: inputSubmitCallback,
                                  isDisabled: !executionController.requiresInput)
                 }.frame(maxWidth : 200)
+                
                 GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
             }
         }.padding()
@@ -101,7 +102,7 @@ struct LittleSwiftComputerView: View {
     }
     
     private func animateChangeOfButtonLabel(isHoveringOverButton : Bool, changeMethod : (Bool) -> Void) {
-        withAnimation(runAndCancelButtonAnimation) {
+        withAnimation(runAndCancelButtonAnimation.delay(isHoveringOverButton ? 0 : 0.1)) {
             changeMethod(isHoveringOverButton)
         }
     }

@@ -21,7 +21,7 @@ extension AssemblyCodeErrors : LocalizedError {
         case .invalidInstruction(at: let index):
             return "There was an invalid instruction at line \(index + 1)."
         case .repetitionOfPlaceholder(placeholder: let repeatedPlaceholder):
-            return "The placeholder '\(repeatedPlaceholder)' was repeated. Placeholders should only be at one location."
+            return "The placeholder '\(repeatedPlaceholder)' was repeated. \nPlaceholders should only be at one location."
         case .missingOperand(at : let index):
             return "The instruction at line \(index + 1) requires an operand."
         case .noCode:
