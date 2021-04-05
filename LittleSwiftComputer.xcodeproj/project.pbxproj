@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9015261B91E80092CA63 /* AccumulatorView.swift */; };
+		AB1B901A261B92900092CA63 /* background-colors-for-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9019261B92900092CA63 /* background-colors-for-components.swift */; };
+		AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B901F261B96CB0092CA63 /* RegisterView.swift */; };
+		AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */; };
+		AB1B902A261BA6A80092CA63 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9029261BA6A80092CA63 /* ErrorView.swift */; };
 		AB2356F02617E5EB000C59C7 /* execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356EF2617E5EB000C59C7 /* execution.swift */; };
 		AB2356F52618656D000C59C7 /* run-and-cancel-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */; };
 		AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */; };
@@ -49,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB1B9015261B91E80092CA63 /* AccumulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorView.swift; sourceTree = "<group>"; };
+		AB1B9019261B92900092CA63 /* background-colors-for-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "background-colors-for-components.swift"; sourceTree = "<group>"; };
+		AB1B901F261B96CB0092CA63 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "text-editor-for-code-style.swift"; sourceTree = "<group>"; };
+		AB1B9029261BA6A80092CA63 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AB2356EF2617E5EB000C59C7 /* execution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = execution.swift; sourceTree = "<group>"; };
 		AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "run-and-cancel-button-style.swift"; sourceTree = "<group>"; };
 		AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "convert-rgb-value.swift"; sourceTree = "<group>"; };
@@ -115,7 +125,9 @@
 		AB2356F326186544000C59C7 /* UI-Styled-Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
 				AB2356FC26186A4B000C59C7 /* Run-And-Cancel-Buttons */,
+				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
 			);
 			path = "UI-Styled-Components";
 			sourceTree = "<group>";
@@ -135,6 +147,9 @@
 				AB3FA9952619EF9A00EAC84A /* OutputView.swift */,
 				AB3FA99B261A305200EAC84A /* InputBoxView.swift */,
 				AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */,
+				AB1B9015261B91E80092CA63 /* AccumulatorView.swift */,
+				AB1B901F261B96CB0092CA63 /* RegisterView.swift */,
+				AB1B9029261BA6A80092CA63 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,8 +400,11 @@
 				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
 				ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */,
 				ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */,
+				AB1B902A261BA6A80092CA63 /* ErrorView.swift in Sources */,
 				AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */,
+				AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */,
 				AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */,
+				AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
@@ -396,6 +414,7 @@
 				ABC5FBC42614C5170095BB70 /* string-to-enumerated-lines.swift in Sources */,
 				ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */,
 				ABA880A32615CF730001817C /* assembly-controller.swift in Sources */,
+				AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */,
@@ -404,6 +423,7 @@
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,
 				ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */,
 				AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */,
+				AB1B901A261B92900092CA63 /* background-colors-for-components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

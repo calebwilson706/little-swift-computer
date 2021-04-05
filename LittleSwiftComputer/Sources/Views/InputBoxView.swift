@@ -12,7 +12,6 @@ struct InputBoxView: View {
     @Binding var inputString : String
     
     let submitCallback : (Int) -> Void
-    let backgroundColor : Color
     let isDisabled : Bool
     
     var parsedInput : Int {
@@ -23,7 +22,7 @@ struct InputBoxView: View {
         VStack(alignment: .leading) {
             Text("Input: ")
             TextField("", text: $inputString)
-                .background(backgroundColor)
+                .background(ComponentBackgroundColors.inputTextField.getColor())
                 .disabled(isDisabled)
             Text("Your input: \(parsedInput)")
             Button(action : {
@@ -31,8 +30,7 @@ struct InputBoxView: View {
             }){
                 Text("Submit")
             }.buttonStyle(RunButtonStyle(methodForHovering: { _ in }, disabled: isDisabled))
-        }.frame(maxWidth: 100)
-         .padding()
+        }.padding()
     }
 }
 

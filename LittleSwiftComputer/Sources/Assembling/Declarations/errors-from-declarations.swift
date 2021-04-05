@@ -10,7 +10,8 @@ import Foundation
 enum DeclarationErrors : Error {
     case keywordMissing(at : Int),
          invalidIdentifier(at : Int),
-         invalidOrder(at : Int)
+         invalidOrder(at : Int),
+         repetition(name : String)
 }
 
 extension DeclarationErrors : LocalizedError {
@@ -22,6 +23,8 @@ extension DeclarationErrors : LocalizedError {
             return "The identifier used at declarations line \(index + 1) is invalid."
         case .invalidOrder(at: let index):
             return "The instruction at declarations line \(index + 1) must start with 'dat'."
+        case .repetition(name: let name):
+            return "The variable name '\(name)' was repeated."
         }
     }
 }

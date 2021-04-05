@@ -8,12 +8,6 @@
 import Foundation
 import SwiftUI
 
-private let greenColorForRunButton = Color(red: 61.convertToRGBValue(), green: 166.convertToRGBValue(), blue: 66.convertToRGBValue())
-
-private let redColorForCancelButton = Color(red : 166.convertToRGBValue(), green: 61.convertToRGBValue(), blue: 66.convertToRGBValue())
-
-
-
 private struct BaseRunAndCancelButtonStyle : ViewModifier {
     let onHoverCallback : (Bool) -> Void
     
@@ -37,7 +31,7 @@ struct RunButtonStyle : ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .modifier(BaseRunAndCancelButtonStyle(onHoverCallback : methodForHovering))
-            .background((!disabled ? greenColorForRunButton : Color.gray).cornerRadius(5))
+            .background((!disabled ? ComponentBackgroundColors.runButton.getColor() : Color.gray).cornerRadius(5))
     }
 }
 
@@ -48,6 +42,6 @@ struct CancelButtonStyle : ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .modifier(BaseRunAndCancelButtonStyle(onHoverCallback : methodForHovering))
-            .background((!disabled ? redColorForCancelButton : Color.gray).cornerRadius(5))
+            .background((!disabled ? ComponentBackgroundColors.cancelButton.getColor() : Color.gray).cornerRadius(5))
     }
 }

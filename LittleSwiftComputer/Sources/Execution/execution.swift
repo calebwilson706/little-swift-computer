@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension ExecutionController {
     func execute(_ assembledCode : PreparedAndAssembledCode) {
@@ -52,6 +53,11 @@ extension ExecutionController {
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             case .input:
                 self.requiresInput = true
+                
+                withAnimation {
+                    self.executionError = "Program requires input!"
+                }
+                
                 timer.invalidate()
             }
             
@@ -59,7 +65,9 @@ extension ExecutionController {
                 indexOfCurrentInstruction += 1
             }
         } catch {
-            self.executionError = error.localizedDescription
+            withAnimation {
+                self.executionError = error.localizedDescription
+            }
             timer.invalidate()
             return
         }
@@ -71,6 +79,10 @@ extension ExecutionController {
         self.indexOfCurrentInstruction += 1
         self.requiresInput = false
         
+        withAnimation {
+            self.executionError = nil
+        }
+        
         startTimer()
     }
     
@@ -78,7 +90,12 @@ extension ExecutionController {
         self.accumulator = 0
         self.indexOfCurrentInstruction = 0
         self.registers.removeAll()
-        self.executionError = nil
+        self.requiresInput = false
+        
+        withAnimation {
+            self.executionError = nil
+        }
+        
         self.outputs.removeAll()
         timer.invalidate()
     }

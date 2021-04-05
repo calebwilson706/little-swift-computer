@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class AssemblyController : ObservableObject {
     @Published var mainCodeBlockString = ""
@@ -14,14 +15,19 @@ class AssemblyController : ObservableObject {
     
     func assembleUserInput() -> PreparedAndAssembledCode? {
         do {
-            self.errorMessageFromAssembly = nil
+            withAnimation {
+                self.errorMessageFromAssembly = nil
+            }
+            
             return try AssemblyServices().prepareCodeForRunning(
                 mainCodeBlock: self.mainCodeBlockString,
                 variableBlock: self.declarationBlockString
             )
         } catch {
-            self.errorMessageFromAssembly = (mainCodeBlockString == "") ?
-                "Please write some code to run." : error.localizedDescription
+            withAnimation {
+                self.errorMessageFromAssembly = (mainCodeBlockString == "") ?
+                    "Please write some code to run." : error.localizedDescription
+            }
             return nil
         }
     }

@@ -11,29 +11,28 @@ struct GridOfRegistersView: View {
     let registerItems : [RegisterData]
     
     let layout = [
-        GridItem(.flexible(minimum: 20.0, maximum: 50.0), spacing: 5),
-        GridItem(.flexible(minimum: 20.0, maximum: 50.0), spacing: 5),
-        GridItem(.flexible(minimum: 20.0, maximum: 50.0), spacing: 5),
-        GridItem(.flexible(minimum: 20.0, maximum: 50.0), spacing: 5)
+        GridItem(.flexible(), spacing: 5.0),
+        GridItem(.flexible(), spacing: 5.0),
+        GridItem(.flexible(), spacing: 5.0),
+        GridItem(.flexible(), spacing: 5.0),
+        GridItem(.flexible(), spacing: 5.0)
     ]
     
+    var remainingEmptyRegisters : [RegisterData] {
+        (registerItems.count ..< 100).map { RegisterData(indexForDisplay: $0, value: 0) }
+    }
     var body: some View {
         VStack(alignment : .leading) {
             Text("Registers: ")
-            LazyVGrid(columns: layout, spacing : 12.5) {
-                ForEach(registerItems, id : \.id) { register in
-                    VStack {
-                        VStack {
-                            Text("\(register.indexForDisplay)")
-                                .padding(.top, 3)
-                            Text("\(register.value)")
-                                .padding(.bottom, 3)
-                        }.padding(.horizontal)
-                    }.border(Color.gray)
+            ScrollView {
+                LazyVGrid(columns: layout, spacing : 12.5) {
+                    ForEach(registerItems, id : \.id, content : RegisterView.init).overlay(Color.gray.opacity(0.1))
+                    ForEach(remainingEmptyRegisters, id : \.id, content : RegisterView.init).overlay(Color.black.opacity(0.6))
                 }
-            }
-            Spacer()
+                Spacer()
+            }.padding(.vertical)
         }.padding()
+        .frame(minWidth : 300)
     }
 }
 

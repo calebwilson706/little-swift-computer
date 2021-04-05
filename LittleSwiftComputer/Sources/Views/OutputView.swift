@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct OutputView: View {
-    let listOfOutputs : [Int]
+    let listOfOutputs : [String]
+    
+    init(listOfOutputs : [Int]) {
+        self.listOfOutputs = listOfOutputs.map { "\($0)" }
+    }
     
     var body: some View {
         VStack(alignment : .leading) {
             Text("Output:")
             ZStack {
-                Color.gray
+                ComponentBackgroundColors.output.getColor()
                 ScrollView {
-                    ForEach(listOfOutputs.reversed(), id : \.self){ output in
-                        Text("\(output)")
-                    }.padding(.top)
+                    ForEach(listOfOutputs.reversed(), id : \.self, content : Text.init).padding(.top)
                 }
-            }.frame(maxWidth : 100)
+            }
         }.padding(.all)
+         .frame(maxHeight : 300)
     }
 }
 

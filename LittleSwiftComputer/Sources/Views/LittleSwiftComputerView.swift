@@ -8,61 +8,53 @@
 import SwiftUI
 
 struct LittleSwiftComputerView: View {
-    @ObservedObject var assemblyViewController = AssemblyController()
-    @ObservedObject var executor = ExecutionController()
+    @ObservedObject var assemblerController = AssemblyController()
+    @ObservedObject var executionController = ExecutionController()
     
     @State var runButtonLabelString = ""
     @State var cancelButtonLabelString = ""
     @State var inputString = ""
     
     let runAndCancelButtonAnimation = Animation.easeInOut(duration: 0.5)
-    let purpleColourForAccumulator = Color(red: 147.convertToRGBValue(), green: 99.convertToRGBValue(), blue: 207.convertToRGBValue())
     
     var body: some View {
         VStack {
+            Text("Little Swift Computer")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 10)
             HStack {
-                Text(assemblyViewController.errorMessageFromAssembly ?? "")
+                Spacer()
+                
+                ErrorView(errorString: executionController.executionError)
+                ErrorView(errorString: assemblerController.errorMessageFromAssembly)
+                
                 VStack {
                     codeAssemblyView
                     runAndCancelButtons
                 }.padding(.all)
+                
                 VStack {
-                    accumulatorView
-                    OutputView(listOfOutputs : executor.outputs)
-                        .frame(maxHeight : 300)
+                    AccumulatorView(accumulator: self.executionController.accumulator)
+                    OutputView(listOfOutputs : executionController.outputs)
                     InputBoxView(inputString: $inputString,
-                                 submitCallback: { input in
-                                    executor.resumeAfterInput(inputNumber: input)
-                                    self.inputString = ""
-                                 },
-                                 backgroundColor: purpleColourForAccumulator,
-                                 isDisabled: !executor.requiresInput
-                    )
-                    Spacer()
-                }
-                GridOfRegistersView(registerItems: executor.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
-                Text(self.executor.executionError ?? "")
-            }.padding()
-        }
+                                 submitCallback: inputSubmitCallback,
+                                 isDisabled: !executionController.requiresInput)
+                }.frame(maxWidth : 200)
+                GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
+            }
+        }.padding()
     }
     
     var codeAssemblyView : some View {
         VStack(alignment : .leading) {
             Text("Write Code Below:")
-            TextEditor(text: self.$assemblyViewController.mainCodeBlockString)
+            TextEditor(text: self.$assemblerController.mainCodeBlockString)
+                .codeEditor()
             Text("Declare Variables Below:")
-            TextEditor(text: self.$assemblyViewController.declarationBlockString)
+            TextEditor(text: self.$assemblerController.declarationBlockString)
+                .codeEditor()
         }
-    }
-    
-    var accumulatorView : some View {
-        VStack(alignment: .leading) {
-            Text("Accumulator:")
-            ZStack {
-                purpleColourForAccumulator
-                Text("\(self.executor.accumulator)")
-            }.frame(maxWidth : 100, maxHeight: 50)
-        }.padding(.all)
     }
     
     var runAndCancelButtons : some View {
@@ -73,23 +65,27 @@ struct LittleSwiftComputerView: View {
     }
     
     var runButton : some View {
-        Button(action : {
-            if let assembledCode = assemblyViewController.assembleUserInput() {
-                executor.execute(assembledCode)
-            }
-        }){
+        Button(action : executeNewUserInput){
             Text("\(runButtonLabelString) \(Image(systemName: "play.fill"))")
-        }.buttonStyle(RunButtonStyle(methodForHovering: appendStringToStartOfRunButton, disabled: executor.isRunning || executor.requiresInput))
-        .disabled(executor.isRunning)
+        }
+        .buttonStyle(RunButtonStyle(methodForHovering: appendStringToStartOfRunButton, disabled: isRunButtonDisabled))
+        .disabled(isRunButtonDisabled)
     }
     
     var cancelButton : some View {
-        Button(action: {
-            executor.resetProgram()
-        }){
+        Button(action: executionController.resetProgram){
             Text("\(cancelButtonLabelString) \(Image(systemName: "square.fill"))")
-        }.buttonStyle(CancelButtonStyle(methodForHovering: appendStringToStartOfCancelButton, disabled: !executor.isRunning))
-        .disabled(!executor.isRunning)
+        }
+        .buttonStyle(CancelButtonStyle(methodForHovering: appendStringToStartOfCancelButton, disabled: isCancelButtonDisabled))
+        .disabled(isCancelButtonDisabled)
+    }
+    
+    private var isRunButtonDisabled : Bool {
+        executionController.isRunning || executionController.requiresInput
+    }
+    
+    private var isCancelButtonDisabled : Bool {
+        !isRunButtonDisabled
     }
     
     private func appendStringToStartOfRunButton(isHoveringOverButton : Bool) {
@@ -107,6 +103,17 @@ struct LittleSwiftComputerView: View {
     private func animateChangeOfButtonLabel(isHoveringOverButton : Bool, changeMethod : (Bool) -> Void) {
         withAnimation(runAndCancelButtonAnimation) {
             changeMethod(isHoveringOverButton)
+        }
+    }
+    
+    private func inputSubmitCallback(inputNumber : Int) {
+        executionController.resumeAfterInput(inputNumber: inputNumber)
+        self.inputString = ""
+    }
+    
+    private func executeNewUserInput() {
+        if let assembledCode = assemblerController.assembleUserInput() {
+            executionController.execute(assembledCode)
         }
     }
     
