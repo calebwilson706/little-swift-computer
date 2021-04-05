@@ -34,8 +34,3 @@ struct InputBoxView: View {
     }
 }
 
-//struct InputBoxView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        InputBoxView(inputString: "", submitCallback: ())
-//    }
-//}

@@ -55,7 +55,7 @@ extension ExecutionController {
                 self.requiresInput = true
                 
                 withAnimation {
-                    self.executionError = "Program requires input!"
+                    self.executionError = ExecutionErrors.requiresInput
                 }
                 
                 timer.invalidate()
@@ -66,7 +66,7 @@ extension ExecutionController {
             }
         } catch {
             withAnimation {
-                self.executionError = error.localizedDescription
+                self.executionError = error
             }
             timer.invalidate()
             return

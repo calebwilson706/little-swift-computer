@@ -11,7 +11,7 @@ import SwiftUI
 class AssemblyController : ObservableObject {
     @Published var mainCodeBlockString = ""
     @Published var declarationBlockString = ""
-    @Published var errorMessageFromAssembly : String? = nil
+    @Published var errorMessageFromAssembly : Error?
     
     func assembleUserInput() -> PreparedAndAssembledCode? {
         do {
@@ -25,8 +25,7 @@ class AssemblyController : ObservableObject {
             )
         } catch {
             withAnimation {
-                self.errorMessageFromAssembly = (mainCodeBlockString == "") ?
-                    "Please write some code to run." : error.localizedDescription
+                self.errorMessageFromAssembly = error
             }
             return nil
         }

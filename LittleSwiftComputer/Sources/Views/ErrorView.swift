@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ErrorView: View {
     
-    let errorString : String?
+    let error : Error?
     
     var body: some View {
-        if let text = errorString {
+        if let text = error?.localizedDescription {
             Text(text)
         }
     }
@@ -20,6 +20,6 @@ struct ErrorView: View {
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(errorString: nil)
+        ErrorView(error: nil)
     }
 }

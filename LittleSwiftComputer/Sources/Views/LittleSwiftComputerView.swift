@@ -26,8 +26,8 @@ struct LittleSwiftComputerView: View {
             HStack {
                 Spacer()
                 
-                ErrorView(errorString: executionController.executionError)
-                ErrorView(errorString: assemblerController.errorMessageFromAssembly)
+                ErrorView(error: executionController.executionError)
+                ErrorView(error: assemblerController.errorMessageFromAssembly)
                 
                 VStack {
                     codeAssemblyView

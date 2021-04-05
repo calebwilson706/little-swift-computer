@@ -10,7 +10,8 @@ import Foundation
 enum AssemblyCodeErrors : Error {
     case invalidInstruction(at : Int),
          repetitionOfPlaceholder(placeholder : String),
-         missingOperand(at : Int)
+         missingOperand(at : Int),
+         noCode
 }
 
 
@@ -23,6 +24,8 @@ extension AssemblyCodeErrors : LocalizedError {
             return "The placeholder '\(repeatedPlaceholder)' was repeated. Placeholders should only be at one location."
         case .missingOperand(at : let index):
             return "The instruction at line \(index + 1) requires an operand."
+        case .noCode:
+            return "Please write some code to run."
         }
     }
 }

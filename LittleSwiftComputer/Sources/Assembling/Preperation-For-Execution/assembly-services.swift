@@ -17,10 +17,16 @@ class AssemblyServices {
             let assembledCode = Assembler().assemble(code: mainCodeBlock)
             try checkIfAssembledCodeIsValid(assembledCode: assembledCode)
             let initializedVariables = try getInitializedVariables(variableDeclarationsUnparsed: variableBlock)
+            
             let unwrappedAssembledCode = AssembledCodeLinesUnwrapped(
                 lines: assembledCode.lines.map { $0! },
                 placeholdersForBranches: assembledCode.dictionaryOfBranchesToIndices
             )
+            
+            if unwrappedAssembledCode.lines.count == 0 {
+                throw AssemblyCodeErrors.noCode
+            }
+            
             return PreparedAndAssembledCode(mainCodeBlock: unwrappedAssembledCode, initializedVariables: initializedVariables)
         } catch {
             throw error

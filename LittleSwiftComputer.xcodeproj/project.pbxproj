@@ -113,6 +113,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB1B902D261BAD050092CA63 /* GridOfRegisters */ = {
+			isa = PBXGroup;
+			children = (
+				AB1B901F261B96CB0092CA63 /* RegisterView.swift */,
+				AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */,
+			);
+			path = GridOfRegisters;
+			sourceTree = "<group>";
+		};
+		AB1B902E261BAD2C0092CA63 /* MiddleColumnOfMainView */ = {
+			isa = PBXGroup;
+			children = (
+				AB3FA9952619EF9A00EAC84A /* OutputView.swift */,
+				AB3FA99B261A305200EAC84A /* InputBoxView.swift */,
+				AB1B9015261B91E80092CA63 /* AccumulatorView.swift */,
+			);
+			path = MiddleColumnOfMainView;
+			sourceTree = "<group>";
+		};
 		AB2356E82617E570000C59C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,12 +162,9 @@
 		AB3FA9942619EF7E00EAC84A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB1B902E261BAD2C0092CA63 /* MiddleColumnOfMainView */,
+				AB1B902D261BAD050092CA63 /* GridOfRegisters */,
 				ABBC7EED2613B3A8003C6047 /* LittleSwiftComputerView.swift */,
-				AB3FA9952619EF9A00EAC84A /* OutputView.swift */,
-				AB3FA99B261A305200EAC84A /* InputBoxView.swift */,
-				AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */,
-				AB1B9015261B91E80092CA63 /* AccumulatorView.swift */,
-				AB1B901F261B96CB0092CA63 /* RegisterView.swift */,
 				AB1B9029261BA6A80092CA63 /* ErrorView.swift */,
 			);
 			path = Views;
