@@ -12,7 +12,7 @@ struct AccumulatorView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Accumulator:")
+            HeaderWithHelpView(title: "Accumulator:", helpCallback : {})
             ZStack {
                 ComponentBackgroundColors.accumulator.getColor()
                 Text("\(accumulator)")

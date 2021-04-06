@@ -23,7 +23,7 @@ struct GridOfRegistersView: View {
     }
     var body: some View {
         VStack(alignment : .leading) {
-            Text("Registers: ")
+            HeaderWithHelpView(title: "Registers: ", helpCallback : {})
             ScrollView {
                 LazyVGrid(columns: layout, spacing : 12.5) {
                     ForEach(registerItems, id : \.id, content : RegisterView.init).overlay(Color.gray.opacity(0.1))

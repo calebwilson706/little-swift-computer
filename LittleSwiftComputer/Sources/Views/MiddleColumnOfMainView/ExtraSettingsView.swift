@@ -12,7 +12,7 @@ struct ExtraSettingsView: View {
     
     var body: some View {
         VStack(alignment : .leading) {
-            Text("Extra Settings:")
+            HeaderWithHelpView(title: "Extra Settings:", helpCallback : {})
             speedPickerView
         }.padding(.all)
     }

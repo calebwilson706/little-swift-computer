@@ -20,7 +20,7 @@ struct InputBoxView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Input: ")
+            HeaderWithHelpView(title: "Input:", helpCallback : {})
             TextField("", text: $inputString)
                 .background(ComponentBackgroundColors.inputTextField.getColor())
             Text("Your input: \(parsedInput)")

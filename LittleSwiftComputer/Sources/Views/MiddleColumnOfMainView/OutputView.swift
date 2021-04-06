@@ -16,7 +16,7 @@ struct OutputView: View {
     
     var body: some View {
         VStack(alignment : .leading) {
-            Text("Output:")
+            HeaderWithHelpView(title: "Output:", helpCallback : {})
             ZStack {
                 ComponentBackgroundColors.output.getColor()
                 ScrollView {

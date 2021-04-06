@@ -54,10 +54,10 @@ struct LittleSwiftComputerView: View {
     
     var codeAssemblyView : some View {
         VStack(alignment : .leading) {
-            Text("Write Code Below:")
+            HeaderWithHelpView(title: "Write Code Below:", helpCallback: {})
             TextEditor(text: self.$assemblerController.mainCodeBlockString)
                 .codeEditor()
-            Text("Declare Variables Below:")
+            HeaderWithHelpView(title: "Declare Variables Below:", helpCallback: {})
             TextEditor(text: self.$assemblerController.declarationBlockString)
                 .codeEditor()
         }

@@ -21,9 +21,7 @@ struct BaseRunPauseCancelButtonStyle : ViewModifier {
             .padding(.horizontal, 6)
             .imageScale(.small)
             .background((!disabled ? component.getColor() : Color.gray).cornerRadius(5))
-            .onHover { inside in
-                onHoverCallback(inside)
-            }
+            .onHover(perform: onHoverCallback)
     }
 }
 
