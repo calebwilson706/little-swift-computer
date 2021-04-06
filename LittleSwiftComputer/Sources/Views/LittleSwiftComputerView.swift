@@ -12,11 +12,14 @@ struct LittleSwiftComputerView: View {
     @ObservedObject var executionController = ExecutionController()
     @ObservedObject var optionsController = ExecutionOptionsController()
     
-    @State var runButtonLabelString = ""
-    @State var cancelButtonLabelString = ""
+    @ObservedObject var runButtonLabel = DynamicButtonLabel(completedString: "Execute Code")
+    @ObservedObject var cancelButtonLabel = DynamicButtonLabel(completedString: "Stop Execution")
+    @ObservedObject var resumeButtonLabel = DynamicButtonLabel(completedString: "Resume Execution")
+    @ObservedObject var pauseButtonLabel = DynamicButtonLabel(completedString: "Pause Execution")
+    
     @State var inputString = ""
     
-    let runAndCancelButtonAnimation = Animation.easeInOut(duration: 0.5)
+    
     
     var body: some View {
         VStack {
@@ -32,7 +35,7 @@ struct LittleSwiftComputerView: View {
                 
                 VStack {
                     codeAssemblyView
-                    runAndCancelButtons
+                    controlExecutionButtons
                 }.padding(.all)
                 
                 VStack {
@@ -41,33 +44,12 @@ struct LittleSwiftComputerView: View {
                     InputBoxView(inputString: $inputString,
                                  submitCallback: inputSubmitCallback,
                                  isDisabled: !executionController.requiresInput)
-                    extraSettingsView
+                    ExtraSettingsView().environmentObject(optionsController)
                 }.frame(maxWidth : 200)
                 
                 GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
             }
         }.padding()
-    }
-    
-    var extraSettingsView : some View {
-        VStack(alignment : .leading) {
-            Text("Extra Settings:")
-            speedPickerView
-        }.padding(.all)
-    }
-    
-    var speedPickerView : some View {
-        VStack(alignment : .leading) {
-            Text("Execution Speed: ")
-                .optionsHeader()
-            Picker("", selection: self.$optionsController.selectedSpeedOption) {
-                ForEach(ExecutionSpeeds.allCases, id : \.self) {
-                    Text($0.getDescription())
-                        .tag($0)
-                }
-            }
-            .labelsHidden()
-        }
     }
     
     var codeAssemblyView : some View {
@@ -81,53 +63,51 @@ struct LittleSwiftComputerView: View {
         }
     }
     
-    var runAndCancelButtons : some View {
+    var controlExecutionButtons : some View {
         HStack {
             runButton
+            pauseButton
             cancelButton
         }
     }
     
     var runButton : some View {
-        Button(action : executeNewUserInput){
-            Text("\(runButtonLabelString) \(Image(systemName: "play.fill"))")
-        }
-        .buttonStyle(RunButtonStyle(methodForHovering: appendStringToStartOfRunButton, disabled: isRunButtonDisabled))
-        .disabled(isRunButtonDisabled)
+        let showResume = executionController.isPaused
+        return DynamicButtonView(
+            dynamicLabel: showResume ? resumeButtonLabel : runButtonLabel,
+            imageName: "play.fill",
+            action: showResume ? resumeExecution : executeNewUserInput,
+            isDisabled: !showResume && isRunButtonDisabled,
+            component: showResume ? .pauseButton : .runButton
+        )
+    }
+    
+    var pauseButton : some View {
+        DynamicButtonView(
+            dynamicLabel: pauseButtonLabel,
+            imageName: "pause.fill",
+            action: executionController.pause,
+            isDisabled: !isRunButtonDisabled || executionController.isPaused,
+            component: .pauseButton
+        )
     }
     
     var cancelButton : some View {
-        Button(action: executionController.resetProgram){
-            Text("\(cancelButtonLabelString) \(Image(systemName: "square.fill"))")
-        }
-        .buttonStyle(CancelButtonStyle(methodForHovering: appendStringToStartOfCancelButton, disabled: isCancelButtonDisabled))
-        .disabled(isCancelButtonDisabled)
+        DynamicButtonView(
+            dynamicLabel: cancelButtonLabel,
+            imageName: "square.fill",
+            action: executionController.resetProgram,
+            isDisabled: isCancelButtonDisabled,
+            component: .cancelButton
+        )
     }
     
     private var isRunButtonDisabled : Bool {
-        executionController.isRunning || executionController.requiresInput
+        (executionController.isRunning || executionController.requiresInput || executionController.isPaused)
     }
     
     private var isCancelButtonDisabled : Bool {
         !isRunButtonDisabled
-    }
-    
-    private func appendStringToStartOfRunButton(isHoveringOverButton : Bool) {
-        animateChangeOfButtonLabel(isHoveringOverButton: isHoveringOverButton) { status in
-            self.runButtonLabelString = status ? "Execute Code" : ""
-        }
-    }
-    
-    private func appendStringToStartOfCancelButton(isHoveringOverButton : Bool) {
-        animateChangeOfButtonLabel(isHoveringOverButton: isHoveringOverButton) { status in
-            self.cancelButtonLabelString = status ? "Stop Execution" : ""
-        }
-    }
-    
-    private func animateChangeOfButtonLabel(isHoveringOverButton : Bool, changeMethod : (Bool) -> Void) {
-        withAnimation(runAndCancelButtonAnimation.delay(isHoveringOverButton ? 0 : 0.1)) {
-            changeMethod(isHoveringOverButton)
-        }
     }
     
     private func inputSubmitCallback(inputNumber : Int) {
@@ -139,6 +119,11 @@ struct LittleSwiftComputerView: View {
         if let assembledCode = assemblerController.assembleUserInput() {
             executionController.execute(assembledCode: assembledCode, speedSelection: self.optionsController.selectedSpeedOption)
         }
+    }
+    
+    private func resumeExecution() {
+        executionController.resume(speedSelection: optionsController.selectedSpeedOption)
+        self.resumeButtonLabel.buttonLabelString = ""
     }
     
 }

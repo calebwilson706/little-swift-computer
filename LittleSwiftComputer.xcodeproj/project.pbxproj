@@ -13,7 +13,7 @@
 		AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */; };
 		AB1B902A261BA6A80092CA63 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9029261BA6A80092CA63 /* ErrorView.swift */; };
 		AB2356F02617E5EB000C59C7 /* execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356EF2617E5EB000C59C7 /* execution.swift */; };
-		AB2356F52618656D000C59C7 /* run-and-cancel-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */; };
+		AB2356F52618656D000C59C7 /* run-cancel-pause-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */; };
 		AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
@@ -22,6 +22,10 @@
 		AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDB261CBF970078E0B0 /* execution-speeds.swift */; };
 		AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */; };
 		AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BE3261CD2A60078E0B0 /* options-headers.swift */; };
+		AB728BE8261CD4000078E0B0 /* ExtraSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BE7261CD4000078E0B0 /* ExtraSettingsView.swift */; };
+		AB728BF4261CD7C10078E0B0 /* input-submit-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */; };
+		AB728BF8261CD9AF0078E0B0 /* dynamic-button-label.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */; };
+		AB728C02261CDAE90078E0B0 /* DynamicButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
@@ -63,7 +67,7 @@
 		AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "text-editor-for-code-style.swift"; sourceTree = "<group>"; };
 		AB1B9029261BA6A80092CA63 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AB2356EF2617E5EB000C59C7 /* execution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = execution.swift; sourceTree = "<group>"; };
-		AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "run-and-cancel-button-style.swift"; sourceTree = "<group>"; };
+		AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "run-cancel-pause-button-style.swift"; sourceTree = "<group>"; };
 		AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "convert-rgb-value.swift"; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,10 @@
 		AB728BDB261CBF970078E0B0 /* execution-speeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-speeds.swift"; sourceTree = "<group>"; };
 		AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-options-controller.swift"; sourceTree = "<group>"; };
 		AB728BE3261CD2A60078E0B0 /* options-headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "options-headers.swift"; sourceTree = "<group>"; };
+		AB728BE7261CD4000078E0B0 /* ExtraSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraSettingsView.swift; sourceTree = "<group>"; };
+		AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "input-submit-style.swift"; sourceTree = "<group>"; };
+		AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "dynamic-button-label.swift"; sourceTree = "<group>"; };
+		AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonView.swift; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 		AB1B902E261BAD2C0092CA63 /* MiddleColumnOfMainView */ = {
 			isa = PBXGroup;
 			children = (
+				AB728BE7261CD4000078E0B0 /* ExtraSettingsView.swift */,
 				AB3FA9952619EF9A00EAC84A /* OutputView.swift */,
 				AB3FA99B261A305200EAC84A /* InputBoxView.swift */,
 				AB1B9015261B91E80092CA63 /* AccumulatorView.swift */,
@@ -151,20 +160,21 @@
 		AB2356F326186544000C59C7 /* UI-Styled-Components */ = {
 			isa = PBXGroup;
 			children = (
-				AB2356FC26186A4B000C59C7 /* Run-And-Cancel-Buttons */,
+				AB2356FC26186A4B000C59C7 /* Run-Cancel-Pause-Buttons */,
 				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
 				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
 				AB728BE3261CD2A60078E0B0 /* options-headers.swift */,
+				AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */,
 			);
 			path = "UI-Styled-Components";
 			sourceTree = "<group>";
 		};
-		AB2356FC26186A4B000C59C7 /* Run-And-Cancel-Buttons */ = {
+		AB2356FC26186A4B000C59C7 /* Run-Cancel-Pause-Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				AB2356F42618656D000C59C7 /* run-and-cancel-button-style.swift */,
+				AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */,
 			);
-			path = "Run-And-Cancel-Buttons";
+			path = "Run-Cancel-Pause-Buttons";
 			sourceTree = "<group>";
 		};
 		AB3FA9942619EF7E00EAC84A /* Views */ = {
@@ -174,8 +184,19 @@
 				AB1B902D261BAD050092CA63 /* GridOfRegisters */,
 				ABBC7EED2613B3A8003C6047 /* LittleSwiftComputerView.swift */,
 				AB1B9029261BA6A80092CA63 /* ErrorView.swift */,
+				AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AB728C05261CE76E0078E0B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABC5FBCB2614EFF60095BB70 /* String-Extensions */,
+				ABBC7F052613B435003C6047 /* safe-array-access.swift */,
+				AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ABA880912615C93A0001817C /* Preperation-For-Execution */ = {
@@ -241,10 +262,9 @@
 		ABBC7EFD2613B3D7003C6047 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AB728C05261CE76E0078E0B0 /* Extensions */,
 				AB2356F326186544000C59C7 /* UI-Styled-Components */,
-				ABC5FBCB2614EFF60095BB70 /* String-Extensions */,
-				ABBC7F052613B435003C6047 /* safe-array-access.swift */,
-				AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */,
+				AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -422,6 +442,7 @@
 				ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */,
 				ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */,
 				ABA880932615C98D0001817C /* assembly-services.swift in Sources */,
+				AB728C02261CDAE90078E0B0 /* DynamicButtonView.swift in Sources */,
 				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
 				ABBC7F002613B401003C6047 /* assembled-instruction.swift in Sources */,
 				ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */,
@@ -434,6 +455,7 @@
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
+				AB728BF8261CD9AF0078E0B0 /* dynamic-button-label.swift in Sources */,
 				AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */,
 				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,
 				AB9D50C52616034500AE7B6B /* register-data.swift in Sources */,
@@ -443,11 +465,13 @@
 				AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */,
 				AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
+				AB728BE8261CD4000078E0B0 /* ExtraSettingsView.swift in Sources */,
+				AB728BF4261CD7C10078E0B0 /* input-submit-style.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */,
 				AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */,
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,
-				AB2356F52618656D000C59C7 /* run-and-cancel-button-style.swift in Sources */,
+				AB2356F52618656D000C59C7 /* run-cancel-pause-button-style.swift in Sources */,
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,
 				ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */,
 				AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */,

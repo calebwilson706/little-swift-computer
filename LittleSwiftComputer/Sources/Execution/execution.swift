@@ -73,6 +73,15 @@ extension ExecutionController {
         }
     }
     
+    func resume(speedSelection : ExecutionSpeeds) {
+        self.isPaused = false
+        startTimer(timeInterval: speedSelection.rawValue)
+    }
+    
+    func pause() {
+        self.isPaused = true
+        timer.invalidate()
+    }
     
     func resumeAfterInput(inputNumber : Int,speedSelection : ExecutionSpeeds) {
         self.accumulator = inputNumber
@@ -91,6 +100,7 @@ extension ExecutionController {
         self.indexOfCurrentInstruction = 0
         self.registers.removeAll()
         self.requiresInput = false
+        self.isPaused = false
         
         withAnimation {
             self.executionError = nil

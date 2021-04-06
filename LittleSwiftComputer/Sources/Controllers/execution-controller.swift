@@ -15,6 +15,7 @@ class ExecutionController : ObservableObject {
     @Published var executionError : Error?
     @Published var outputs = [Int]()
     @Published var requiresInput = false
+    @Published var isPaused = false
     
     var assembledCodeSource : PreparedAndAssembledCode? = nil
     var timer = Timer()

@@ -13,6 +13,7 @@ enum ComponentBackgroundColors {
          output,
          inputTextField,
          runButton,
+         pauseButton,
          cancelButton,
          errorMessage,
          inputRequiredMessage
@@ -25,6 +26,8 @@ enum ComponentBackgroundColors {
             return Color.gray
         case .runButton:
             return Color(red: 61.convertToRGBValue(), green: 166.convertToRGBValue(), blue: 66.convertToRGBValue())
+        case .pauseButton:
+            return Color.blue
         case .cancelButton, .errorMessage:
             return Color(red : 166.convertToRGBValue(), green: 61.convertToRGBValue(), blue: 66.convertToRGBValue())
         case .inputRequiredMessage:

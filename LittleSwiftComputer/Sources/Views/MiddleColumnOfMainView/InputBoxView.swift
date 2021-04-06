@@ -23,14 +23,15 @@ struct InputBoxView: View {
             Text("Input: ")
             TextField("", text: $inputString)
                 .background(ComponentBackgroundColors.inputTextField.getColor())
-                .disabled(isDisabled)
             Text("Your input: \(parsedInput)")
             Button(action : {
                 submitCallback(parsedInput)
             }){
                 Text("Submit")
-            }.buttonStyle(RunButtonStyle(methodForHovering: { _ in }, disabled: isDisabled))
+            }.buttonStyle(InputSubmitButtonStyle(disabled: isDisabled))
+            
         }.padding()
+         .disabled(isDisabled)
     }
 }
 

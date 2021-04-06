@@ -20,7 +20,9 @@ struct OutputView: View {
             ZStack {
                 ComponentBackgroundColors.output.getColor()
                 ScrollView {
-                    ForEach(listOfOutputs.reversed(), id : \.self, content : Text.init).padding(.top)
+                    ForEach(listOfOutputs.reversed(), id : \.self){
+                        Text($0).padding(.horizontal)
+                    }.padding(.top)
                 }
             }
         }.padding(.all)
