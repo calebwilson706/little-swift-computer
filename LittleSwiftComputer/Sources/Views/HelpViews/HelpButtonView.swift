@@ -17,12 +17,6 @@ struct HelpButtonView: View {
     }
 }
 
-struct HelpButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        HelpButtonView(action: {})
-    }
-}
-
 struct HelpButtonStyle : ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -32,5 +26,11 @@ struct HelpButtonStyle : ButtonStyle {
                 hovering ? NSCursor.pointingHand.push() : NSCursor.pop()
             }
             .foregroundColor(Color.gray)
+    }
+}
+
+struct HelpButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        HelpButtonView(action: {})
     }
 }

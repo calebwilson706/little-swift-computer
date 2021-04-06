@@ -27,11 +27,11 @@ struct HelpAlertView: View {
                         Text(helpController.helpSelection.rawValue)
                         Spacer()
                     }.padding()
-                }
+                }.foregroundColor(Color.white)
             }
         }.background(ComponentBackgroundColors.helpAlert.getColor().cornerRadius(20))
-         .frame(maxWidth : 300, maxHeight: 300)
-         .shadow(radius: 20)
+        .frame(maxWidth : 300, maxHeight: 300)
+        .shadow(radius: 20)
         .animation(.easeInOut(duration : 0.3))
     }
     

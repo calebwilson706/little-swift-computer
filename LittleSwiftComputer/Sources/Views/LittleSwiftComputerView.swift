@@ -100,7 +100,7 @@ struct LittleSwiftComputerView: View {
             dynamicLabel: pauseButtonLabel,
             imageName: "pause.fill",
             action: executionController.pause,
-            isDisabled: !isRunButtonDisabled || executionController.isPaused || executionController.requiresInput,
+            isDisabled: isCancelButtonDisabled || executionController.isPaused || executionController.requiresInput,
             component: .pauseButton
         )
     }

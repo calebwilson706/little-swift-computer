@@ -189,6 +189,7 @@
 		AB3FA9942619EF7E00EAC84A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB728C14261CEBEF0078E0B0 /* HelpViews */,
 				AB728C0D261CEB760078E0B0 /* UtilityViews */,
 				AB1B902E261BAD2C0092CA63 /* MiddleColumnOfMainView */,
 				AB1B902D261BAD050092CA63 /* GridOfRegisters */,
@@ -221,20 +222,19 @@
 		AB728C0D261CEB760078E0B0 /* UtilityViews */ = {
 			isa = PBXGroup;
 			children = (
-				AB728C14261CEBEF0078E0B0 /* Help */,
 				AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */,
 			);
 			path = UtilityViews;
 			sourceTree = "<group>";
 		};
-		AB728C14261CEBEF0078E0B0 /* Help */ = {
+		AB728C14261CEBEF0078E0B0 /* HelpViews */ = {
 			isa = PBXGroup;
 			children = (
 				AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */,
 				AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */,
 				AB728C25261CF5320078E0B0 /* HelpAlertView.swift */,
 			);
-			path = Help;
+			path = HelpViews;
 			sourceTree = "<group>";
 		};
 		AB728C2D261D0D670078E0B0 /* Resources */ = {
