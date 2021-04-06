@@ -10,6 +10,7 @@ import SwiftUI
 struct LittleSwiftComputerView: View {
     @ObservedObject var assemblerController = AssemblyController()
     @ObservedObject var executionController = ExecutionController()
+    @ObservedObject var optionsController = ExecutionOptionsController()
     
     @State var runButtonLabelString = ""
     @State var cancelButtonLabelString = ""
@@ -40,11 +41,33 @@ struct LittleSwiftComputerView: View {
                     InputBoxView(inputString: $inputString,
                                  submitCallback: inputSubmitCallback,
                                  isDisabled: !executionController.requiresInput)
+                    extraSettingsView
                 }.frame(maxWidth : 200)
                 
                 GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
             }
         }.padding()
+    }
+    
+    var extraSettingsView : some View {
+        VStack(alignment : .leading) {
+            Text("Extra Settings:")
+            speedPickerView
+        }.padding(.all)
+    }
+    
+    var speedPickerView : some View {
+        VStack(alignment : .leading) {
+            Text("Execution Speed: ")
+                .optionsHeader()
+            Picker("", selection: self.$optionsController.selectedSpeedOption) {
+                ForEach(ExecutionSpeeds.allCases, id : \.self) {
+                    Text($0.getDescription())
+                        .tag($0)
+                }
+            }
+            .labelsHidden()
+        }
     }
     
     var codeAssemblyView : some View {
@@ -108,13 +131,13 @@ struct LittleSwiftComputerView: View {
     }
     
     private func inputSubmitCallback(inputNumber : Int) {
-        executionController.resumeAfterInput(inputNumber: inputNumber)
+        executionController.resumeAfterInput(inputNumber: inputNumber, speedSelection: self.optionsController.selectedSpeedOption)
         self.inputString = ""
     }
     
     private func executeNewUserInput() {
         if let assembledCode = assemblerController.assembleUserInput() {
-            executionController.execute(assembledCode)
+            executionController.execute(assembledCode: assembledCode, speedSelection: self.optionsController.selectedSpeedOption)
         }
     }
     

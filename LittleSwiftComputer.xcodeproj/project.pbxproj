@@ -19,6 +19,9 @@
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
 		AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA9952619EF9A00EAC84A /* OutputView.swift */; };
 		AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA99B261A305200EAC84A /* InputBoxView.swift */; };
+		AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDB261CBF970078E0B0 /* execution-speeds.swift */; };
+		AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */; };
+		AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BE3261CD2A60078E0B0 /* options-headers.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
@@ -66,6 +69,9 @@
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
 		AB3FA9952619EF9A00EAC84A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		AB3FA99B261A305200EAC84A /* InputBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBoxView.swift; sourceTree = "<group>"; };
+		AB728BDB261CBF970078E0B0 /* execution-speeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-speeds.swift"; sourceTree = "<group>"; };
+		AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-options-controller.swift"; sourceTree = "<group>"; };
+		AB728BE3261CD2A60078E0B0 /* options-headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "options-headers.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 			children = (
 				ABA880A22615CF730001817C /* assembly-controller.swift */,
 				ABC5FBA52614A2710095BB70 /* execution-controller.swift */,
+				AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,9 +151,10 @@
 		AB2356F326186544000C59C7 /* UI-Styled-Components */ = {
 			isa = PBXGroup;
 			children = (
-				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
 				AB2356FC26186A4B000C59C7 /* Run-And-Cancel-Buttons */,
+				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
 				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
+				AB728BE3261CD2A60078E0B0 /* options-headers.swift */,
 			);
 			path = "UI-Styled-Components";
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 				AB9D50C42616034500AE7B6B /* register-data.swift */,
 				AB27330C26161C50000FE5E3 /* execution-errors.swift */,
 				AB2356EF2617E5EB000C59C7 /* execution.swift */,
+				AB728BDB261CBF970078E0B0 /* execution-speeds.swift */,
 			);
 			path = Execution;
 			sourceTree = "<group>";
@@ -420,6 +429,7 @@
 				AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */,
 				AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */,
 				AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */,
+				AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */,
 				AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
@@ -431,9 +441,11 @@
 				ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */,
 				ABA880A32615CF730001817C /* assembly-controller.swift in Sources */,
 				AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */,
+				AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */,
+				AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */,
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,
 				AB2356F52618656D000C59C7 /* run-and-cancel-button-style.swift in Sources */,
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,

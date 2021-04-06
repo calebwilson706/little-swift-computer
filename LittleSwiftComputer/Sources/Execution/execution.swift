@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 extension ExecutionController {
-    func execute(_ assembledCode : PreparedAndAssembledCode) {
+    func execute(assembledCode : PreparedAndAssembledCode, speedSelection : ExecutionSpeeds) {
         resetProgram()
         self.assembledCodeSource = assembledCode
         
         fillRegistersWithInitialValues(variables: assembledCode.initializedVariables)
-        startTimer()
+        startTimer(timeInterval: speedSelection.rawValue)
     }
     
     
@@ -74,7 +74,7 @@ extension ExecutionController {
     }
     
     
-    func resumeAfterInput(inputNumber : Int) {
+    func resumeAfterInput(inputNumber : Int,speedSelection : ExecutionSpeeds) {
         self.accumulator = inputNumber
         self.indexOfCurrentInstruction += 1
         self.requiresInput = false
@@ -83,7 +83,7 @@ extension ExecutionController {
             self.executionError = nil
         }
         
-        startTimer()
+        startTimer(timeInterval: speedSelection.rawValue)
     }
     
     func resetProgram() {
@@ -128,7 +128,7 @@ extension ExecutionController {
         }
     }
     
-    private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
+    private func startTimer(timeInterval: Double) {
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
     }
 }
