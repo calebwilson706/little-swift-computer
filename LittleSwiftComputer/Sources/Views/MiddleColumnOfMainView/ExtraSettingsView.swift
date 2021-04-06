@@ -9,12 +9,15 @@ import SwiftUI
 
 struct ExtraSettingsView: View {
     @EnvironmentObject var optionsController : ExecutionOptionsController
+    @EnvironmentObject var helpController : HelpController
+    var shouldDisable : Bool
     
     var body: some View {
         VStack(alignment : .leading) {
-            HeaderWithHelpView(title: "Extra Settings:", helpCallback : {})
+            HeaderWithHelpView(title: "Extra Settings:", helpCallback : showHelp)
             speedPickerView
         }.padding(.all)
+         .disabled(shouldDisable)
     }
     
     var speedPickerView : some View {
@@ -29,6 +32,10 @@ struct ExtraSettingsView: View {
             }
             .labelsHidden()
         }
+    }
+    
+    func showHelp() {
+        self.helpController.showHelp(selection: .extraSettings)
     }
     
 }

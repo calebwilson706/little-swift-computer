@@ -16,7 +16,8 @@ enum ComponentBackgroundColors {
          pauseButton,
          cancelButton,
          errorMessage,
-         inputRequiredMessage
+         inputRequiredMessage,
+         helpAlert
     
     func getColor() -> Color {
         switch self {
@@ -32,6 +33,8 @@ enum ComponentBackgroundColors {
             return Color(red : 166.convertToRGBValue(), green: 61.convertToRGBValue(), blue: 66.convertToRGBValue())
         case .inputRequiredMessage:
             return Color(red: 10.convertToRGBValue(), green: 79.convertToRGBValue(), blue: 14.convertToRGBValue())
+        case .helpAlert:
+            return Color(red: 46.convertToRGBValue(), green: 46.convertToRGBValue(), blue: 46.convertToRGBValue())
         }
     }
 }

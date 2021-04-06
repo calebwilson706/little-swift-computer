@@ -18,20 +18,34 @@ struct InputBoxView: View {
         Int(inputString.filter { $0.isNumber }) ?? 0
     }
     
+    @EnvironmentObject var helpController : HelpController
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderWithHelpView(title: "Input:", helpCallback : {})
-            TextField("", text: $inputString)
-                .background(ComponentBackgroundColors.inputTextField.getColor())
-            Text("Your input: \(parsedInput)")
-            Button(action : {
-                submitCallback(parsedInput)
-            }){
-                Text("Submit")
-            }.buttonStyle(InputSubmitButtonStyle(disabled: isDisabled))
+            HeaderWithHelpView(title: "Input:", helpCallback : showHelp)
+            
+            Group {
+                TextField("", text: $inputString)
+                    .background(ComponentBackgroundColors.inputTextField.getColor())
+                
+                Text("Your input: \(parsedInput)")
+                
+                Button(action : submit){
+                    Text("Submit")
+                }.buttonStyle(InputSubmitButtonStyle(disabled: isDisabled))
+            }.disabled(isDisabled)
             
         }.padding()
-         .disabled(isDisabled)
+         
     }
+    
+    private func submit() {
+        submitCallback(parsedInput)
+    }
+    
+    private func showHelp() {
+        self.helpController.showHelp(selection: .input)
+    }
+    
 }
 

@@ -11,6 +11,7 @@ struct LittleSwiftComputerView: View {
     @ObservedObject var assemblerController = AssemblyController()
     @ObservedObject var executionController = ExecutionController()
     @ObservedObject var optionsController = ExecutionOptionsController()
+    @ObservedObject var helpController = HelpController()
     
     @ObservedObject var runButtonLabel = DynamicButtonLabel(completedString: "Execute Code")
     @ObservedObject var cancelButtonLabel = DynamicButtonLabel(completedString: "Stop Execution")
@@ -22,42 +23,54 @@ struct LittleSwiftComputerView: View {
     
     
     var body: some View {
-        VStack {
-            Text("Little Swift Computer")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.top, 10)
-            HStack {
-                Spacer()
-                
-                ErrorView(error: executionController.executionError)
-                ErrorView(error: assemblerController.errorMessageFromAssembly)
-                
-                VStack {
-                    codeAssemblyView
-                    controlExecutionButtons
-                }.padding(.all)
-                
-                VStack {
-                    AccumulatorView(accumulator: self.executionController.accumulator)
-                    OutputView(listOfOutputs : executionController.outputs)
-                    InputBoxView(inputString: $inputString,
-                                 submitCallback: inputSubmitCallback,
-                                 isDisabled: !executionController.requiresInput)
-                    ExtraSettingsView().environmentObject(optionsController)
-                }.frame(maxWidth : 200)
-                
-                GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
-            }
-        }.padding()
+        ZStack {
+            VStack {
+                header
+                HStack {
+                    Spacer()
+                    
+                    ErrorView(error: executionController.executionError)
+                    ErrorView(error: assemblerController.errorMessageFromAssembly)
+                    
+                    VStack {
+                        codeAssemblyView
+                        controlExecutionButtons
+                    }.padding(.all)
+                    
+                    VStack {
+                        AccumulatorView(accumulator: self.executionController.accumulator)
+                        OutputView(listOfOutputs : executionController.outputs)
+                        InputBoxView(inputString: $inputString,
+                                     submitCallback: inputSubmitCallback,
+                                     isDisabled: !executionController.requiresInput)
+                        ExtraSettingsView(shouldDisable: isRunButtonDisabled && !executionController.isPaused).environmentObject(optionsController)
+                    }.frame(maxWidth : 200)
+                        
+                    GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
+                }
+            }.padding()
+            .blur(radius: helpController.showingHelpMessage ? 20 : 0)
+            .disabled(helpController.showingHelpMessage)
+            
+            HelpAlertView()
+            
+        }.environmentObject(helpController)
+        
+    }
+    
+    var header : some View {
+        Text("Little Swift Computer")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .padding(.top, 10)
     }
     
     var codeAssemblyView : some View {
         VStack(alignment : .leading) {
-            HeaderWithHelpView(title: "Write Code Below:", helpCallback: {})
+            HeaderWithHelpView(title: "Write Code Below:", helpCallback: showCodeEditorHelp)
             TextEditor(text: self.$assemblerController.mainCodeBlockString)
                 .codeEditor()
-            HeaderWithHelpView(title: "Declare Variables Below:", helpCallback: {})
+            HeaderWithHelpView(title: "Declare Variables Below:", helpCallback: showDeclarationEditorHelp)
             TextEditor(text: self.$assemblerController.declarationBlockString)
                 .codeEditor()
         }
@@ -87,7 +100,7 @@ struct LittleSwiftComputerView: View {
             dynamicLabel: pauseButtonLabel,
             imageName: "pause.fill",
             action: executionController.pause,
-            isDisabled: !isRunButtonDisabled || executionController.isPaused,
+            isDisabled: !isRunButtonDisabled || executionController.isPaused || executionController.requiresInput,
             component: .pauseButton
         )
     }
@@ -123,7 +136,18 @@ struct LittleSwiftComputerView: View {
     
     private func resumeExecution() {
         executionController.resume(speedSelection: optionsController.selectedSpeedOption)
-        self.resumeButtonLabel.buttonLabelString = ""
+        
+        withAnimation {
+            self.resumeButtonLabel.buttonLabelString = ""
+        }
+    }
+    
+    private func showCodeEditorHelp() {
+        helpController.showHelp(selection: .assemblyCodeEditor)
+    }
+    
+    private func showDeclarationEditorHelp() {
+        helpController.showHelp(selection: .variableDeclarationEditor)
     }
     
 }

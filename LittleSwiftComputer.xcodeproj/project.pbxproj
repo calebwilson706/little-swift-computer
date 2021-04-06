@@ -28,6 +28,9 @@
 		AB728C02261CDAE90078E0B0 /* DynamicButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */; };
 		AB728C08261CE8B00078E0B0 /* HelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */; };
 		AB728C0F261CEB960078E0B0 /* HeaderWithHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */; };
+		AB728C18261CEE0B0078E0B0 /* help-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C17261CEE0B0078E0B0 /* help-controller.swift */; };
+		AB728C1C261CEE720078E0B0 /* help-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C1B261CEE720078E0B0 /* help-messages.swift */; };
+		AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C25261CF5320078E0B0 /* HelpAlertView.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
@@ -84,6 +87,9 @@
 		AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonView.swift; sourceTree = "<group>"; };
 		AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButtonView.swift; sourceTree = "<group>"; };
 		AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithHelpView.swift; sourceTree = "<group>"; };
+		AB728C17261CEE0B0078E0B0 /* help-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-controller.swift"; sourceTree = "<group>"; };
+		AB728C1B261CEE720078E0B0 /* help-messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-messages.swift"; sourceTree = "<group>"; };
+		AB728C25261CF5320078E0B0 /* HelpAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAlertView.swift; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				ABA880A22615CF730001817C /* assembly-controller.swift */,
 				ABC5FBA52614A2710095BB70 /* execution-controller.swift */,
 				AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */,
+				AB728C17261CEE0B0078E0B0 /* help-controller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 		AB2356F326186544000C59C7 /* UI-Styled-Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
 				AB728C06261CE85D0078E0B0 /* Styles */,
 				AB2356FC26186A4B000C59C7 /* Run-Cancel-Pause-Buttons */,
 			);
@@ -203,7 +211,6 @@
 		AB728C06261CE85D0078E0B0 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
 				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
 				AB728BE3261CD2A60078E0B0 /* options-headers.swift */,
 				AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */,
@@ -225,8 +232,16 @@
 			children = (
 				AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */,
 				AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */,
+				AB728C25261CF5320078E0B0 /* HelpAlertView.swift */,
 			);
 			path = Help;
+			sourceTree = "<group>";
+		};
+		AB728C2D261D0D670078E0B0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		ABA880912615C93A0001817C /* Preperation-For-Execution */ = {
@@ -259,8 +274,8 @@
 		ABBC7EEA2613B3A8003C6047 /* LittleSwiftComputer */ = {
 			isa = PBXGroup;
 			children = (
+				AB728C2D261D0D670078E0B0 /* Resources */,
 				ABBC7EFC2613B3CC003C6047 /* Sources */,
-				ABBC7EEB2613B3A8003C6047 /* LittleSwiftComputerApp.swift */,
 				ABBC7EEF2613B3AA003C6047 /* Assets.xcassets */,
 				ABBC7EF42613B3AA003C6047 /* Info.plist */,
 				ABBC7EF52613B3AA003C6047 /* LittleSwiftComputer.entitlements */,
@@ -280,6 +295,7 @@
 		ABBC7EFC2613B3CC003C6047 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ABBC7EEB2613B3A8003C6047 /* LittleSwiftComputerApp.swift */,
 				AB3FA9942619EF7E00EAC84A /* Views */,
 				AB2356E82617E570000C59C7 /* Controllers */,
 				ABBC7EFE2613B3E9003C6047 /* Assembling */,
@@ -295,6 +311,7 @@
 				AB2356F326186544000C59C7 /* UI-Styled-Components */,
 				AB728C05261CE76E0078E0B0 /* Extensions */,
 				AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */,
+				AB728C1B261CEE720078E0B0 /* help-messages.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -471,6 +488,7 @@
 				ABC5FBA62614A2710095BB70 /* execution-controller.swift in Sources */,
 				ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */,
 				ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */,
+				AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */,
 				ABA880932615C98D0001817C /* assembly-services.swift in Sources */,
 				AB728C02261CDAE90078E0B0 /* DynamicButtonView.swift in Sources */,
 				ABBC7F062613B435003C6047 /* safe-array-access.swift in Sources */,
@@ -478,6 +496,7 @@
 				ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */,
 				AB1B902A261BA6A80092CA63 /* ErrorView.swift in Sources */,
 				AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */,
+				AB728C1C261CEE720078E0B0 /* help-messages.swift in Sources */,
 				AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */,
 				AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */,
 				AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */,
@@ -497,6 +516,7 @@
 				AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				AB728BE8261CD4000078E0B0 /* ExtraSettingsView.swift in Sources */,
+				AB728C18261CEE0B0078E0B0 /* help-controller.swift in Sources */,
 				AB728BF4261CD7C10078E0B0 /* input-submit-style.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */,

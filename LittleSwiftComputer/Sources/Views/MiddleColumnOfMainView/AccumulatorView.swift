@@ -9,15 +9,20 @@ import SwiftUI
 
 struct AccumulatorView: View {
     let accumulator: Int
-    
+    @EnvironmentObject var helpController : HelpController
+        
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderWithHelpView(title: "Accumulator:", helpCallback : {})
+            HeaderWithHelpView(title: "Accumulator:", helpCallback : showHelp)
             ZStack {
                 ComponentBackgroundColors.accumulator.getColor()
                 Text("\(accumulator)")
             }.frame(maxHeight: 50)
         }.padding(.all)
+    }
+    
+    private func showHelp() {
+        helpController.showHelp(selection: .accumulator)
     }
 }
 

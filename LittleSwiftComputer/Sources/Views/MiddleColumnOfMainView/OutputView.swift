@@ -10,13 +10,15 @@ import SwiftUI
 struct OutputView: View {
     let listOfOutputs : [String]
     
+    @EnvironmentObject var helpController : HelpController
+    
     init(listOfOutputs : [Int]) {
         self.listOfOutputs = listOfOutputs.map { "\($0)" }
     }
     
     var body: some View {
         VStack(alignment : .leading) {
-            HeaderWithHelpView(title: "Output:", helpCallback : {})
+            HeaderWithHelpView(title: "Output:", helpCallback : showHelp)
             ZStack {
                 ComponentBackgroundColors.output.getColor()
                 ScrollView {
@@ -27,6 +29,10 @@ struct OutputView: View {
             }
         }.padding(.all)
          .frame(maxHeight : 300)
+    }
+    
+    func showHelp() {
+        helpController.showHelp(selection: .output)
     }
 }
 
