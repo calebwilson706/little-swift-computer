@@ -14,6 +14,7 @@ struct DynamicButtonView: View {
     let component : ComponentMetaData
     var buttonIconImage : Image {
         Image(systemName: component.getImageStringForComponent() ?? "circlebadge")
+            
     }
     
     var body: some View {

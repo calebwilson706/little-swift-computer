@@ -23,6 +23,7 @@
 		AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4A2261DCBFD007E6C85 /* input-help.txt */; };
 		AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */; };
 		AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4AC261DCC6C007E6C85 /* registers-help.txt */; };
+		AB26C4B3261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26C4B2261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
 		AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA9952619EF9A00EAC84A /* OutputView.swift */; };
@@ -90,6 +91,7 @@
 		AB26C4A2261DCBFD007E6C85 /* input-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "input-help.txt"; sourceTree = "<group>"; };
 		AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "extra-settings-help.txt"; sourceTree = "<group>"; };
 		AB26C4AC261DCC6C007E6C85 /* registers-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "registers-help.txt"; sourceTree = "<group>"; };
+		AB26C4B2261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedLeftAlignedHelpTextView.swift; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
 		AB3FA9952619EF9A00EAC84A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */,
 				AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */,
 				AB728C25261CF5320078E0B0 /* HelpAlertView.swift */,
+				AB26C4B2261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift */,
 			);
 			path = HelpViews;
 			sourceTree = "<group>";
@@ -267,9 +270,9 @@
 			children = (
 				AB26C490261DC828007E6C85 /* accumulator-help.txt */,
 				AB26C494261DCA8D007E6C85 /* output-help.txt */,
+				AB26C4A2261DCBFD007E6C85 /* input-help.txt */,
 				AB26C498261DCABA007E6C85 /* assembly-code-editor-help.txt */,
 				AB26C49E261DCB86007E6C85 /* declarations-editor-help.txt */,
-				AB26C4A2261DCBFD007E6C85 /* input-help.txt */,
 				AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */,
 				AB26C4AC261DCC6C007E6C85 /* registers-help.txt */,
 			);
@@ -541,6 +544,7 @@
 				AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */,
 				AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */,
 				AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */,
+				AB26C4B3261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,

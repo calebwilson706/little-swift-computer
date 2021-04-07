@@ -8,8 +8,7 @@
 import Foundation
 
 enum HelpMessages : String {
-    case none = "loading...",
-         assemblyCodeEditor = "assembly-code-editor-help",
+    case assemblyCodeEditor = "assembly-code-editor-help",
          variableDeclarationEditor = "declarations-editor-help",
          accumulator = "accumulator-help",
          output = "output-help",
@@ -19,8 +18,6 @@ enum HelpMessages : String {
     
     func getHeaderForAlert() -> String {
         switch self {
-        case .none:
-            return ""
         case .assemblyCodeEditor:
             return "Assembly Code"
         case .variableDeclarationEditor:
@@ -49,6 +46,10 @@ enum HelpMessages : String {
         }
         
         return "No Help Found"
+    }
+    
+    func getHelpTextLines() -> [String] {
+        return getHelpText().components(separatedBy : "\n")
     }
          
 }

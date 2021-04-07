@@ -1,1 +1,9 @@
-accumulator help placeholder
+This is [the accumulator.]
+
+This is where the results of arithmetic and logic operations carried out are stored.
+
+You can modify the value in the accumulator using commands such as [lda, inp, add and sub.]
+
+You can output the value of the accumulator using the [out] command or store it in a register using the [sta] command.
+
+This is set to 0 at the start of your program's execution.

@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 class HelpController : ObservableObject {
-    @Published var showingHelpMessage = false
-    @Published var helpSelection : HelpMessages = .none
-    
+    @Published var helpSelection : HelpMessages? = nil
+    var isShowingHelp : Bool {
+        helpSelection != nil
+    }
     func showHelp(selection : HelpMessages) {
-        self.showingHelpMessage = true
         self.helpSelection = selection
     }
 }

@@ -1,1 +1,7 @@
-input help placeholder
+This is the [input area.]
+
+To make the [input area] active use the [inp] command.
+
+When prompted to input a number you can type it in here. That number will then be stored in [the accumulator] when you press [submit.]
+
+Note: if you press submit without entering a number then 0 will be taken as your input.

@@ -1,1 +1,9 @@
-output help placeholder
+This is the [output stack.]
+
+Here you can see a list of numbers which were output by the program.
+
+The [out] command places the value of [the accumulator] to the top of this list.
+
+Most recent output is at the top and the earliest output is at the bottom.
+
+The [output stack] is reset when new the program is started or when you cancel the execution of your program.

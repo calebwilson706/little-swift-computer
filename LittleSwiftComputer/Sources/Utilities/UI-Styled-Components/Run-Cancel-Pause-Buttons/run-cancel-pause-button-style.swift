@@ -15,6 +15,7 @@ struct BaseRunPauseCancelButtonStyle : ViewModifier {
     
     func body(content: Content) -> some View {
         return content
+            .foregroundColor(Color.white)
             .frame(minWidth : 20)
             .frame(height : 20)
             .padding(.vertical, 3)

@@ -1,2 +1,5 @@
+[Execution Speed.]
 
-extra settings help placeholder
+This setting determines how quickly the program completes [instructions,] the slower it runs the easier it is to see the workings of your program.
+
+I recommend using the ['fast'] setting for a nice balance between speed and clarity of how the program works.

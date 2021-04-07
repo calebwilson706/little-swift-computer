@@ -1,1 +1,15 @@
-declarations help placeholder
+This text editor is where you [declare variables.]
+
+You use the [dat] keyword followed by a name for your variable, this will [create the variable] with an [initial value of 0.]
+
+For example: [dat test]
+
+You can also [give the variable an initial value] by adding the number to the end of your statement as follows: [dat five 5]
+
+Don't use any numbers in your variable names. If there are any issues with your declarations an error message will be shown when you try to execute your code.
+
+You can still, of course, create and modify variables using the [sta] command in your code.
+
+For example: [sta test] will create the variable test and [give it the value of the accumulator,] if test already exists then its current value will be overwritten by the value in the accumulator.
+
+You can monitor the storing and creation of variables in the [memory registers] section while the program runs.

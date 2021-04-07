@@ -18,7 +18,8 @@ enum ComponentMetaData {
          cancelButton,
          errorMessage,
          inputRequiredMessage,
-         helpAlert
+         helpAlert,
+         highlightedHelpText
     
     func getColor() -> Color {
         switch self {
@@ -36,6 +37,8 @@ enum ComponentMetaData {
             return Color(red: 10.convertToRGBValue(), green: 79.convertToRGBValue(), blue: 14.convertToRGBValue())
         case .helpAlert:
             return Color(red: 46.convertToRGBValue(), green: 46.convertToRGBValue(), blue: 46.convertToRGBValue())
+        case .highlightedHelpText:
+            return Color(red: 5.convertToRGBValue(), green: 168.convertToRGBValue(), blue: 144.convertToRGBValue())
         }
     }
     

@@ -18,44 +18,45 @@ struct LittleSwiftComputerView: View {
     
     
     var body: some View {
-        ZStack {
+        VStack(alignment: .center) {
             GeometryReader { geometry in
-                VStack {
-                    header
-                    HStack {
-                        Spacer()
-                        
-                        ErrorView(error: executionController.executionError)
-                        ErrorView(error: assemblerController.errorMessageFromAssembly)
-                        
-                        VStack {
-                            codeAssemblyView
-                            controlExecutionButtons
-                        }.padding(.all)
-                        
-                        VStack {
-                            AccumulatorView(isRunningProgram: executionController.isRunning, accumulator: self.executionController.accumulator)
-                            OutputView(isRunningProgram: executionController.isRunning, listOfOutputs : executionController.outputs)
-                            InputBoxView(isRunningProgram: executionController.isRunning,
-                                         inputString: $inputString,
-                                         submitCallback: inputSubmitCallback,
-                                         isDisabled: !executionController.requiresInput)
-                            ExtraSettingsView(optionsController: optionsController, isRunningProgram: executionController.isRunning)
-                        }.frame(maxWidth : 200)
+                ZStack {
+                    VStack {
+                        header
+                        HStack {
+                            Spacer()
                             
-                        GridOfRegistersView(isRunningProgram: executionController.isRunning, registerItems: executionController.registersForDisplaying)
-                            .frame(maxWidth : geometry.size.width*0.4)
-                            .frame(minWidth : 300)
-                    }
-                }.padding()
-                .blur(radius: helpController.showingHelpMessage ? 20 : 0)
-                .disabled(helpController.showingHelpMessage)
+                            ErrorView(error: executionController.executionError)
+                            ErrorView(error: assemblerController.errorMessageFromAssembly)
+                            
+                            VStack {
+                                codeAssemblyView
+                                controlExecutionButtons
+                            }.padding(.all)
+                            
+                            VStack {
+                                AccumulatorView(isRunningProgram: executionController.isRunning, accumulator: self.executionController.accumulator)
+                                OutputView(isRunningProgram: executionController.isRunning, listOfOutputs : executionController.outputs)
+                                InputBoxView(isRunningProgram: executionController.isRunning,
+                                             inputString: $inputString,
+                                             submitCallback: inputSubmitCallback,
+                                             isDisabled: !executionController.requiresInput)
+                                ExtraSettingsView(optionsController: optionsController, isRunningProgram: executionController.isRunning)
+                            }.frame(maxWidth : 200)
+                                
+                            GridOfRegistersView(isRunningProgram: executionController.isRunning, registerItems: executionController.registersForDisplaying)
+                                .frame(maxWidth : geometry.size.width*0.4)
+                                .frame(minWidth : 300)
+                        }
+                    }.padding()
+                    .blur(radius: helpController.isShowingHelp ? 20 : 0)
+                    .disabled(helpController.isShowingHelp)
+                    
+                    HelpAlertView(widthAndHeight: geometry.size.width/4)
+                    
+                }
             }
-            
-            HelpAlertView()
-            
         }.environmentObject(helpController)
-        
     }
     
     var header : some View {

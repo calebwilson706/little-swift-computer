@@ -9,41 +9,46 @@ import SwiftUI
 
 struct HelpAlertView: View {
     @EnvironmentObject var helpController : HelpController
+    let widthAndHeight : CGFloat
     
     var body: some View {
         VStack {
-            if helpController.showingHelpMessage {
-                ScrollView {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            Button(action: hideAlert){
-                                Image(systemName: "xmark.circle")
-                            }.buttonStyle(HelpButtonStyle())
-                        }
-                        Text(helpController.helpSelection.getHeaderForAlert())
+            if let selectedHelpSection = helpController.helpSelection {
+                VStack(alignment : .leading) {
+                    HStack {
+                        Text(selectedHelpSection.getHeaderForAlert())
+                            .underline()
                             .font(.title2)
+                            .foregroundColor(Color.white)
                         Spacer()
-                        Text(helpController.helpSelection.getHelpText())
-                        Spacer()
-                    }.padding()
-                }.foregroundColor(Color.white)
+                        dismissButton
+                    }
+                    ScrollView {
+                        ForEach(selectedHelpSection.getHelpTextLines(), id : \.self, content : HighlightedLeftAlignedHelpTextView.init)
+                    }
+                }.padding()
             }
         }.background(ComponentMetaData.helpAlert.getColor().cornerRadius(20))
-        .frame(maxWidth : 350, maxHeight: 350)
+        .frame(maxWidth : widthAndHeight, maxHeight: widthAndHeight)
         .shadow(radius: 20)
         .animation(.easeInOut(duration : 0.3))
     }
     
-    func hideAlert() {
-        self.helpController.showingHelpMessage = false
-        self.helpController.helpSelection = .none
+    var dismissButton : some View {
+        Button(action: hideAlert){
+            Image(systemName: "xmark.circle")
+        }.buttonStyle(HelpButtonStyle())
     }
+    
+    func hideAlert() {
+        self.helpController.helpSelection = nil
+    }
+    
 }
 
 struct HelpAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpAlertView()
+        HelpAlertView(widthAndHeight: 350)
             .environmentObject(HelpController())
 
     }
