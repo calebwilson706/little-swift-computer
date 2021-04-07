@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9015261B91E80092CA63 /* AccumulatorView.swift */; };
-		AB1B901A261B92900092CA63 /* background-colors-for-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9019261B92900092CA63 /* background-colors-for-components.swift */; };
+		AB1B901A261B92900092CA63 /* meta-data-for-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9019261B92900092CA63 /* meta-data-for-components.swift */; };
 		AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B901F261B96CB0092CA63 /* RegisterView.swift */; };
 		AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */; };
 		AB1B902A261BA6A80092CA63 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9029261BA6A80092CA63 /* ErrorView.swift */; };
@@ -75,7 +75,7 @@
 
 /* Begin PBXFileReference section */
 		AB1B9015261B91E80092CA63 /* AccumulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorView.swift; sourceTree = "<group>"; };
-		AB1B9019261B92900092CA63 /* background-colors-for-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "background-colors-for-components.swift"; sourceTree = "<group>"; };
+		AB1B9019261B92900092CA63 /* meta-data-for-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "meta-data-for-components.swift"; sourceTree = "<group>"; };
 		AB1B901F261B96CB0092CA63 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "text-editor-for-code-style.swift"; sourceTree = "<group>"; };
 		AB1B9029261BA6A80092CA63 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		AB2356F326186544000C59C7 /* UI-Styled-Components */ = {
 			isa = PBXGroup;
 			children = (
-				AB1B9019261B92900092CA63 /* background-colors-for-components.swift */,
+				AB1B9019261B92900092CA63 /* meta-data-for-components.swift */,
 				AB728C06261CE85D0078E0B0 /* Styles */,
 				AB2356FC26186A4B000C59C7 /* Run-Cancel-Pause-Buttons */,
 			);
@@ -567,7 +567,7 @@
 				AB728C0F261CEB960078E0B0 /* HeaderWithHelpView.swift in Sources */,
 				ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */,
 				AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */,
-				AB1B901A261B92900092CA63 /* background-colors-for-components.swift in Sources */,
+				AB1B901A261B92900092CA63 /* meta-data-for-components.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

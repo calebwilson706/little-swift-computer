@@ -26,7 +26,7 @@ struct InputBoxView: View {
             
             Group {
                 TextField("", text: $inputString)
-                    .background(ComponentBackgroundColors.inputTextField.getColor())
+                    .background(ComponentMetaData.inputTextField.getColor())
                 
                 Text("Your input: \(parsedInput)")
                 

@@ -38,7 +38,6 @@ struct GridOfRegistersView: View {
                 Spacer()
             }.padding(.vertical)
         }.padding()
-        .frame(minWidth : 300)
     }
     
     func showHelp() {

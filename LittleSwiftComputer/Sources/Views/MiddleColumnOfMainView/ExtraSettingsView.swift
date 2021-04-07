@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExtraSettingsView: View {
-    @EnvironmentObject var optionsController : ExecutionOptionsController
+    @ObservedObject var optionsController : ExecutionOptionsController
     @EnvironmentObject var helpController : HelpController
     var isRunningProgram : Bool
     

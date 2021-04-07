@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 
-enum ComponentBackgroundColors {
+enum ComponentMetaData {
     case accumulator,
          output,
          inputTextField,
          runButton,
          pauseButton,
+         resumeButton,
          cancelButton,
          errorMessage,
          inputRequiredMessage,
@@ -27,7 +28,7 @@ enum ComponentBackgroundColors {
             return Color.gray
         case .runButton:
             return Color(red: 61.convertToRGBValue(), green: 166.convertToRGBValue(), blue: 66.convertToRGBValue())
-        case .pauseButton:
+        case .pauseButton, .resumeButton:
             return Color.blue
         case .cancelButton, .errorMessage:
             return Color(red : 166.convertToRGBValue(), green: 61.convertToRGBValue(), blue: 66.convertToRGBValue())
@@ -35,6 +36,19 @@ enum ComponentBackgroundColors {
             return Color(red: 10.convertToRGBValue(), green: 79.convertToRGBValue(), blue: 14.convertToRGBValue())
         case .helpAlert:
             return Color(red: 46.convertToRGBValue(), green: 46.convertToRGBValue(), blue: 46.convertToRGBValue())
+        }
+    }
+    
+    func getImageStringForComponent() -> String? {
+        switch self {
+        case .runButton, .resumeButton:
+            return "play.fill"
+        case .pauseButton:
+            return "pause.fill"
+        case .cancelButton:
+            return "square.fill"
+        default:
+            return nil
         }
     }
 }

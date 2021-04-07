@@ -8,45 +8,49 @@
 import SwiftUI
 
 struct LittleSwiftComputerView: View {
-    @ObservedObject var assemblerController = AssemblyController()
-    @ObservedObject var executionController = ExecutionController()
-    @ObservedObject var optionsController = ExecutionOptionsController()
-    @ObservedObject var helpController = HelpController()
-    @ObservedObject var dynamicLabels = DynamicButtonLabelsController()
-    @State var inputString = ""
+    @StateObject var assemblerController = AssemblyController()
+    @StateObject var executionController = ExecutionController()
+    @StateObject var optionsController = ExecutionOptionsController()
+    @StateObject var helpController = HelpController()
+    @StateObject var dynamicLabels = DynamicButtonLabelsController()
+    @State private var inputString = ""
     
     
     
     var body: some View {
         ZStack {
-            VStack {
-                header
-                HStack {
-                    Spacer()
-                    
-                    ErrorView(error: executionController.executionError)
-                    ErrorView(error: assemblerController.errorMessageFromAssembly)
-                    
-                    VStack {
-                        codeAssemblyView
-                        controlExecutionButtons
-                    }.padding(.all)
-                    
-                    VStack {
-                        AccumulatorView(isRunningProgram: executionController.isRunning, accumulator: self.executionController.accumulator)
-                        OutputView(isRunningProgram: executionController.isRunning, listOfOutputs : executionController.outputs)
-                        InputBoxView(isRunningProgram: executionController.isRunning,
-                                     inputString: $inputString,
-                                     submitCallback: inputSubmitCallback,
-                                     isDisabled: !executionController.requiresInput)
-                        ExtraSettingsView(isRunningProgram: executionController.isRunning).environmentObject(optionsController)
-                    }.frame(maxWidth : 200)
+            GeometryReader { geometry in
+                VStack {
+                    header
+                    HStack {
+                        Spacer()
                         
-                    GridOfRegistersView(isRunningProgram: executionController.isRunning, registerItems: executionController.registersForDisplaying)
-                }
-            }.padding()
-            .blur(radius: helpController.showingHelpMessage ? 20 : 0)
-            .disabled(helpController.showingHelpMessage)
+                        ErrorView(error: executionController.executionError)
+                        ErrorView(error: assemblerController.errorMessageFromAssembly)
+                        
+                        VStack {
+                            codeAssemblyView
+                            controlExecutionButtons
+                        }.padding(.all)
+                        
+                        VStack {
+                            AccumulatorView(isRunningProgram: executionController.isRunning, accumulator: self.executionController.accumulator)
+                            OutputView(isRunningProgram: executionController.isRunning, listOfOutputs : executionController.outputs)
+                            InputBoxView(isRunningProgram: executionController.isRunning,
+                                         inputString: $inputString,
+                                         submitCallback: inputSubmitCallback,
+                                         isDisabled: !executionController.requiresInput)
+                            ExtraSettingsView(optionsController: optionsController, isRunningProgram: executionController.isRunning)
+                        }.frame(maxWidth : 200)
+                            
+                        GridOfRegistersView(isRunningProgram: executionController.isRunning, registerItems: executionController.registersForDisplaying)
+                            .frame(maxWidth : geometry.size.width*0.4)
+                            .frame(minWidth : 300)
+                    }
+                }.padding()
+                .blur(radius: helpController.showingHelpMessage ? 20 : 0)
+                .disabled(helpController.showingHelpMessage)
+            }
             
             HelpAlertView()
             
@@ -84,17 +88,15 @@ struct LittleSwiftComputerView: View {
         let showResume = executionController.isPaused
         return DynamicButtonView(
             dynamicLabel: showResume ? dynamicLabels.resumeButtonLabel : dynamicLabels.runButtonLabel,
-            imageName: "play.fill",
             action: showResume ? resumeExecution : executeNewUserInput,
             isDisabled: !showResume && !executionController.canRunProgram,
-            component: showResume ? .pauseButton : .runButton
+            component: showResume ? .resumeButton : .runButton
         )
     }
     
     var pauseButton : some View {
         DynamicButtonView(
             dynamicLabel: dynamicLabels.pauseButtonLabel,
-            imageName: "pause.fill",
             action: executionController.pause,
             isDisabled: !executionController.canPauseProgram,
             component: .pauseButton
@@ -104,7 +106,6 @@ struct LittleSwiftComputerView: View {
     var cancelButton : some View {
         DynamicButtonView(
             dynamicLabel: dynamicLabels.cancelButtonLabel,
-            imageName: "square.fill",
             action: executionController.resetProgram,
             isDisabled: !executionController.canStopProgram,
             component: .cancelButton

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BaseRunPauseCancelButtonStyle : ViewModifier {
     let onHoverCallback : (Bool) -> Void
-    let component : ComponentBackgroundColors
+    let component : ComponentMetaData
     let disabled : Bool
     
     func body(content: Content) -> some View {
@@ -28,7 +28,7 @@ struct BaseRunPauseCancelButtonStyle : ViewModifier {
 struct ControlFlowButtonStyle : ButtonStyle {
     let methodForHovering : (Bool) -> Void
     let disabled : Bool
-    let component : ComponentBackgroundColors
+    let component : ComponentMetaData
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

@@ -29,7 +29,7 @@ struct HelpAlertView: View {
                     }.padding()
                 }.foregroundColor(Color.white)
             }
-        }.background(ComponentBackgroundColors.helpAlert.getColor().cornerRadius(20))
+        }.background(ComponentMetaData.helpAlert.getColor().cornerRadius(20))
         .frame(maxWidth : 350, maxHeight: 350)
         .shadow(radius: 20)
         .animation(.easeInOut(duration : 0.3))

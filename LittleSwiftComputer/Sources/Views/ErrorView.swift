@@ -12,7 +12,7 @@ struct ErrorView: View {
     let error : Error?
     
     var backgroundColor : Color {
-        let component : ComponentBackgroundColors = (error?.localizedDescription == ExecutionErrors.requiresInput.localizedDescription ? .inputRequiredMessage : .errorMessage)
+        let component : ComponentMetaData = (error?.localizedDescription == ExecutionErrors.requiresInput.localizedDescription ? .inputRequiredMessage : .errorMessage)
         return component.getColor()
     }
     

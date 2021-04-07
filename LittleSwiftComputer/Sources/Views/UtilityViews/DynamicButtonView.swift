@@ -9,14 +9,16 @@ import SwiftUI
 
 struct DynamicButtonView: View {
     @ObservedObject var dynamicLabel : DynamicButtonLabel
-    let imageName : String
     let action : () -> Void
     let isDisabled : Bool
-    let component : ComponentBackgroundColors
+    let component : ComponentMetaData
+    var buttonIconImage : Image {
+        Image(systemName: component.getImageStringForComponent() ?? "circlebadge")
+    }
     
     var body: some View {
         Button(action: action){
-            Text("\(dynamicLabel.buttonLabelString) \(Image(systemName : imageName)) ")
+            Text("\(dynamicLabel.buttonLabelString) \(buttonIconImage) ")
         }
         .buttonStyle(ControlFlowButtonStyle(
                         methodForHovering: dynamicLabel.changeToCompletedButtonLabelOnHover,
@@ -24,5 +26,6 @@ struct DynamicButtonView: View {
                         component: component))
         .disabled(isDisabled)
     }
+    
 }
 
