@@ -9,30 +9,18 @@ import XCTest
 @testable import LittleSwiftComputer
 
 class LittleSwiftComputerTests: XCTestCase {
-    let input = """
-sta five
-lda five
-frfr sub two
-out
-brz end
-end out
-last add three
-"""
-let declarations = """
-dat five 5
-dat three 3
-dat two
-dat t
-"""
     func testExample() throws {
-        print("\n\n\n\n")
-        do {
-            let code = try AssemblyServices().prepareCodeForRunning(mainCodeBlock: input, variableBlock: declarations)
-            code.mainCodeBlock.lines.forEach { print($0) }
-        } catch {
-            print(error.localizedDescription)
+        print("\n\n\n")
+        if let filepath = Bundle.main.path(forResource: "accumulator-help", ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                print(contents)
+            } catch {
+                throw error
+            }
         }
-        print("\n\n\n\n")
+       
+        print("\n\n\n")
     }
 
 

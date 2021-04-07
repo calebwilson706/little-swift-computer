@@ -9,13 +9,13 @@ import Foundation
 
 enum HelpMessages : String {
     case none = "loading...",
-         assemblyCodeEditor = "a",
-         variableDeclarationEditor = "b",
-         accumulator = "c",
-         output = "d",
-         input = "e",
-         extraSettings = "f",
-         registers = "g"
+         assemblyCodeEditor = "assembly-code-editor-help",
+         variableDeclarationEditor = "declarations-editor-help",
+         accumulator = "accumulator-help",
+         output = "output-help",
+         input = "input-help",
+         extraSettings = "extra-settings-help",
+         registers = "registers-help"
     
     func getHeaderForAlert() -> String {
         switch self {
@@ -36,6 +36,19 @@ enum HelpMessages : String {
         case .registers:
             return "Memory Registers"
         }
+    }
+    
+    func getHelpText() -> String {
+        if let filepath = Bundle.main.path(forResource: self.rawValue, ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                return contents
+            } catch {
+                return "Cannot Load File"
+            }
+        }
+        
+        return "No Help Found"
     }
          
 }

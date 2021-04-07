@@ -16,6 +16,13 @@
 		AB2356F52618656D000C59C7 /* run-cancel-pause-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */; };
 		AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */; };
 		AB26C48B261DBCDC007E6C85 /* dynamic-button-labels-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26C48A261DBCDC007E6C85 /* dynamic-button-labels-controller.swift */; };
+		AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C490261DC828007E6C85 /* accumulator-help.txt */; };
+		AB26C495261DCA8D007E6C85 /* output-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C494261DCA8D007E6C85 /* output-help.txt */; };
+		AB26C499261DCABA007E6C85 /* assembly-code-editor-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C498261DCABA007E6C85 /* assembly-code-editor-help.txt */; };
+		AB26C49F261DCB86007E6C85 /* declarations-editor-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C49E261DCB86007E6C85 /* declarations-editor-help.txt */; };
+		AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4A2261DCBFD007E6C85 /* input-help.txt */; };
+		AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */; };
+		AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4AC261DCC6C007E6C85 /* registers-help.txt */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
 		AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA9952619EF9A00EAC84A /* OutputView.swift */; };
@@ -76,6 +83,13 @@
 		AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "run-cancel-pause-button-style.swift"; sourceTree = "<group>"; };
 		AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "convert-rgb-value.swift"; sourceTree = "<group>"; };
 		AB26C48A261DBCDC007E6C85 /* dynamic-button-labels-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "dynamic-button-labels-controller.swift"; sourceTree = "<group>"; };
+		AB26C490261DC828007E6C85 /* accumulator-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "accumulator-help.txt"; sourceTree = "<group>"; };
+		AB26C494261DCA8D007E6C85 /* output-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "output-help.txt"; sourceTree = "<group>"; };
+		AB26C498261DCABA007E6C85 /* assembly-code-editor-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "assembly-code-editor-help.txt"; sourceTree = "<group>"; };
+		AB26C49E261DCB86007E6C85 /* declarations-editor-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "declarations-editor-help.txt"; sourceTree = "<group>"; };
+		AB26C4A2261DCBFD007E6C85 /* input-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "input-help.txt"; sourceTree = "<group>"; };
+		AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "extra-settings-help.txt"; sourceTree = "<group>"; };
+		AB26C4AC261DCC6C007E6C85 /* registers-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "registers-help.txt"; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
 		AB3FA9952619EF9A00EAC84A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
@@ -251,6 +265,13 @@
 		AB728C32261D14C40078E0B0 /* HelpMessages */ = {
 			isa = PBXGroup;
 			children = (
+				AB26C490261DC828007E6C85 /* accumulator-help.txt */,
+				AB26C494261DCA8D007E6C85 /* output-help.txt */,
+				AB26C498261DCABA007E6C85 /* assembly-code-editor-help.txt */,
+				AB26C49E261DCB86007E6C85 /* declarations-editor-help.txt */,
+				AB26C4A2261DCBFD007E6C85 /* input-help.txt */,
+				AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */,
+				AB26C4AC261DCC6C007E6C85 /* registers-help.txt */,
 			);
 			path = HelpMessages;
 			sourceTree = "<group>";
@@ -477,8 +498,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB26C495261DCA8D007E6C85 /* output-help.txt in Resources */,
+				AB26C499261DCABA007E6C85 /* assembly-code-editor-help.txt in Resources */,
 				ABBC7EF32613B3AA003C6047 /* Preview Assets.xcassets in Resources */,
+				AB26C49F261DCB86007E6C85 /* declarations-editor-help.txt in Resources */,
+				AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */,
+				AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */,
 				ABBC7EF02613B3AA003C6047 /* Assets.xcassets in Resources */,
+				AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */,
+				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

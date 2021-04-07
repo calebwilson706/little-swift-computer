@@ -24,13 +24,13 @@ struct HelpAlertView: View {
                         Text(helpController.helpSelection.getHeaderForAlert())
                             .font(.title2)
                         Spacer()
-                        Text(helpController.helpSelection.rawValue)
+                        Text(helpController.helpSelection.getHelpText())
                         Spacer()
                     }.padding()
                 }.foregroundColor(Color.white)
             }
         }.background(ComponentBackgroundColors.helpAlert.getColor().cornerRadius(20))
-        .frame(maxWidth : 300, maxHeight: 300)
+        .frame(maxWidth : 350, maxHeight: 350)
         .shadow(radius: 20)
         .animation(.easeInOut(duration : 0.3))
     }
