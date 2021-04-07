@@ -12,5 +12,6 @@ extension TextEditor {
     func codeEditor() -> some View {
         self
             .font(.title2)
+            .cornerRadius(10)
     }
 }

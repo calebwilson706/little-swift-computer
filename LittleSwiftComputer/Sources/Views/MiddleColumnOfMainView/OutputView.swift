@@ -22,7 +22,7 @@ struct OutputView: View {
         VStack(alignment : .leading) {
             HeaderWithHelpView(title: "Output:", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             ZStack {
-                ComponentMetaData.output.getColor()
+                ComponentMetaData.output.getColor().roundedCornersForGridAndMiddleStack()
                 ScrollView {
                     ForEach(listOfOutputs.reversed(), id : \.self){
                         Text($0).padding(.horizontal)

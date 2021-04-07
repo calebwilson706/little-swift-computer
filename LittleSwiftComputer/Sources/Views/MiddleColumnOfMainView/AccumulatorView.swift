@@ -16,7 +16,7 @@ struct AccumulatorView: View {
         VStack(alignment: .leading) {
             HeaderWithHelpView(title: "Accumulator:", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             ZStack {
-                ComponentMetaData.accumulator.getColor()
+                ComponentMetaData.accumulator.getColor().roundedCornersForGridAndMiddleStack()
                 Text("\(accumulator)")
             }.frame(maxHeight: 50)
         }.padding(.all)

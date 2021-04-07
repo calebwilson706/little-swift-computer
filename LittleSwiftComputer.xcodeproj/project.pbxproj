@@ -24,6 +24,7 @@
 		AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */; };
 		AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB26C4AC261DCC6C007E6C85 /* registers-help.txt */; };
 		AB26C4B3261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26C4B2261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift */; };
+		AB26C4C1261E64AB007E6C85 /* register-grid-item-styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26C4C0261E64AB007E6C85 /* register-grid-item-styles.swift */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
 		AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA9952619EF9A00EAC84A /* OutputView.swift */; };
@@ -92,6 +93,7 @@
 		AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "extra-settings-help.txt"; sourceTree = "<group>"; };
 		AB26C4AC261DCC6C007E6C85 /* registers-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "registers-help.txt"; sourceTree = "<group>"; };
 		AB26C4B2261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedLeftAlignedHelpTextView.swift; sourceTree = "<group>"; };
+		AB26C4C0261E64AB007E6C85 /* register-grid-item-styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-grid-item-styles.swift"; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
 		AB3FA9952619EF9A00EAC84A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
 				AB728BE3261CD2A60078E0B0 /* options-headers.swift */,
 				AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */,
+				AB26C4C0261E64AB007E6C85 /* register-grid-item-styles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,
 				AB2356F52618656D000C59C7 /* run-cancel-pause-button-style.swift in Sources */,
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,
+				AB26C4C1261E64AB007E6C85 /* register-grid-item-styles.swift in Sources */,
 				AB728C0F261CEB960078E0B0 /* HeaderWithHelpView.swift in Sources */,
 				ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */,
 				AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */,

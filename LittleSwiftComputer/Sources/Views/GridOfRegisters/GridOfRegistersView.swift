@@ -20,21 +20,24 @@ struct GridOfRegistersView: View {
     ]
     
     
-    
     var remainingEmptyRegisters : [RegisterData] {
         (registerItems.count ..< 100).map { RegisterData(indexForDisplay: $0, value: 0) }
     }
     
     @EnvironmentObject var helpController : HelpController
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack(alignment : .leading) {
             HeaderWithHelpView(title: "Registers: ", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             ScrollView {
                 LazyVGrid(columns: layout, spacing : 12.5) {
-                    ForEach(registerItems, id : \.id, content : RegisterView.init).overlay(Color.gray.opacity(0.1))
-                    ForEach(remainingEmptyRegisters, id : \.id, content : RegisterView.init).overlay(Color.black.opacity(0.6))
-                }
+                    ForEach(registerItems, id : \.id, content : RegisterView.init)
+                        .gridItemInUseStyle()
+                    ForEach(remainingEmptyRegisters, id : \.id, content : RegisterView.init)
+                        .gridItemOutOfUseStyle(colorScheme: colorScheme)
+                }.padding(.top, 5)
                 Spacer()
             }.padding(.vertical)
         }.padding()
@@ -43,5 +46,6 @@ struct GridOfRegistersView: View {
     func showHelp() {
         self.helpController.showHelp(selection: .registers)
     }
+    
 }
 

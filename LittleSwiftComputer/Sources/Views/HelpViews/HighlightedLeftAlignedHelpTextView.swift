@@ -17,22 +17,19 @@ struct HighlightedLeftAlignedHelpTextView: View {
 
     
     var body : some View {
-       var isInsideSearchTerm = false
+       var isInsideHighlightedBlock = false
        
         return HStack {
             text.reduce(Text(""), { helpTextView, nextChar in
                switch nextChar {
-               case "[":
-                   isInsideSearchTerm = true
-                   return helpTextView
-               case "]":
-                   isInsideSearchTerm = false
+               case "[", "]" :
+                   isInsideHighlightedBlock.toggle()
                    return helpTextView
                default :
                    return helpTextView +
                        Text(String(nextChar))
-                           .fontWeight(isInsideSearchTerm ? .bold : .regular)
-                           .foregroundColor(isInsideSearchTerm ?  highlightColor : .white)
+                           .fontWeight(isInsideHighlightedBlock ? .bold : .regular)
+                           .foregroundColor(isInsideHighlightedBlock ?  highlightColor : .white)
 
                }
             })

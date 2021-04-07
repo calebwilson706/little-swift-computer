@@ -14,13 +14,15 @@ struct RegisterView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                Text("\(register.indexForDisplay)")
-                    .foregroundColor(Color.gray)
-                    .padding(.top, verticalMargin)
-                Text("\(register.value)")
-                    .padding(.bottom, verticalMargin)
-            }.padding(.horizontal)
-        }.border(Color.gray)
+            Text("\(register.indexForDisplay)")
+                .foregroundColor(Color.gray)
+                .padding(.top, verticalMargin)
+            Text("\(register.value)")
+                .padding(.bottom, verticalMargin)
+        }.padding(.horizontal)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.gray)
+        )
     }
 }
