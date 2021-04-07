@@ -22,4 +22,16 @@ class ExecutionController : ObservableObject {
     var isRunning : Bool {
         timer.isValid
     }
+    var canRunProgram : Bool {
+        !isRunning && !requiresInput
+    }
+    var canStopProgram : Bool {
+        isRunning || requiresInput || isPaused
+    }
+    var canPauseProgram : Bool {
+        isRunning
+    }
+    var registersForDisplaying : [RegisterData] {
+        registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay }
+    }
 }

@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct AccumulatorView: View {
+    let isRunningProgram : Bool
     let accumulator: Int
     @EnvironmentObject var helpController : HelpController
         
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderWithHelpView(title: "Accumulator:", helpCallback : showHelp)
+            HeaderWithHelpView(title: "Accumulator:", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             ZStack {
                 ComponentBackgroundColors.accumulator.getColor()
                 Text("\(accumulator)")

@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct OutputView: View {
+    let isRunningProgram : Bool
     let listOfOutputs : [String]
     
     @EnvironmentObject var helpController : HelpController
     
-    init(listOfOutputs : [Int]) {
+    init(isRunningProgram : Bool, listOfOutputs : [Int]) {
         self.listOfOutputs = listOfOutputs.map { "\($0)" }
+        self.isRunningProgram = isRunningProgram
     }
     
     var body: some View {
         VStack(alignment : .leading) {
-            HeaderWithHelpView(title: "Output:", helpCallback : showHelp)
+            HeaderWithHelpView(title: "Output:", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             ZStack {
                 ComponentBackgroundColors.output.getColor()
                 ScrollView {
@@ -38,6 +40,6 @@ struct OutputView: View {
 
 struct OutputView_Previews: PreviewProvider {
     static var previews: some View {
-        OutputView(listOfOutputs: [1,2,3,4,5,6])
+        OutputView(isRunningProgram: false, listOfOutputs: [1,2,3,4,5,6])
     }
 }

@@ -12,12 +12,7 @@ struct LittleSwiftComputerView: View {
     @ObservedObject var executionController = ExecutionController()
     @ObservedObject var optionsController = ExecutionOptionsController()
     @ObservedObject var helpController = HelpController()
-    
-    @ObservedObject var runButtonLabel = DynamicButtonLabel(completedString: "Execute Code")
-    @ObservedObject var cancelButtonLabel = DynamicButtonLabel(completedString: "Stop Execution")
-    @ObservedObject var resumeButtonLabel = DynamicButtonLabel(completedString: "Resume Execution")
-    @ObservedObject var pauseButtonLabel = DynamicButtonLabel(completedString: "Pause Execution")
-    
+    @ObservedObject var dynamicLabels = DynamicButtonLabelsController()
     @State var inputString = ""
     
     
@@ -38,15 +33,16 @@ struct LittleSwiftComputerView: View {
                     }.padding(.all)
                     
                     VStack {
-                        AccumulatorView(accumulator: self.executionController.accumulator)
-                        OutputView(listOfOutputs : executionController.outputs)
-                        InputBoxView(inputString: $inputString,
+                        AccumulatorView(isRunningProgram: executionController.isRunning, accumulator: self.executionController.accumulator)
+                        OutputView(isRunningProgram: executionController.isRunning, listOfOutputs : executionController.outputs)
+                        InputBoxView(isRunningProgram: executionController.isRunning,
+                                     inputString: $inputString,
                                      submitCallback: inputSubmitCallback,
                                      isDisabled: !executionController.requiresInput)
-                        ExtraSettingsView(shouldDisable: isRunButtonDisabled && !executionController.isPaused).environmentObject(optionsController)
+                        ExtraSettingsView(isRunningProgram: executionController.isRunning).environmentObject(optionsController)
                     }.frame(maxWidth : 200)
                         
-                    GridOfRegistersView(registerItems: executionController.registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay })
+                    GridOfRegistersView(isRunningProgram: executionController.isRunning, registerItems: executionController.registersForDisplaying)
                 }
             }.padding()
             .blur(radius: helpController.showingHelpMessage ? 20 : 0)
@@ -67,10 +63,10 @@ struct LittleSwiftComputerView: View {
     
     var codeAssemblyView : some View {
         VStack(alignment : .leading) {
-            HeaderWithHelpView(title: "Write Code Below:", helpCallback: showCodeEditorHelp)
+            HeaderWithHelpView(title: "Write Code Below:", helpCallback: showCodeEditorHelp, isRunningProgram: executionController.isRunning)
             TextEditor(text: self.$assemblerController.mainCodeBlockString)
                 .codeEditor()
-            HeaderWithHelpView(title: "Declare Variables Below:", helpCallback: showDeclarationEditorHelp)
+            HeaderWithHelpView(title: "Declare Variables Below:", helpCallback: showDeclarationEditorHelp, isRunningProgram: executionController.isRunning)
             TextEditor(text: self.$assemblerController.declarationBlockString)
                 .codeEditor()
         }
@@ -87,40 +83,32 @@ struct LittleSwiftComputerView: View {
     var runButton : some View {
         let showResume = executionController.isPaused
         return DynamicButtonView(
-            dynamicLabel: showResume ? resumeButtonLabel : runButtonLabel,
+            dynamicLabel: showResume ? dynamicLabels.resumeButtonLabel : dynamicLabels.runButtonLabel,
             imageName: "play.fill",
             action: showResume ? resumeExecution : executeNewUserInput,
-            isDisabled: !showResume && isRunButtonDisabled,
+            isDisabled: !showResume && !executionController.canRunProgram,
             component: showResume ? .pauseButton : .runButton
         )
     }
     
     var pauseButton : some View {
         DynamicButtonView(
-            dynamicLabel: pauseButtonLabel,
+            dynamicLabel: dynamicLabels.pauseButtonLabel,
             imageName: "pause.fill",
             action: executionController.pause,
-            isDisabled: isCancelButtonDisabled || executionController.isPaused || executionController.requiresInput,
+            isDisabled: !executionController.canPauseProgram,
             component: .pauseButton
         )
     }
     
     var cancelButton : some View {
         DynamicButtonView(
-            dynamicLabel: cancelButtonLabel,
+            dynamicLabel: dynamicLabels.cancelButtonLabel,
             imageName: "square.fill",
             action: executionController.resetProgram,
-            isDisabled: isCancelButtonDisabled,
+            isDisabled: !executionController.canStopProgram,
             component: .cancelButton
         )
-    }
-    
-    private var isRunButtonDisabled : Bool {
-        (executionController.isRunning || executionController.requiresInput || executionController.isPaused)
-    }
-    
-    private var isCancelButtonDisabled : Bool {
-        !isRunButtonDisabled
     }
     
     private func inputSubmitCallback(inputNumber : Int) {
@@ -138,7 +126,7 @@ struct LittleSwiftComputerView: View {
         executionController.resume(speedSelection: optionsController.selectedSpeedOption)
         
         withAnimation {
-            self.resumeButtonLabel.buttonLabelString = ""
+            dynamicLabels.resumeButtonLabel.buttonLabelString = ""
         }
     }
     

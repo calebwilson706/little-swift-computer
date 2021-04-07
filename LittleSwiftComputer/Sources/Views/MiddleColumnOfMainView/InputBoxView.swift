@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputBoxView: View {
-    
+    let isRunningProgram : Bool
     @Binding var inputString : String
     
     let submitCallback : (Int) -> Void
@@ -22,7 +22,7 @@ struct InputBoxView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderWithHelpView(title: "Input:", helpCallback : showHelp)
+            HeaderWithHelpView(title: "Input:", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             
             Group {
                 TextField("", text: $inputString)

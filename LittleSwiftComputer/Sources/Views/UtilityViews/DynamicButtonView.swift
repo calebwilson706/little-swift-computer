@@ -16,7 +16,7 @@ struct DynamicButtonView: View {
     
     var body: some View {
         Button(action: action){
-            Text("\(dynamicLabel.buttonLabelString) \(Image(systemName : imageName))")
+            Text("\(dynamicLabel.buttonLabelString) \(Image(systemName : imageName)) ")
         }
         .buttonStyle(ControlFlowButtonStyle(
                         methodForHovering: dynamicLabel.changeToCompletedButtonLabelOnHover,

@@ -15,6 +15,7 @@
 		AB2356F02617E5EB000C59C7 /* execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356EF2617E5EB000C59C7 /* execution.swift */; };
 		AB2356F52618656D000C59C7 /* run-cancel-pause-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */; };
 		AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */; };
+		AB26C48B261DBCDC007E6C85 /* dynamic-button-labels-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26C48A261DBCDC007E6C85 /* dynamic-button-labels-controller.swift */; };
 		AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27330C26161C50000FE5E3 /* execution-errors.swift */; };
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
 		AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA9952619EF9A00EAC84A /* OutputView.swift */; };
@@ -74,6 +75,7 @@
 		AB2356EF2617E5EB000C59C7 /* execution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = execution.swift; sourceTree = "<group>"; };
 		AB2356F42618656D000C59C7 /* run-cancel-pause-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "run-cancel-pause-button-style.swift"; sourceTree = "<group>"; };
 		AB2356F8261866B5000C59C7 /* convert-rgb-value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "convert-rgb-value.swift"; sourceTree = "<group>"; };
+		AB26C48A261DBCDC007E6C85 /* dynamic-button-labels-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "dynamic-button-labels-controller.swift"; sourceTree = "<group>"; };
 		AB27330C26161C50000FE5E3 /* execution-errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-errors.swift"; sourceTree = "<group>"; };
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
 		AB3FA9952619EF9A00EAC84A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				ABC5FBA52614A2710095BB70 /* execution-controller.swift */,
 				AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */,
 				AB728C17261CEE0B0078E0B0 /* help-controller.swift */,
+				AB26C48A261DBCDC007E6C85 /* dynamic-button-labels-controller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,8 +243,16 @@
 		AB728C2D261D0D670078E0B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB728C32261D14C40078E0B0 /* HelpMessages */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB728C32261D14C40078E0B0 /* HelpMessages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HelpMessages;
 			sourceTree = "<group>";
 		};
 		ABA880912615C93A0001817C /* Preperation-For-Execution */ = {
@@ -487,6 +498,7 @@
 			files = (
 				ABC5FBA62614A2710095BB70 /* execution-controller.swift in Sources */,
 				ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */,
+				AB26C48B261DBCDC007E6C85 /* dynamic-button-labels-controller.swift in Sources */,
 				ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */,
 				AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */,
 				ABA880932615C98D0001817C /* assembly-services.swift in Sources */,

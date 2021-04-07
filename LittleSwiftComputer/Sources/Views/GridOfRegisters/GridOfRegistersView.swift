@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct GridOfRegistersView: View {
+    let isRunningProgram : Bool
     let registerItems : [RegisterData]
-    
+
     let layout = [
         GridItem(.flexible(), spacing: 5.0),
         GridItem(.flexible(), spacing: 5.0),
@@ -17,6 +18,8 @@ struct GridOfRegistersView: View {
         GridItem(.flexible(), spacing: 5.0),
         GridItem(.flexible(), spacing: 5.0)
     ]
+    
+    
     
     var remainingEmptyRegisters : [RegisterData] {
         (registerItems.count ..< 100).map { RegisterData(indexForDisplay: $0, value: 0) }
@@ -26,7 +29,7 @@ struct GridOfRegistersView: View {
     
     var body: some View {
         VStack(alignment : .leading) {
-            HeaderWithHelpView(title: "Registers: ", helpCallback : showHelp)
+            HeaderWithHelpView(title: "Registers: ", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             ScrollView {
                 LazyVGrid(columns: layout, spacing : 12.5) {
                     ForEach(registerItems, id : \.id, content : RegisterView.init).overlay(Color.gray.opacity(0.1))
