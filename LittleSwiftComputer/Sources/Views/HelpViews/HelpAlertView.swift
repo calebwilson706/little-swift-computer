@@ -24,7 +24,17 @@ struct HelpAlertView: View {
                         dismissButton
                     }
                     ScrollView {
-                        ForEach(selectedHelpSection.getHelpTextLines(), id : \.self, content : HighlightedLeftAlignedHelpTextView.init)
+                        ScrollViewReader { scroller in
+                            ForEach(selectedHelpSection.getHelpTextLines(), id : \.offset){ index, textLine in
+                                HighlightedLeftAlignedHelpTextView(textLine)
+                            }.onChange(of: selectedHelpSection){ _ in
+                                withAnimation {
+                                    scroller.scrollTo(0)
+                                }
+                            }
+                            ChangeHelpButtonView(selectedHelp: selectedHelpSection, callback: changeHelp)
+                                .padding(.bottom)
+                        }
                     }
                 }.padding()
             }
@@ -37,13 +47,16 @@ struct HelpAlertView: View {
     var dismissButton : some View {
         Button(action: hideAlert){
             Image(systemName: "xmark.circle")
-        }.buttonStyle(HelpButtonStyle())
+        }.buttonStyle(ShowHelpButtonStyle())
     }
     
     func hideAlert() {
         self.helpController.helpSelection = nil
     }
     
+    func changeHelp(to selection: HelpMessages ) {
+        self.helpController.showHelp(selection: selection)
+    }
 }
 
 struct HelpAlertView_Previews: PreviewProvider {

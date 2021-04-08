@@ -12,4 +12,4 @@ You can still, of course, create and modify variables using the [sta] command in
 
 For example: [sta test] will create the variable test and [give it the value of the accumulator,] if test already exists then its current value will be overwritten by the value in the accumulator.
 
-You can monitor the storing and creation of variables in the [memory registers] section while the program runs.
+You can monitor the storing and creation of variables in the [memory registers] section while the program runs press the button below to learn more about this.

@@ -1,1 +1,44 @@
-assembly code editor placeholder
+This is where you write [assembly code.]
+
+The [little swift computer] uses the following instruction set:
+
+[add, sub, sta, lda, out, inp, hlt, bra, brz] and [brp].
+
+For a description of each instruction press the [LSC Instruction Set] button in the top left corner of the main screen.
+
+You write assembly code line by line ensuring each instruction is valid, if there is something not working an error message will be shown to you.
+
+A few things to note:
+
+For instructions which require an operand make sure it comes after the operator such as:
+
+[add myVariable] or
+[lda mySecondVariable].
+
+If no operand is given when required there will be an error.
+
+For branch commands you put a [marker] or [placeholder] after the branch command. This will show where you want to branch too. For example:
+
+[bra top]
+[brz bottom]
+[brp middle]
+
+Then put the corresponding placeholder [before] the line you want to move too:
+
+[top add one]
+[middle out]
+[bottom hlt]
+
+You can use the same placeholder when branching away from a line but you cannot have the same placeholder in two locations:
+
+so [top add one]
+[top sub one]
+[bra top]
+would not be valid however:
+
+[top add one]
+[brz top]
+[bra top]
+would be [valid].
+
+If you want to learn more about assembly code press the [Tell me more] button below.

@@ -13,7 +13,7 @@ class Assembler {
     func assemble(code : String) -> AssembledCode {
         var assembledLines = [AssembledInstruction?]()
         var placeholdersForBranches = [BranchPlaceholder]()
-        let inputLines = code.convertToEnumeratedArrayOfLines()
+        let inputLines = code.convertToEnumeratedArrayOfLinesRemoveBlanks()
         
         inputLines.forEach { index, lineOfCode in
             let parsedInstructionLine = getFullInstruction(from: lineOfCode)

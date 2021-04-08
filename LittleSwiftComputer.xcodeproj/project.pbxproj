@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB08BC90261F243800F26480 /* ChangeHelpSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BC8F261F243800F26480 /* ChangeHelpSelectionButton.swift */; };
+		AB08BC96261F25C900F26480 /* ChangeHelpButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BC95261F25C900F26480 /* ChangeHelpButtonProperties.swift */; };
+		AB08BC9F261F2EFC00F26480 /* change-help-button-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BC9E261F2EFC00F26480 /* change-help-button-style.swift */; };
+		AB08BCA7261F322000F26480 /* pointer-shown-on-hover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BCA6261F322000F26480 /* pointer-shown-on-hover.swift */; };
+		AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB08BCAC261F3FC100F26480 /* assembly-code-help.txt */; };
+		AB08BCB3261F414D00F26480 /* show-help-styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BCB2261F414D00F26480 /* show-help-styles.swift */; };
+		AB08BCBA261F44E300F26480 /* ShowHelpHeaderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BCB9261F44E300F26480 /* ShowHelpHeaderButtonView.swift */; };
+		AB08BCBE261F468E00F26480 /* instruction-set-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB08BCBD261F468E00F26480 /* instruction-set-help.txt */; };
 		AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9015261B91E80092CA63 /* AccumulatorView.swift */; };
 		AB1B901A261B92900092CA63 /* meta-data-for-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9019261B92900092CA63 /* meta-data-for-components.swift */; };
 		AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B901F261B96CB0092CA63 /* RegisterView.swift */; };
@@ -36,7 +44,7 @@
 		AB728BF4261CD7C10078E0B0 /* input-submit-style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */; };
 		AB728BF8261CD9AF0078E0B0 /* dynamic-button-label.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */; };
 		AB728C02261CDAE90078E0B0 /* DynamicButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */; };
-		AB728C08261CE8B00078E0B0 /* HelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */; };
+		AB728C08261CE8B00078E0B0 /* ShowHelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C07261CE8B00078E0B0 /* ShowHelpButtonView.swift */; };
 		AB728C0F261CEB960078E0B0 /* HeaderWithHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */; };
 		AB728C18261CEE0B0078E0B0 /* help-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C17261CEE0B0078E0B0 /* help-controller.swift */; };
 		AB728C1C261CEE720078E0B0 /* help-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C1B261CEE720078E0B0 /* help-messages.swift */; };
@@ -76,6 +84,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB08BC8F261F243800F26480 /* ChangeHelpSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHelpSelectionButton.swift; sourceTree = "<group>"; };
+		AB08BC95261F25C900F26480 /* ChangeHelpButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHelpButtonProperties.swift; sourceTree = "<group>"; };
+		AB08BC9E261F2EFC00F26480 /* change-help-button-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "change-help-button-style.swift"; sourceTree = "<group>"; };
+		AB08BCA6261F322000F26480 /* pointer-shown-on-hover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "pointer-shown-on-hover.swift"; sourceTree = "<group>"; };
+		AB08BCAC261F3FC100F26480 /* assembly-code-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "assembly-code-help.txt"; sourceTree = "<group>"; };
+		AB08BCB2261F414D00F26480 /* show-help-styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "show-help-styles.swift"; sourceTree = "<group>"; };
+		AB08BCB9261F44E300F26480 /* ShowHelpHeaderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHelpHeaderButtonView.swift; sourceTree = "<group>"; };
+		AB08BCBD261F468E00F26480 /* instruction-set-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "instruction-set-help.txt"; sourceTree = "<group>"; };
 		AB1B9015261B91E80092CA63 /* AccumulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorView.swift; sourceTree = "<group>"; };
 		AB1B9019261B92900092CA63 /* meta-data-for-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "meta-data-for-components.swift"; sourceTree = "<group>"; };
 		AB1B901F261B96CB0092CA63 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -105,7 +121,7 @@
 		AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "input-submit-style.swift"; sourceTree = "<group>"; };
 		AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "dynamic-button-label.swift"; sourceTree = "<group>"; };
 		AB728C01261CDAE90078E0B0 /* DynamicButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButtonView.swift; sourceTree = "<group>"; };
-		AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButtonView.swift; sourceTree = "<group>"; };
+		AB728C07261CE8B00078E0B0 /* ShowHelpButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHelpButtonView.swift; sourceTree = "<group>"; };
 		AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithHelpView.swift; sourceTree = "<group>"; };
 		AB728C17261CEE0B0078E0B0 /* help-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-controller.swift"; sourceTree = "<group>"; };
 		AB728C1B261CEE720078E0B0 /* help-messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-messages.swift"; sourceTree = "<group>"; };
@@ -157,6 +173,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB08BC99261F25D100F26480 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				AB728C1B261CEE720078E0B0 /* help-messages.swift */,
+				AB08BC95261F25C900F26480 /* ChangeHelpButtonProperties.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		AB08BCB6261F416A00F26480 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				AB08BC9E261F2EFC00F26480 /* change-help-button-style.swift */,
+				AB08BCB2261F414D00F26480 /* show-help-styles.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		AB1B902D261BAD050092CA63 /* GridOfRegisters */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +229,7 @@
 				AB1B9019261B92900092CA63 /* meta-data-for-components.swift */,
 				AB728C06261CE85D0078E0B0 /* Styles */,
 				AB2356FC26186A4B000C59C7 /* Run-Cancel-Pause-Buttons */,
+				AB08BCA6261F322000F26480 /* pointer-shown-on-hover.swift */,
 			);
 			path = "UI-Styled-Components";
 			sourceTree = "<group>";
@@ -233,6 +268,7 @@
 		AB728C06261CE85D0078E0B0 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				AB08BCB6261F416A00F26480 /* Help */,
 				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
 				AB728BE3261CD2A60078E0B0 /* options-headers.swift */,
 				AB728BF3261CD7C10078E0B0 /* input-submit-style.swift */,
@@ -252,10 +288,12 @@
 		AB728C14261CEBEF0078E0B0 /* HelpViews */ = {
 			isa = PBXGroup;
 			children = (
-				AB728C07261CE8B00078E0B0 /* HelpButtonView.swift */,
+				AB728C07261CE8B00078E0B0 /* ShowHelpButtonView.swift */,
 				AB728C0E261CEB960078E0B0 /* HeaderWithHelpView.swift */,
 				AB728C25261CF5320078E0B0 /* HelpAlertView.swift */,
 				AB26C4B2261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift */,
+				AB08BC8F261F243800F26480 /* ChangeHelpSelectionButton.swift */,
+				AB08BCB9261F44E300F26480 /* ShowHelpHeaderButtonView.swift */,
 			);
 			path = HelpViews;
 			sourceTree = "<group>";
@@ -271,13 +309,15 @@
 		AB728C32261D14C40078E0B0 /* HelpMessages */ = {
 			isa = PBXGroup;
 			children = (
+				AB26C498261DCABA007E6C85 /* assembly-code-editor-help.txt */,
+				AB26C49E261DCB86007E6C85 /* declarations-editor-help.txt */,
 				AB26C490261DC828007E6C85 /* accumulator-help.txt */,
 				AB26C494261DCA8D007E6C85 /* output-help.txt */,
 				AB26C4A2261DCBFD007E6C85 /* input-help.txt */,
-				AB26C498261DCABA007E6C85 /* assembly-code-editor-help.txt */,
-				AB26C49E261DCB86007E6C85 /* declarations-editor-help.txt */,
 				AB26C4A8261DCC4E007E6C85 /* extra-settings-help.txt */,
 				AB26C4AC261DCC6C007E6C85 /* registers-help.txt */,
+				AB08BCAC261F3FC100F26480 /* assembly-code-help.txt */,
+				AB08BCBD261F468E00F26480 /* instruction-set-help.txt */,
 			);
 			path = HelpMessages;
 			sourceTree = "<group>";
@@ -338,6 +378,7 @@
 				AB2356E82617E570000C59C7 /* Controllers */,
 				ABBC7EFE2613B3E9003C6047 /* Assembling */,
 				ABC5FBA22614A24F0095BB70 /* Execution */,
+				AB2356F326186544000C59C7 /* UI-Styled-Components */,
 				ABBC7EFD2613B3D7003C6047 /* Utilities */,
 			);
 			path = Sources;
@@ -346,10 +387,9 @@
 		ABBC7EFD2613B3D7003C6047 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				AB2356F326186544000C59C7 /* UI-Styled-Components */,
+				AB08BC99261F25D100F26480 /* Help */,
 				AB728C05261CE76E0078E0B0 /* Extensions */,
 				AB728BF7261CD9AF0078E0B0 /* dynamic-button-label.swift */,
-				AB728C1B261CEE720078E0B0 /* help-messages.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -510,9 +550,11 @@
 				AB26C49F261DCB86007E6C85 /* declarations-editor-help.txt in Resources */,
 				AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */,
 				AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */,
+				AB08BCBE261F468E00F26480 /* instruction-set-help.txt in Resources */,
 				ABBC7EF02613B3AA003C6047 /* Assets.xcassets in Resources */,
 				AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */,
 				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
+				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +576,7 @@
 				ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */,
 				AB26C48B261DBCDC007E6C85 /* dynamic-button-labels-controller.swift in Sources */,
 				ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */,
+				AB08BC9F261F2EFC00F26480 /* change-help-button-style.swift in Sources */,
 				AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */,
 				ABA880932615C98D0001817C /* assembly-services.swift in Sources */,
 				AB728C02261CDAE90078E0B0 /* DynamicButtonView.swift in Sources */,
@@ -542,22 +585,27 @@
 				ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */,
 				AB1B902A261BA6A80092CA63 /* ErrorView.swift in Sources */,
 				AB27330D26161C50000FE5E3 /* execution-errors.swift in Sources */,
+				AB08BC90261F243800F26480 /* ChangeHelpSelectionButton.swift in Sources */,
 				AB728C1C261CEE720078E0B0 /* help-messages.swift in Sources */,
 				AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */,
 				AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */,
 				AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */,
 				AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */,
+				AB08BCBA261F44E300F26480 /* ShowHelpHeaderButtonView.swift in Sources */,
 				AB26C4B3261E1BE4007E6C85 /* HighlightedLeftAlignedHelpTextView.swift in Sources */,
 				ABBC7F232613B824003C6047 /* assembled-code.swift in Sources */,
 				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
+				AB08BCB3261F414D00F26480 /* show-help-styles.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
 				AB728BF8261CD9AF0078E0B0 /* dynamic-button-label.swift in Sources */,
 				AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */,
 				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,
 				AB9D50C52616034500AE7B6B /* register-data.swift in Sources */,
-				AB728C08261CE8B00078E0B0 /* HelpButtonView.swift in Sources */,
+				AB728C08261CE8B00078E0B0 /* ShowHelpButtonView.swift in Sources */,
 				ABC5FBC42614C5170095BB70 /* string-to-enumerated-lines.swift in Sources */,
+				AB08BC96261F25C900F26480 /* ChangeHelpButtonProperties.swift in Sources */,
 				ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */,
+				AB08BCA7261F322000F26480 /* pointer-shown-on-hover.swift in Sources */,
 				ABA880A32615CF730001817C /* assembly-controller.swift in Sources */,
 				AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */,
 				AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */,

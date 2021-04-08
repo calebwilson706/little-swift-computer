@@ -8,7 +8,10 @@
 import Foundation
 
 extension String {
+    func convertToEnumeratedArrayOfLinesRemoveBlanks() -> Array<(offset: Int, element: String)> {
+        return convertToEnumeratedArrayOfLines().filter { $0.element != "" }
+    }
     func convertToEnumeratedArrayOfLines() -> Array<(offset: Int, element: String)> {
-        return Array(self.components(separatedBy: "\n").filter {$0 != "" }.enumerated())
+        return Array(self.components(separatedBy: "\n").enumerated())
     }
 }

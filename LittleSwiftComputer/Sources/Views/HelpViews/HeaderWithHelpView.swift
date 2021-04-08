@@ -16,7 +16,7 @@ struct HeaderWithHelpView: View {
         HStack {
             Text(title)
             if !isRunningProgram {
-                HelpButtonView(action: helpCallback)
+                ShowHelpButtonView(action: helpCallback)
             }
         }
     }

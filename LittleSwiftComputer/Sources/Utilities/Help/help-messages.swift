@@ -14,12 +14,14 @@ enum HelpMessages : String {
          output = "output-help",
          input = "input-help",
          extraSettings = "extra-settings-help",
-         registers = "registers-help"
-    
+         registers = "registers-help",
+         assemblyCode = "assembly-code-help",
+         instructionSetHelp = "instruction-set-help"
+        
     func getHeaderForAlert() -> String {
         switch self {
         case .assemblyCodeEditor:
-            return "Assembly Code"
+            return "Assembly Code Editor"
         case .variableDeclarationEditor:
             return "Variable Declarations"
         case .accumulator:
@@ -32,6 +34,10 @@ enum HelpMessages : String {
             return "Extra Settings"
         case .registers:
             return "Memory Registers"
+        case .assemblyCode:
+            return "What Is Assembly Code?"
+        case .instructionSetHelp:
+            return "The Instruction Set"
         }
     }
     
@@ -48,8 +54,8 @@ enum HelpMessages : String {
         return "No Help Found"
     }
     
-    func getHelpTextLines() -> [String] {
-        return getHelpText().components(separatedBy : "\n")
+    func getHelpTextLines() -> Array<(offset: Int, element: String)> {
+        return getHelpText().convertToEnumeratedArrayOfLines()
     }
          
 }

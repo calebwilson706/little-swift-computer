@@ -1,4 +1,3 @@
-
 These are the [memory registers.]
 
 This grid shows you the current values for each [variable] that has been created with the [dat] command before execution or throughout execution with the [sta] command.
@@ -10,3 +9,5 @@ However, the values are not shown below the variable name but instead [below the
 The variable which was created first has index 0 and the next value created has index 1 and so on. Empty registers up to index 99 are also shown.
 
 You can [load the registers values] into the accumulator using the [lda] command and their name such as [lda example].
+
+Press the button below to learn more about variable declarations.

@@ -13,9 +13,8 @@ struct LittleSwiftComputerView: View {
     @StateObject var optionsController = ExecutionOptionsController()
     @StateObject var helpController = HelpController()
     @StateObject var dynamicLabels = DynamicButtonLabelsController()
+    
     @State private var inputString = ""
-    
-    
     
     var body: some View {
         VStack(alignment: .center) {
@@ -60,10 +59,26 @@ struct LittleSwiftComputerView: View {
     }
     
     var header : some View {
-        Text("Little Swift Computer")
-            .font(.largeTitle)
-            .fontWeight(.bold)
-            .padding(.top, 10)
+        HStack(alignment: .center) {
+            ShowHelpHeaderButtonView(
+                label: "LSC Instruction Set",
+                showHelpCallback: helpController.showHelp,
+                helpSelection: .instructionSetHelp,
+                isShowing: !executionController.isRunning
+            )
+            Spacer()
+            Text("Little Swift Computer")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            Spacer()
+            ShowHelpHeaderButtonView(
+                label: "What is assembly code?",
+                showHelpCallback: helpController.showHelp,
+                helpSelection: .assemblyCode,
+                isShowing: !executionController.isRunning
+            )
+        }.padding(.top, 10)
+        .padding(.horizontal, 20)
     }
     
     var codeAssemblyView : some View {
