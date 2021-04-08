@@ -47,6 +47,7 @@ struct LittleSwiftComputerView: View {
                                 .frame(maxWidth : geometry.size.width*0.4)
                                 .frame(minWidth : 300)
                         }
+                        footer
                     }.padding()
                     .blur(radius: helpController.isShowingHelp ? 20 : 0)
                     .disabled(helpController.isShowingHelp)
@@ -81,6 +82,14 @@ struct LittleSwiftComputerView: View {
         .padding(.horizontal, 20)
     }
     
+    var footer : some View {
+        HStack {
+            Text("Created by Caleb Wilson.")
+                .font(.footnote)
+            Spacer()
+        }.padding(.leading, 20)
+        .padding(.bottom, 10)
+    }
     var codeAssemblyView : some View {
         VStack(alignment : .leading) {
             HeaderWithHelpView(title: "Write Code Below:", helpCallback: showCodeEditorHelp, isRunningProgram: executionController.isRunning)
@@ -136,6 +145,8 @@ struct LittleSwiftComputerView: View {
     private func executeNewUserInput() {
         if let assembledCode = assemblerController.assembleUserInput() {
             executionController.execute(assembledCode: assembledCode, speedSelection: self.optionsController.selectedSpeedOption)
+        } else {
+            executionController.resetProgram()
         }
     }
     

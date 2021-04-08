@@ -1,1 +1,8 @@
-[Assembly code]
+[Assembly code] is a [low level language] which uses mnemonics to represent operations. Assembly code is [compiled by an assembler] which is specifically designed for it's [instruction set.]
+
+To view the [instruction set] for this assembly code simulator press the [LSC Instruction Set] button in the top left corner of the main screen.
+
+Assembly language is not as useful as higher level languages like Swift or Kotlin but it was a vast improvement from binary!
+
+I made the [Little Swift Computer] as a [learning resource] for assembly code as writing in assembly helps you understand exactly how the processor and memory work together to solve problems.
+

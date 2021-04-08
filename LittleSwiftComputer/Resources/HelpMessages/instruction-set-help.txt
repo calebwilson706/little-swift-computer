@@ -1,1 +1,13 @@
 The [Little Swift Computer Instruction Set.]
+
+
+
+
+
+
+
+
+
+What is an [instruction set?] this is simply a set of all the instructions available in a machine code that can be recognised and carried out.
+
+[The Little Swift Computer] uses a very small instruction set to make it easier to understand the basics of [assembly language.]

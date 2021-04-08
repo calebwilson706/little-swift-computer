@@ -12,7 +12,7 @@ struct ShowHelpButtonStyle : ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .background(Color.clear)
-            .imageScale(.medium)
+            .imageScale(.large)
             .foregroundColor(Color.gray)
             .showPointingHandOnHover()
     }
