@@ -12,9 +12,10 @@ enum AssemblyOperators : String, CaseIterable {
          subtract = "sub",
          store = "sta",
          load = "lda",
-         //operands below have no operand
+         //operands for those below is optional
          output = "out",
          input = "inp",
+         //no operand for halt
          halt = "hlt",
          //operands for those below will be placeholders
          branch_always = "bra",

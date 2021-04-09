@@ -1,13 +1,64 @@
 The [Little Swift Computer Instruction Set.]
 
-
-
-
-
-
-
-
-
 What is an [instruction set?] this is simply a set of all the instructions available in a machine code that can be recognised and carried out.
 
 [The Little Swift Computer] uses a very small instruction set to make it easier to understand the basics of [assembly language.]
+
+The instruction set is shown below
+
+[_______________________________]
+
+
+[add] -> This instruction adds the operand of the statement to the accumulator
+
+[add test] would add the value of the variable 'test' to the accumulator.
+
+[_______________________________]
+
+
+[sub] -> This instruction subtracts the operand of the statement from the accumulator.
+
+[sub test] would subtract the value of the variable 'test' to the accumulator.
+
+[_______________________________]
+
+
+[sta] -> This instruction stores the value of the accumulator in the variable given as the operator.
+
+[sta myVariable] would store the value of the accumulator in the variable 'myVariable'.
+
+[_______________________________]
+
+
+[out] -> This instruction works in two different ways. Both ways push values to the top of the output stack.
+
+[out] with no operand will put the accumulator at the top of the output stack.
+
+[out test] would add the value of the variable 'test' to the top of the output stack
+
+[_______________________________]
+
+
+[inp] -> This instruction will request input it once again works in two ways.
+
+[inp] with no operand will store the input in the accumulator.
+
+[inp test] would store the input in the variable 'test'.
+
+[_______________________________]
+
+
+[hlt] -> This instruction requires no operand and simply halts the program.
+
+[_______________________________]
+
+
+Next is the 3 branch statements, they basic structure is the same and they do the same thing however they all branch depending on different conditions.
+
+[bra placeholder] will [always] branch to the statement marked with 'placeholder'.
+
+[brp placeholder] will branch to the statement marked with 'placeholder' if the [accumulator is positive.]
+
+[brz placeholder] will branch to the statement marked with 'placeholder' if the [accumulator is zero.]
+
+To mark a statement put the marker before the operation, for example [marker out].

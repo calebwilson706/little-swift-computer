@@ -24,6 +24,8 @@ extension ExecutionController {
         
         guard let currentInstruction = codeLines[safe : indexOfCurrentInstruction] else {
             timer.invalidate()
+            self.requiresInput = false
+            self.isPaused = false
             return
         }
         
@@ -34,14 +36,14 @@ extension ExecutionController {
             case .subtract:
                 accumulator -= try getValueFromRegister(identifier: currentInstruction.theOperand)
             case .store:
-                registers[currentInstruction.theOperand!] = RegisterData(
-                    indexForDisplay: registers[currentInstruction.theOperand!]?.indexForDisplay ?? registers.count,
-                    value: accumulator
+                registers[currentInstruction.theOperand!] = replaceRegisterWithNewValue(
+                    name: currentInstruction.theOperand!,
+                    newValue: accumulator
                 )
             case .load:
                 accumulator = try getValueFromRegister(identifier: currentInstruction.theOperand)
             case .output:
-                self.outputs.append(accumulator)
+                try output(operand: currentInstruction.theOperand)
             case .halt:
                 indexOfCurrentInstruction = codeLines.count
                 return
@@ -83,8 +85,14 @@ extension ExecutionController {
         timer.invalidate()
     }
     
-    func resumeAfterInput(inputNumber : Int,speedSelection : ExecutionSpeeds) {
-        self.accumulator = inputNumber
+    func resumeAfterInput(inputNumber : Int, speedSelection : ExecutionSpeeds) {
+        
+        if let registerName = assembledCodeSource?.mainCodeBlock.lines[indexOfCurrentInstruction].theOperand {
+            self.registers[registerName] = replaceRegisterWithNewValue(name: registerName, newValue: inputNumber)
+        } else {
+            self.accumulator = inputNumber
+        }
+        
         self.indexOfCurrentInstruction += 1
         self.requiresInput = false
         
@@ -108,6 +116,18 @@ extension ExecutionController {
         
         self.outputs.removeAll()
         timer.invalidate()
+    }
+    
+    private func output(operand : String?) throws {
+        do {
+            let numberToAdd = try getValueFromRegister(identifier: operand)
+            self.outputs.append(numberToAdd)
+        } catch {
+            guard operand == nil else {
+                throw error
+            }
+            self.outputs.append(accumulator)
+        }
     }
     
     private func fillRegistersWithInitialValues(variables : [DeclaredVariable]) {
@@ -140,5 +160,12 @@ extension ExecutionController {
     
     private func startTimer(timeInterval: Double) {
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
+    }
+    
+    private func replaceRegisterWithNewValue(name : String, newValue : Int) -> RegisterData {
+        return RegisterData(
+            indexForDisplay: registers[name]?.indexForDisplay ?? registers.count,
+            value: newValue
+        )
     }
 }
