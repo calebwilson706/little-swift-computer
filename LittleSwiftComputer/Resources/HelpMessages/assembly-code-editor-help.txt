@@ -8,6 +8,8 @@ For a description of each instruction press the [LSC Instruction Set] button in 
 
 You write assembly code line by line ensuring each instruction is valid, if there is something not working an error message will be shown to you.
 
+If you place a ['#'] before a line it will be ignored.
+
 A few things to note:
 
 For instructions which require an operand make sure it comes after the operator such as:

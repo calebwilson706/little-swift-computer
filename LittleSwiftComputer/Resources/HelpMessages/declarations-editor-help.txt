@@ -6,6 +6,8 @@ For example: [dat test]
 
 You can also [give the variable an initial value] by adding the number to the end of your statement as follows: [dat five 5]
 
+If you place a ['#'] before a line it will be ignored.
+
 Don't use any numbers in your variable names. If there are any issues with your declarations an error message will be shown when you try to execute your code.
 
 You can still, of course, create and modify variables using the [sta] command in your code.
