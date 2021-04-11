@@ -13,6 +13,7 @@ struct LittleSwiftComputerView: View {
     @StateObject var optionsController = OptionsController()
     @StateObject var helpController = HelpController()
     @StateObject var dynamicLabels = DynamicButtonLabelsController()
+    @StateObject var soundEffectController = SoundEffectController()
     
     @State private var inputString = ""
     
@@ -90,6 +91,7 @@ struct LittleSwiftComputerView: View {
         }.padding(.leading, 20)
         .padding(.bottom, 10)
     }
+    
     var codeAssemblyView : some View {
         VStack(alignment : .leading) {
             HeaderWithHelpView(title: "Write Code Below:", helpCallback: showCodeEditorHelp, isRunningProgram: executionController.isRunning)
@@ -138,13 +140,16 @@ struct LittleSwiftComputerView: View {
     }
     
     private func inputSubmitCallback(inputNumber : Int) {
-        executionController.resumeAfterInput(inputNumber: inputNumber, speedSelection: self.optionsController.selectedSpeedOption)
+        executionController.resumeAfterInput(inputNumber: inputNumber, optionsController: optionsController)
         self.inputString = ""
     }
     
     private func executeNewUserInput() {
-        if let assembledCode = assemblerController.assembleUserInput() {
-            executionController.execute(assembledCode: assembledCode, speedSelection: self.optionsController.selectedSpeedOption)
+        if let assembledCode = assemblerController.assembleUserInput(
+            audioPlayer: self.soundEffectController,
+            shouldPlaySoundEffects: self.optionsController.shouldPlaySoundEffects
+        ) {
+            executionController.execute(assembledCode: assembledCode, optionsController: optionsController, audioController: soundEffectController)
         } else {
             executionController.resetProgram()
         }

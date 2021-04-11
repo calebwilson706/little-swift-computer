@@ -12,6 +12,15 @@ enum AssemblyCodeErrors : Error {
          repetitionOfPlaceholder(placeholder : String),
          missingOperand(at : Int),
          noCode
+    
+    func getSoundFilePrefix() -> String {
+        switch self {
+        case .noCode:
+            return "no-code"
+        default:
+            return "assembly"
+        }
+    }
 }
 
 

@@ -6,6 +6,6 @@ I recommend using the ['fast'] setting for a nice balance between speed and clar
 
 [Sound Effects.]
 
-I created original sound effects for certain actions and events in [The Little Swift Computer.]
+I created unique original sound effects for certain actions and events in [The Little Swift Computer.]
 
 If this setting is turned on then the sound effects will play.

@@ -11,6 +11,18 @@ enum ExecutionErrors : Error {
     case undeclaredVariableAccess(at : Int),
          missingPlaceholder(at : Int),
          requiresInput
+    
+    func getFileNameForAudioPlayer() -> String {
+        let postfix = "-sound.mp3"
+        
+        switch self {
+        case .requiresInput:
+            return "input-required" + postfix
+        default:
+            return "run-time-error" + postfix
+        }
+        
+    }
 }
 
 

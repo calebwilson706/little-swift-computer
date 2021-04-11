@@ -18,9 +18,12 @@ class ExecutionController : ObservableObject {
     @Published var isPaused = false
     
     var assembledCodeSource : PreparedAndAssembledCode? = nil
-    var timer = Timer()
+    var audioPlayerController : SoundEffectController? = nil
+    var shouldPlaySoundEffects = true
+    var executionTimer = Timer()
+    
     var isRunning : Bool {
-        timer.isValid
+        executionTimer.isValid
     }
     var canRunProgram : Bool {
         !isRunning && !requiresInput
@@ -34,4 +37,5 @@ class ExecutionController : ObservableObject {
     var registersForDisplaying : [RegisterData] {
         registers.values.sorted { $0.indexForDisplay < $1.indexForDisplay }
     }
+    
 }

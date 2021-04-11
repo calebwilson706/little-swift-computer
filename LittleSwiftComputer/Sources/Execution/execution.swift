@@ -9,12 +9,18 @@ import Foundation
 import SwiftUI
 
 extension ExecutionController {
-    func execute(assembledCode : PreparedAndAssembledCode, speedSelection : ExecutionSpeeds) {
+    func execute(assembledCode : PreparedAndAssembledCode,
+                 optionsController : OptionsController,
+                 audioController : SoundEffectController
+    ) {
         resetProgram()
+        
         self.assembledCodeSource = assembledCode
+        self.audioPlayerController = audioController
+        self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
         
         fillRegistersWithInitialValues(variables: assembledCode.initializedVariables)
-        startTimer(timeInterval: speedSelection.rawValue)
+        startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
     
     
@@ -23,7 +29,7 @@ extension ExecutionController {
         let codeLines = assembledCode.mainCodeBlock.lines
         
         guard let currentInstruction = codeLines[safe : indexOfCurrentInstruction] else {
-            timer.invalidate()
+            executionTimer.invalidate()
             self.requiresInput = false
             self.isPaused = false
             return
@@ -55,12 +61,15 @@ extension ExecutionController {
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             case .input:
                 self.requiresInput = true
+                let requiresInputError = ExecutionErrors.requiresInput
                 
                 withAnimation {
-                    self.executionError = ExecutionErrors.requiresInput
+                    self.executionError = requiresInputError
                 }
                 
-                timer.invalidate()
+                executionTimer.invalidate()
+                
+                audioPlayerController?.playSound(fileName: requiresInputError.getFileNameForAudioPlayer(), shouldPlay: self.shouldPlaySoundEffects)
             }
             
             if currentInstruction.theOperator.requiresIncrementation() {
@@ -70,7 +79,12 @@ extension ExecutionController {
             withAnimation {
                 self.executionError = error
             }
-            timer.invalidate()
+            executionTimer.invalidate()
+            
+            if let executionErrorToPlaySoundFor = error as? ExecutionErrors {
+                audioPlayerController?.playSound(fileName: executionErrorToPlaySoundFor.getFileNameForAudioPlayer(), shouldPlay: self.shouldPlaySoundEffects)
+            }
+            
             return
         }
     }
@@ -82,10 +96,10 @@ extension ExecutionController {
     
     func pause() {
         self.isPaused = true
-        timer.invalidate()
+        executionTimer.invalidate()
     }
     
-    func resumeAfterInput(inputNumber : Int, speedSelection : ExecutionSpeeds) {
+    func resumeAfterInput(inputNumber : Int, optionsController : OptionsController) {
         
         if let registerName = assembledCodeSource?.mainCodeBlock.lines[indexOfCurrentInstruction].theOperand {
             self.registers[registerName] = replaceRegisterWithNewValue(name: registerName, newValue: inputNumber)
@@ -99,8 +113,9 @@ extension ExecutionController {
         withAnimation {
             self.executionError = nil
         }
+        self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
         
-        startTimer(timeInterval: speedSelection.rawValue)
+        startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
     
     func resetProgram() {
@@ -109,13 +124,15 @@ extension ExecutionController {
         self.registers.removeAll()
         self.requiresInput = false
         self.isPaused = false
+        self.assembledCodeSource = nil
+        self.audioPlayerController = nil
         
         withAnimation {
             self.executionError = nil
         }
         
         self.outputs.removeAll()
-        timer.invalidate()
+        executionTimer.invalidate()
     }
     
     private func output(operand : String?) throws {
@@ -159,7 +176,7 @@ extension ExecutionController {
     }
     
     private func startTimer(timeInterval: Double) {
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
+        executionTimer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(runLineOfAssembledCode), userInfo: nil, repeats: true)
     }
     
     private func replaceRegisterWithNewValue(name : String, newValue : Int) -> RegisterData {
