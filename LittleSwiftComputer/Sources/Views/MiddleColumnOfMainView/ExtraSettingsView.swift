@@ -42,6 +42,7 @@ struct ExtraSettingsView: View {
             Spacer()
             Toggle("", isOn : $optionsController.shouldPlaySoundEffects)
                 .labelsHidden()
+                .onChange(of: optionsController.shouldPlaySoundEffects, perform: keepHelpShouldPlayStatusUpToDate)
         }
     }
     
@@ -49,5 +50,8 @@ struct ExtraSettingsView: View {
         self.helpController.showHelp(selection: .extraSettings)
     }
     
+    func keepHelpShouldPlayStatusUpToDate(status : Bool){
+        self.helpController.shouldPlaySounds = status
+    }
 }
 
