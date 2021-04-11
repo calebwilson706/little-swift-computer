@@ -24,7 +24,4 @@ class HelpController : ObservableObject {
         self.helpSelection = selection
     }
     
-    func assignSoundEffectController(controller : SoundEffectController){
-        self.soundEffectController = controller
-    }
 }

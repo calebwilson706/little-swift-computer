@@ -10,13 +10,11 @@ import SwiftUI
 
 extension ExecutionController {
     func execute(assembledCode : PreparedAndAssembledCode,
-                 optionsController : OptionsController,
-                 soundEffectController : SoundEffectController
+                 optionsController : OptionsController
     ) {
         resetProgram()
         
         self.assembledCodeSource = assembledCode
-        self.soundEffectController = soundEffectController
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
         
         fillRegistersWithInitialValues(variables: assembledCode.initializedVariables)
@@ -107,6 +105,7 @@ extension ExecutionController {
         withAnimation {
             self.executionError = nil
         }
+        
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
         
         startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
@@ -119,7 +118,6 @@ extension ExecutionController {
         self.requiresInput = false
         self.isPaused = false
         self.assembledCodeSource = nil
-        self.soundEffectController = nil
         
         withAnimation {
             self.executionError = nil

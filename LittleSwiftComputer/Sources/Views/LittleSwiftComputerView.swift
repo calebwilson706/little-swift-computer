@@ -58,7 +58,7 @@ struct LittleSwiftComputerView: View {
                 }
             }
         }.environmentObject(helpController)
-         .onAppear(perform: assignSoundEffectControllerToHelpController)
+         .onAppear(perform: assignSoundEffectControllerToOtherControllers)
     }
     
     var header : some View {
@@ -150,7 +150,7 @@ struct LittleSwiftComputerView: View {
             soundEffectController: self.soundEffectController,
             shouldPlaySoundEffects: self.optionsController.shouldPlaySoundEffects
         ) {
-            executionController.execute(assembledCode: assembledCode, optionsController: optionsController, soundEffectController: soundEffectController)
+            executionController.execute(assembledCode: assembledCode, optionsController: optionsController)
         } else {
             executionController.resetProgram()
         }
@@ -172,8 +172,9 @@ struct LittleSwiftComputerView: View {
         helpController.showHelp(selection: .variableDeclarationEditor)
     }
     
-    private func assignSoundEffectControllerToHelpController() {
-        helpController.assignSoundEffectController(controller: soundEffectController)
+    private func assignSoundEffectControllerToOtherControllers() {
+        helpController.soundEffectController = soundEffectController
+        executionController.soundEffectController = soundEffectController
     }
     
 }
