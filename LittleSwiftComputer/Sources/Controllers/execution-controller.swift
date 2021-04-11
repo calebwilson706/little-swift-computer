@@ -18,7 +18,7 @@ class ExecutionController : ObservableObject {
     @Published var isPaused = false
     
     var assembledCodeSource : PreparedAndAssembledCode? = nil
-    var audioPlayerController : SoundEffectController? = nil
+    var soundEffectController : SoundEffectController? = nil
     var shouldPlaySoundEffects = true
     var executionTimer = Timer()
     

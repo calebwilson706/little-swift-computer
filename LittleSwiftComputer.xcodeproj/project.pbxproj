@@ -37,6 +37,8 @@
 		AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */; };
 		AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA9952619EF9A00EAC84A /* OutputView.swift */; };
 		AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA99B261A305200EAC84A /* InputBoxView.swift */; };
+		AB5C843D262382F100A58FC2 /* open-help-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5C843C262382F100A58FC2 /* open-help-sound.mp3 */; };
+		AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5C8440262382FC00A58FC2 /* close-help-sound.mp3 */; };
 		AB62057626233CD400C65EB7 /* declaration-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */; };
 		AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */; };
 		AB62058226233CF200C65EB7 /* no-code-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62058126233CF200C65EB7 /* no-code-error-sound.mp3 */; };
@@ -120,6 +122,8 @@
 		AB361A69261A4ACD002372CE /* GridOfRegistersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridOfRegistersView.swift; sourceTree = "<group>"; };
 		AB3FA9952619EF9A00EAC84A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		AB3FA99B261A305200EAC84A /* InputBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBoxView.swift; sourceTree = "<group>"; };
+		AB5C843C262382F100A58FC2 /* open-help-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "open-help-sound.mp3"; sourceTree = "<group>"; };
+		AB5C8440262382FC00A58FC2 /* close-help-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "close-help-sound.mp3"; sourceTree = "<group>"; };
 		AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "declaration-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "run-time-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62058126233CF200C65EB7 /* no-code-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "no-code-error-sound.mp3"; sourceTree = "<group>"; };
@@ -268,14 +272,40 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		AB62057426233CC300C65EB7 /* Sounds */ = {
+		AB5C8439262382C000A58FC2 /* AssemblySounds */ = {
+			isa = PBXGroup;
+			children = (
+				AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */,
+				AB62058526233CF900C65EB7 /* assembly-error-sound.mp3 */,
+				AB62058126233CF200C65EB7 /* no-code-error-sound.mp3 */,
+			);
+			path = AssemblySounds;
+			sourceTree = "<group>";
+		};
+		AB5C843A262382D300A58FC2 /* ExecutionSounds */ = {
 			isa = PBXGroup;
 			children = (
 				AB6205A026235ED900C65EB7 /* input-required-sound.mp3 */,
-				AB62058526233CF900C65EB7 /* assembly-error-sound.mp3 */,
-				AB62058126233CF200C65EB7 /* no-code-error-sound.mp3 */,
 				AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */,
-				AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */,
+			);
+			path = ExecutionSounds;
+			sourceTree = "<group>";
+		};
+		AB5C843B262382DE00A58FC2 /* HelpSounds */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C8440262382FC00A58FC2 /* close-help-sound.mp3 */,
+				AB5C843C262382F100A58FC2 /* open-help-sound.mp3 */,
+			);
+			path = HelpSounds;
+			sourceTree = "<group>";
+		};
+		AB62057426233CC300C65EB7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AB5C843B262382DE00A58FC2 /* HelpSounds */,
+				AB5C843A262382D300A58FC2 /* ExecutionSounds */,
+				AB5C8439262382C000A58FC2 /* AssemblySounds */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -577,6 +607,7 @@
 				ABBC7EF32613B3AA003C6047 /* Preview Assets.xcassets in Resources */,
 				AB26C49F261DCB86007E6C85 /* declarations-editor-help.txt in Resources */,
 				AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */,
+				AB5C843D262382F100A58FC2 /* open-help-sound.mp3 in Resources */,
 				AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */,
 				AB08BCBE261F468E00F26480 /* instruction-set-help.txt in Resources */,
 				ABBC7EF02613B3AA003C6047 /* Assets.xcassets in Resources */,
@@ -585,6 +616,7 @@
 				AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */,
 				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
 				AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */,
+				AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */,
 				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

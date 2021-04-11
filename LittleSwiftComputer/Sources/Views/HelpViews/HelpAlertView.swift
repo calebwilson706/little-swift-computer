@@ -51,6 +51,7 @@ struct HelpAlertView: View {
     }
     
     func hideAlert() {
+        helpController.soundEffectController?.playSound(fileName: "close-help-sound.mp3", shouldPlay: helpController.shouldPlaySounds)
         self.helpController.helpSelection = nil
     }
     
