@@ -61,15 +61,7 @@ extension ExecutionController {
                 self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
             case .input:
                 self.requiresInput = true
-                let requiresInputError = ExecutionErrors.requiresInput
-                
-                withAnimation {
-                    self.executionError = requiresInputError
-                }
-                
-                executionTimer.invalidate()
-                
-                audioPlayerController?.playSound(fileName: requiresInputError.getFileNameForAudioPlayer(), shouldPlay: self.shouldPlaySoundEffects)
+                throw ExecutionErrors.requiresInput
             }
             
             if currentInstruction.theOperator.requiresIncrementation() {
@@ -89,9 +81,11 @@ extension ExecutionController {
         }
     }
     
-    func resume(speedSelection : ExecutionSpeeds) {
+    func resume(optionsController : OptionsController) {
         self.isPaused = false
-        startTimer(timeInterval: speedSelection.rawValue)
+        self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
+        
+        startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
     
     func pause() {
