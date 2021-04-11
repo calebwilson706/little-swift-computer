@@ -156,7 +156,7 @@ struct LittleSwiftComputerView: View {
     }
     
     private func resumeExecution() {
-        executionController.resume(speedSelection: optionsController.selectedSpeedOption)
+        executionController.resume(optionsController: optionsController)
         
         withAnimation {
             dynamicLabels.resumeButtonLabel.buttonLabelString = ""
