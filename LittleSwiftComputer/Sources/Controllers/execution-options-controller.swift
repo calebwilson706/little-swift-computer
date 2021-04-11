@@ -7,6 +7,7 @@
 
 import Foundation
 
-class ExecutionOptionsController : ObservableObject {
+class OptionsController : ObservableObject {
     @Published var selectedSpeedOption : ExecutionSpeeds = .fast
+    @Published var shouldPlaySoundEffects = true
 }

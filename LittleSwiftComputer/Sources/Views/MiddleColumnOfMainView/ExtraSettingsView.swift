@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ExtraSettingsView: View {
-    @ObservedObject var optionsController : ExecutionOptionsController
+    @ObservedObject var optionsController : OptionsController
     @EnvironmentObject var helpController : HelpController
     var isRunningProgram : Bool
     
@@ -16,6 +16,7 @@ struct ExtraSettingsView: View {
         VStack(alignment : .leading) {
             HeaderWithHelpView(title: "Extra Settings:", helpCallback : showHelp, isRunningProgram: isRunningProgram)
             speedPickerView
+            playSoundEffectsToggle
         }.padding(.all)
          .disabled(isRunningProgram)
     }
@@ -31,6 +32,16 @@ struct ExtraSettingsView: View {
                 }
             }
             .labelsHidden()
+        }
+    }
+    
+    var playSoundEffectsToggle : some View {
+        HStack {
+            Text("Play Sound Effects: ")
+                .optionsHeader()
+            Spacer()
+            Toggle("", isOn : $optionsController.shouldPlaySoundEffects)
+                .labelsHidden()
         }
     }
     

@@ -10,7 +10,7 @@ import SwiftUI
 struct LittleSwiftComputerView: View {
     @StateObject var assemblerController = AssemblyController()
     @StateObject var executionController = ExecutionController()
-    @StateObject var optionsController = ExecutionOptionsController()
+    @StateObject var optionsController = OptionsController()
     @StateObject var helpController = HelpController()
     @StateObject var dynamicLabels = DynamicButtonLabelsController()
     
