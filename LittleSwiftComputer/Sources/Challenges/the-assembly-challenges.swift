@@ -17,7 +17,7 @@ let assemblyCodeInitialChallenges = [
     
     ChallengeContainer(
         challengeTitle: "Divide A Number",
-        description: "Write some assembly code to divide a number input by another input number. \nTip : Count how many times you can subtract the divider from the first number.",
+        description: "Write some assembly code divide an input number input by another input number. \nTip : Count how many times you can subtract the divider from the first number.",
         exampleSolutionFileName: "divide-two-numbers-solution"
     )
 
