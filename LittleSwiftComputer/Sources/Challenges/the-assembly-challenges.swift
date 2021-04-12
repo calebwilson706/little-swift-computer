@@ -17,14 +17,16 @@ let assemblyCodeInitialChallenges = [
     
     ChallengeContainer(
         challengeTitle: "Multiply Two Positive Numbers",
-        description: "Write some assembly code to multiply two positive numbers together. \nTip : 3 + 3 + 3 + 3 is the same as 3x4",
-        exampleSolutionFileName: "multiply-two-numbers-solution"
+        description: "Write some assembly code to multiply two positive numbers together.",
+        exampleSolutionFileName: "multiply-two-numbers-solution",
+        tip: "3 + 3 + 3 + 3 is the same as 3x4"
     ),
     
     ChallengeContainer(
         challengeTitle: "Divide A Positive Number",
-        description: "Write some assembly code divide a positive input number input by another positive input number. \nTip : Count how many times you can subtract the divider from the first number.",
-        exampleSolutionFileName: "divide-two-numbers-solution"
+        description: "Write some assembly code divide a positive input number input by another positive input number.",
+        exampleSolutionFileName: "divide-two-numbers-solution",
+        tip: "Count how many times you can subtract the divider from the first number."
     ),
     
     ChallengeContainer(

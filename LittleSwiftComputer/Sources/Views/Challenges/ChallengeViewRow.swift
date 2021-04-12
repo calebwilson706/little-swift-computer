@@ -10,22 +10,18 @@ import SwiftUI
 struct ChallengeViewRow: View {
     @ObservedObject var challenge : ChallengeContainer
     @State var isShowingSolution = false
+    @State var isShowingTip = false
     let listHeight : CGFloat
     
     var body: some View {
         VStack {
             header
             descriptionAndShowSolutionButton
+            tipTextView
             solutionText
         }.padding(.all)
     }
-    
-    func toggleSolutionShowing() {
-        withAnimation {
-            self.isShowingSolution.toggle()
-        }
-    }
-    
+
     var header : some View {
         HStack {
             Text(challenge.challengeTitle)
@@ -47,6 +43,7 @@ struct ChallengeViewRow: View {
             if isShowingSolution {
                 ScrollView {
                     Text(challenge.exampleSolution)
+                        .foregroundColor(Color.white)
                 }
                 Spacer()
             }
@@ -62,6 +59,31 @@ struct ChallengeViewRow: View {
             }.buttonStyle(ShowSolutionButtonStyle())
         }.frame(minHeight : listHeight/10)
     }
+    
+    var tipTextView : some View {
+        HStack(spacing: 0) {
+            if let tip = challenge.tip {
+                Text("Tip: ")
+                Text(isShowingTip ? tip : tip.scrambledText())
+                    .onTapGesture(perform: toggleTipShowing)
+                    .foregroundColor(isShowingTip ? .white : .gray)
+                Spacer()
+            }
+        }
+    }
+    
+    func toggleSolutionShowing() {
+        withAnimation {
+            self.isShowingSolution.toggle()
+        }
+    }
+    
+    func toggleTipShowing() {
+        withAnimation {
+            self.isShowingTip.toggle()
+        }
+    }
+    
 }
 
 struct ChallengeViewRow_Previews: PreviewProvider {

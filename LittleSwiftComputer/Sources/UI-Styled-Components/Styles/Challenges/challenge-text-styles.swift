@@ -12,6 +12,7 @@ extension Text {
         self
             .bold()
             .font(.title3)
+            .foregroundColor(Color.white)
             
     }
     
