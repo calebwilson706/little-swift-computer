@@ -1,0 +1,17 @@
+inp number
+inp counter
+top lda counter
+sub one
+sta counter
+lda total
+add number
+sta total
+lda counter
+brp top
+lda total
+out
+
+__________
+
+dat one 1
+dat total

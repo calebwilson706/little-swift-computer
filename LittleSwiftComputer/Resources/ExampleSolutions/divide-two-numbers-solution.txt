@@ -1,0 +1,17 @@
+inp workingLargeNumber
+inp divider
+top lda counter
+add one
+sta counter
+lda workingLargeNumber
+sub divider
+sta workingLargeNumber
+brp top
+lda counter
+out
+
+
+__________
+
+dat one 1
+dat counter

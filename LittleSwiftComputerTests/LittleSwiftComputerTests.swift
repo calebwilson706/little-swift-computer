@@ -10,17 +10,7 @@ import XCTest
 
 class LittleSwiftComputerTests: XCTestCase {
     func testExample() throws {
-        print("\n\n\n")
-        if let filepath = Bundle.main.path(forResource: "accumulator-help", ofType: "txt") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                print(contents)
-            } catch {
-                throw error
-            }
-        }
-       
-        print("\n\n\n")
+        print(assemblyCodeInitialChallenges.last?.exampleSolution ?? "")
     }
 
 

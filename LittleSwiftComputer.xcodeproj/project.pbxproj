@@ -57,6 +57,16 @@
 		AB728C18261CEE0B0078E0B0 /* help-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C17261CEE0B0078E0B0 /* help-controller.swift */; };
 		AB728C1C261CEE720078E0B0 /* help-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C1B261CEE720078E0B0 /* help-messages.swift */; };
 		AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C25261CF5320078E0B0 /* HelpAlertView.swift */; };
+		AB91D4F226244F8C00550D65 /* challenge-container.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D4F126244F8C00550D65 /* challenge-container.swift */; };
+		AB91D4F82624502200550D65 /* the-assembly-challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D4F72624502200550D65 /* the-assembly-challenges.swift */; };
+		AB91D4FD262451DE00550D65 /* multiply-two-numbers-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB91D4FC262451DE00550D65 /* multiply-two-numbers-solution.txt */; };
+		AB91D5032624542D00550D65 /* divide-two-numbers-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB91D5022624542D00550D65 /* divide-two-numbers-solution.txt */; };
+		AB91D50A2624566600550D65 /* ChallengeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D5092624566600550D65 /* ChallengeViewRow.swift */; };
+		AB91D50F262457A200550D65 /* show-solution-button.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D50E262457A200550D65 /* show-solution-button.swift */; };
+		AB91D5162624583300550D65 /* challenge-text-styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D5152624583300550D65 /* challenge-text-styles.swift */; };
+		AB91D51E26245D0D00550D65 /* challenge-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D51D26245D0D00550D65 /* challenge-controller.swift */; };
+		AB91D52226245DC800550D65 /* ChallengeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D52126245DC800550D65 /* ChallengeListView.swift */; };
+		AB91D5262624636D00550D65 /* show-challenges-button.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D5252624636D00550D65 /* show-challenges-button.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
@@ -142,6 +152,16 @@
 		AB728C17261CEE0B0078E0B0 /* help-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-controller.swift"; sourceTree = "<group>"; };
 		AB728C1B261CEE720078E0B0 /* help-messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-messages.swift"; sourceTree = "<group>"; };
 		AB728C25261CF5320078E0B0 /* HelpAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAlertView.swift; sourceTree = "<group>"; };
+		AB91D4F126244F8C00550D65 /* challenge-container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "challenge-container.swift"; sourceTree = "<group>"; };
+		AB91D4F72624502200550D65 /* the-assembly-challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "the-assembly-challenges.swift"; sourceTree = "<group>"; };
+		AB91D4FC262451DE00550D65 /* multiply-two-numbers-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "multiply-two-numbers-solution.txt"; sourceTree = "<group>"; };
+		AB91D5022624542D00550D65 /* divide-two-numbers-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "divide-two-numbers-solution.txt"; sourceTree = "<group>"; };
+		AB91D5092624566600550D65 /* ChallengeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewRow.swift; sourceTree = "<group>"; };
+		AB91D50E262457A200550D65 /* show-solution-button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "show-solution-button.swift"; sourceTree = "<group>"; };
+		AB91D5152624583300550D65 /* challenge-text-styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "challenge-text-styles.swift"; sourceTree = "<group>"; };
+		AB91D51D26245D0D00550D65 /* challenge-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "challenge-controller.swift"; sourceTree = "<group>"; };
+		AB91D52126245DC800550D65 /* ChallengeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListView.swift; sourceTree = "<group>"; };
+		AB91D5252624636D00550D65 /* show-challenges-button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "show-challenges-button.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
@@ -236,6 +256,7 @@
 				AB728C17261CEE0B0078E0B0 /* help-controller.swift */,
 				AB26C48A261DBCDC007E6C85 /* dynamic-button-labels-controller.swift */,
 				AB62058E262341E900C65EB7 /* sound-effect-controller.swift */,
+				AB91D51D26245D0D00550D65 /* challenge-controller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +283,7 @@
 		AB3FA9942619EF7E00EAC84A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB91D5082624565800550D65 /* Challenges */,
 				AB728C14261CEBEF0078E0B0 /* HelpViews */,
 				AB728C0D261CEB760078E0B0 /* UtilityViews */,
 				AB1B902E261BAD2C0092CA63 /* MiddleColumnOfMainView */,
@@ -323,6 +345,7 @@
 		AB728C06261CE85D0078E0B0 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				AB91D50D2624578E00550D65 /* Challenges */,
 				AB08BCB6261F416A00F26480 /* Help */,
 				AB1B9023261BA0880092CA63 /* text-editor-for-code-style.swift */,
 				AB728BE3261CD2A60078E0B0 /* options-headers.swift */,
@@ -356,6 +379,7 @@
 		AB728C2D261D0D670078E0B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB91D4FB262451BC00550D65 /* ExampleSolutions */,
 				AB62057426233CC300C65EB7 /* Sounds */,
 				AB728C32261D14C40078E0B0 /* HelpMessages */,
 			);
@@ -376,6 +400,43 @@
 				AB08BCBD261F468E00F26480 /* instruction-set-help.txt */,
 			);
 			path = HelpMessages;
+			sourceTree = "<group>";
+		};
+		AB91D4F026244F5700550D65 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				AB91D4F126244F8C00550D65 /* challenge-container.swift */,
+				AB91D4F72624502200550D65 /* the-assembly-challenges.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		AB91D4FB262451BC00550D65 /* ExampleSolutions */ = {
+			isa = PBXGroup;
+			children = (
+				AB91D4FC262451DE00550D65 /* multiply-two-numbers-solution.txt */,
+				AB91D5022624542D00550D65 /* divide-two-numbers-solution.txt */,
+			);
+			path = ExampleSolutions;
+			sourceTree = "<group>";
+		};
+		AB91D5082624565800550D65 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				AB91D5092624566600550D65 /* ChallengeViewRow.swift */,
+				AB91D52126245DC800550D65 /* ChallengeListView.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		AB91D50D2624578E00550D65 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				AB91D50E262457A200550D65 /* show-solution-button.swift */,
+				AB91D5152624583300550D65 /* challenge-text-styles.swift */,
+				AB91D5252624636D00550D65 /* show-challenges-button.swift */,
+			);
+			path = Challenges;
 			sourceTree = "<group>";
 		};
 		ABA880912615C93A0001817C /* Preperation-For-Execution */ = {
@@ -435,6 +496,7 @@
 				ABBC7EFE2613B3E9003C6047 /* Assembling */,
 				ABC5FBA22614A24F0095BB70 /* Execution */,
 				AB2356F326186544000C59C7 /* UI-Styled-Components */,
+				AB91D4F026244F5700550D65 /* Challenges */,
 				ABBC7EFD2613B3D7003C6047 /* Utilities */,
 			);
 			path = Sources;
@@ -614,6 +676,8 @@
 				AB6205A126235ED900C65EB7 /* input-required-sound.mp3 in Resources */,
 				AB62058226233CF200C65EB7 /* no-code-error-sound.mp3 in Resources */,
 				AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */,
+				AB91D5032624542D00550D65 /* divide-two-numbers-solution.txt in Resources */,
+				AB91D4FD262451DE00550D65 /* multiply-two-numbers-solution.txt in Resources */,
 				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
 				AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */,
 				AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */,
@@ -635,10 +699,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB91D52226245DC800550D65 /* ChallengeListView.swift in Sources */,
 				ABC5FBA62614A2710095BB70 /* execution-controller.swift in Sources */,
 				ABBC7EEE2613B3A8003C6047 /* LittleSwiftComputerView.swift in Sources */,
 				AB26C48B261DBCDC007E6C85 /* dynamic-button-labels-controller.swift in Sources */,
 				ABC5FBBD2614C3E10095BB70 /* declared-variable.swift in Sources */,
+				AB91D50F262457A200550D65 /* show-solution-button.swift in Sources */,
 				AB08BC9F261F2EFC00F26480 /* change-help-button-style.swift in Sources */,
 				AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */,
 				ABA880932615C98D0001817C /* assembly-services.swift in Sources */,
@@ -660,6 +726,7 @@
 				AB2356F02617E5EB000C59C7 /* execution.swift in Sources */,
 				AB08BCB3261F414D00F26480 /* show-help-styles.swift in Sources */,
 				ABBC7EEC2613B3A8003C6047 /* LittleSwiftComputerApp.swift in Sources */,
+				AB91D5162624583300550D65 /* challenge-text-styles.swift in Sources */,
 				AB728BF8261CD9AF0078E0B0 /* dynamic-button-label.swift in Sources */,
 				AB361A6A261A4ACD002372CE /* GridOfRegistersView.swift in Sources */,
 				ABC5FBAA2614A2ED0095BB70 /* errors-from-assembly.swift in Sources */,
@@ -668,24 +735,29 @@
 				ABC5FBC42614C5170095BB70 /* string-to-enumerated-lines.swift in Sources */,
 				AB08BC96261F25C900F26480 /* ChangeHelpButtonProperties.swift in Sources */,
 				ABC5FBC82614EFBA0095BB70 /* string-split-into-components-remove-empties.swift in Sources */,
+				AB91D51E26245D0D00550D65 /* challenge-controller.swift in Sources */,
 				AB08BCA7261F322000F26480 /* pointer-shown-on-hover.swift in Sources */,
 				ABA880A32615CF730001817C /* assembly-controller.swift in Sources */,
 				AB1B9024261BA0880092CA63 /* text-editor-for-code-style.swift in Sources */,
 				AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */,
 				ABBC7F1D2613B810003C6047 /* branch-placeholder.swift in Sources */,
 				AB728BE8261CD4000078E0B0 /* ExtraSettingsView.swift in Sources */,
+				AB91D4F226244F8C00550D65 /* challenge-container.swift in Sources */,
 				AB728C18261CEE0B0078E0B0 /* help-controller.swift in Sources */,
 				AB728BF4261CD7C10078E0B0 /* input-submit-style.swift in Sources */,
 				ABBC7F092613B444003C6047 /* assembler.swift in Sources */,
 				AB2356F9261866B5000C59C7 /* convert-rgb-value.swift in Sources */,
+				AB91D5262624636D00550D65 /* show-challenges-button.swift in Sources */,
 				AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */,
 				ABC5FBAE2614C19D0095BB70 /* errors-from-declarations.swift in Sources */,
 				AB2356F52618656D000C59C7 /* run-cancel-pause-button-style.swift in Sources */,
+				AB91D50A2624566600550D65 /* ChallengeViewRow.swift in Sources */,
 				ABBC7F032613B41D003C6047 /* assembly-operators.swift in Sources */,
 				AB26C4C1261E64AB007E6C85 /* register-grid-item-styles.swift in Sources */,
 				AB728C0F261CEB960078E0B0 /* HeaderWithHelpView.swift in Sources */,
 				AB62058F262341E900C65EB7 /* sound-effect-controller.swift in Sources */,
 				ABC5FBB32614C20A0095BB70 /* variable-declaration-parsing.swift in Sources */,
+				AB91D4F82624502200550D65 /* the-assembly-challenges.swift in Sources */,
 				AB3FA9962619EF9A00EAC84A /* OutputView.swift in Sources */,
 				AB1B901A261B92900092CA63 /* meta-data-for-components.swift in Sources */,
 			);
