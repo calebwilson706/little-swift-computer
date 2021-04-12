@@ -95,6 +95,7 @@ struct LittleSwiftComputerView: View {
             Text("Created by Caleb Wilson.")
                 .font(.footnote)
             Spacer()
+            ShowHelpButtonView(action: showChallengesHelp)
             Button(action : toggleChallengesShowing) {
                 Text("Show Challenges")
             }.buttonStyle(ShowChallengesButtonStyle())
@@ -179,6 +180,10 @@ struct LittleSwiftComputerView: View {
     
     private func showDeclarationEditorHelp() {
         helpController.showHelp(selection: .variableDeclarationEditor)
+    }
+    
+    private func showChallengesHelp() {
+        helpController.showHelp(selection: .challenges)
     }
     
     private func assignSoundEffectControllerToOtherControllers() {

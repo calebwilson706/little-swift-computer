@@ -16,7 +16,8 @@ enum HelpMessages : String {
          extraSettings = "extra-settings-help",
          registers = "registers-help",
          assemblyCode = "assembly-code-help",
-         instructionSetHelp = "instruction-set-help"
+         instructionSetHelp = "instruction-set-help",
+         challenges = "challenges-help"
         
     func getHeaderForAlert() -> String {
         switch self {
@@ -38,6 +39,8 @@ enum HelpMessages : String {
             return "What Is Assembly Code?"
         case .instructionSetHelp:
             return "The Instruction Set"
+        case .challenges:
+            return "Challenges"
         }
     }
     

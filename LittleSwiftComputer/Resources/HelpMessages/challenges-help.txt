@@ -1,0 +1,9 @@
+[Challenges] for the [Little Swift Computer.]
+
+These are challenges that I made for you to try out so that you can [test your assembly skills!]
+
+There is a brief description of each challenge, there is also a [tip] for some challenges [which is censored.] To view the tip [simply press on it.]
+
+There is also an [example solution] for each challenge (I even struggled on some!) that you can view to give you a nudge in the right direction.
+
+[Try some challenges to improve your ability to write assembly code!]
