@@ -11,13 +11,15 @@ class ChallengeContainer : ObservableObject {
     let challengeTitle : String
     let description : String
     let exampleSolution : String
+    let tip : String?
     let id = UUID()
     @Published var hasBeenCompleted = false
 
-    init(challengeTitle: String, description: String, exampleSolutionFileName: String) {
+    init(challengeTitle: String, description: String, exampleSolutionFileName: String, tip : String? = nil) {
         self.challengeTitle = challengeTitle
         self.description = description
         self.exampleSolution = loadTextFile(fileName: exampleSolutionFileName)
+        self.tip = tip
     }
     
 }

@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-extension Text {
+public extension Text {
     func challengeTitle() -> some View {
         self
             .bold()
             .font(.title3)
+            .foregroundColor(Color.white)
             
     }
     
@@ -21,4 +22,11 @@ extension Text {
             .foregroundColor(.gray)
             .font(.footnote)
     }
+    
+    func tipTextStyle(onTap toggleTipStatus : @escaping () -> Void, isShowingTip : Bool) -> some View {
+        self
+            .foregroundColor(isShowingTip ? .white : .gray)
+            .onTapGesture(perform: toggleTipStatus)
+    }
+    
 }
