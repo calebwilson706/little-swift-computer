@@ -49,6 +49,7 @@
 		AB6311E02624C2D50089E1C2 /* multiples-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */; };
 		AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */; };
 		AB6311EE2624CE670089E1C2 /* scramble-text.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6311ED2624CE670089E1C2 /* scramble-text.swift */; };
+		AB6BE4262624D6EF00405D3A /* challenges-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6BE4252624D6EF00405D3A /* challenges-help.txt */; };
 		AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDB261CBF970078E0B0 /* execution-speeds.swift */; };
 		AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */; };
 		AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BE3261CD2A60078E0B0 /* options-headers.swift */; };
@@ -148,6 +149,7 @@
 		AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "multiples-solution.txt"; sourceTree = "<group>"; };
 		AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "fibonacci-solution.txt"; sourceTree = "<group>"; };
 		AB6311ED2624CE670089E1C2 /* scramble-text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "scramble-text.swift"; sourceTree = "<group>"; };
+		AB6BE4252624D6EF00405D3A /* challenges-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "challenges-help.txt"; sourceTree = "<group>"; };
 		AB728BDB261CBF970078E0B0 /* execution-speeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-speeds.swift"; sourceTree = "<group>"; };
 		AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-options-controller.swift"; sourceTree = "<group>"; };
 		AB728BE3261CD2A60078E0B0 /* options-headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "options-headers.swift"; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				AB26C4AC261DCC6C007E6C85 /* registers-help.txt */,
 				AB08BCAC261F3FC100F26480 /* assembly-code-help.txt */,
 				AB08BCBD261F468E00F26480 /* instruction-set-help.txt */,
+				AB6BE4252624D6EF00405D3A /* challenges-help.txt */,
 			);
 			path = HelpMessages;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
 				AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */,
 				AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */,
+				AB6BE4262624D6EF00405D3A /* challenges-help.txt in Resources */,
 				AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */,
 				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
 			);
