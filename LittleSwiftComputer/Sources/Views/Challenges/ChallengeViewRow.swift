@@ -10,7 +10,8 @@ import SwiftUI
 struct ChallengeViewRow: View {
     @ObservedObject var challenge : ChallengeContainer
     @State var isShowingSolution = false
-   
+    let listHeight : CGFloat
+    
     var body: some View {
         VStack {
             header
@@ -59,12 +60,12 @@ struct ChallengeViewRow: View {
             Button(action: toggleSolutionShowing){
                 toggleShowingSolutionLabel
             }.buttonStyle(ShowSolutionButtonStyle())
-        }
+        }.frame(minHeight : listHeight/10)
     }
 }
 
 struct ChallengeViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeViewRow(challenge: assemblyCodeInitialChallenges.first!)
+        ChallengeViewRow(challenge: assemblyCodeInitialChallenges.first!, listHeight: 500)
     }
 }

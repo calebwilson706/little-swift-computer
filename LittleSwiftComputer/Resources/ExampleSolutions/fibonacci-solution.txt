@@ -1,0 +1,23 @@
+lda one
+out
+out
+sta previousTwo
+add one
+out
+sta previous
+top lda previous
+sta temp
+add previousTwo
+sta previous
+out
+lda temp
+sta previousTwo
+lda counter
+sub one
+sta counter
+brp top
+
+__________
+
+dat one 1
+dat counter 7

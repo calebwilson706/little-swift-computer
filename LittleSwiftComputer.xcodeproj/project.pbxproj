@@ -45,6 +45,9 @@
 		AB62058626233CF900C65EB7 /* assembly-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62058526233CF900C65EB7 /* assembly-error-sound.mp3 */; };
 		AB62058F262341E900C65EB7 /* sound-effect-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB62058E262341E900C65EB7 /* sound-effect-controller.swift */; };
 		AB6205A126235ED900C65EB7 /* input-required-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB6205A026235ED900C65EB7 /* input-required-sound.mp3 */; };
+		AB6311DC2624ABFF0089E1C2 /* square-number-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6311DB2624ABFF0089E1C2 /* square-number-solution.txt */; };
+		AB6311E02624C2D50089E1C2 /* multiples-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */; };
+		AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */; };
 		AB728BDC261CBF970078E0B0 /* execution-speeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDB261CBF970078E0B0 /* execution-speeds.swift */; };
 		AB728BE0261CCC560078E0B0 /* execution-options-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */; };
 		AB728BE4261CD2A60078E0B0 /* options-headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728BE3261CD2A60078E0B0 /* options-headers.swift */; };
@@ -140,6 +143,9 @@
 		AB62058526233CF900C65EB7 /* assembly-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "assembly-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62058E262341E900C65EB7 /* sound-effect-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sound-effect-controller.swift"; sourceTree = "<group>"; };
 		AB6205A026235ED900C65EB7 /* input-required-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "input-required-sound.mp3"; sourceTree = "<group>"; };
+		AB6311DB2624ABFF0089E1C2 /* square-number-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "square-number-solution.txt"; sourceTree = "<group>"; };
+		AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "multiples-solution.txt"; sourceTree = "<group>"; };
+		AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "fibonacci-solution.txt"; sourceTree = "<group>"; };
 		AB728BDB261CBF970078E0B0 /* execution-speeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-speeds.swift"; sourceTree = "<group>"; };
 		AB728BDF261CCC560078E0B0 /* execution-options-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "execution-options-controller.swift"; sourceTree = "<group>"; };
 		AB728BE3261CD2A60078E0B0 /* options-headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "options-headers.swift"; sourceTree = "<group>"; };
@@ -416,6 +422,9 @@
 			children = (
 				AB91D4FC262451DE00550D65 /* multiply-two-numbers-solution.txt */,
 				AB91D5022624542D00550D65 /* divide-two-numbers-solution.txt */,
+				AB6311DB2624ABFF0089E1C2 /* square-number-solution.txt */,
+				AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */,
+				AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */,
 			);
 			path = ExampleSolutions;
 			sourceTree = "<group>";
@@ -663,11 +672,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB62057626233CD400C65EB7 /* declaration-error-sound.mp3 in Resources */,
+				AB6311E02624C2D50089E1C2 /* multiples-solution.txt in Resources */,
 				AB26C495261DCA8D007E6C85 /* output-help.txt in Resources */,
 				AB26C499261DCABA007E6C85 /* assembly-code-editor-help.txt in Resources */,
 				AB62058626233CF900C65EB7 /* assembly-error-sound.mp3 in Resources */,
 				ABBC7EF32613B3AA003C6047 /* Preview Assets.xcassets in Resources */,
 				AB26C49F261DCB86007E6C85 /* declarations-editor-help.txt in Resources */,
+				AB6311DC2624ABFF0089E1C2 /* square-number-solution.txt in Resources */,
 				AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */,
 				AB5C843D262382F100A58FC2 /* open-help-sound.mp3 in Resources */,
 				AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */,
@@ -681,6 +692,7 @@
 				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
 				AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */,
 				AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */,
+				AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */,
 				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
