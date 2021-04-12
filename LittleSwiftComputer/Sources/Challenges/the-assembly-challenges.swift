@@ -10,7 +10,7 @@ import Foundation
 let assemblyCodeInitialChallenges = [
     
     ChallengeContainer(
-        challengeTitle: "Multiples Of A Positive",
+        challengeTitle: "Multiples of A Positive",
         description: "Write some assembly code to output the multiples of a positive input number up until another positive input number",
         exampleSolutionFileName: "multiples-solution"
     ),
