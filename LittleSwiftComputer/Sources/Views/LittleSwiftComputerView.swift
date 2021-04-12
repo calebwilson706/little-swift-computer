@@ -14,6 +14,7 @@ struct LittleSwiftComputerView: View {
     @StateObject var helpController = HelpController()
     @StateObject var dynamicLabels = DynamicButtonLabelsController()
     @StateObject var soundEffectController = SoundEffectController()
+    @StateObject var challengeController = ChallengeController()
     
     @State private var inputString = ""
     
@@ -50,11 +51,16 @@ struct LittleSwiftComputerView: View {
                         }
                         footer
                     }.padding()
-                    .blur(radius: helpController.isShowingHelp ? 20 : 0)
-                    .disabled(helpController.isShowingHelp)
+                    .blur(radius: popoverShowing ? 20 : 0)
+                    .disabled(popoverShowing)
                     
                     HelpAlertView(widthAndHeight: geometry.size.width/4)
-                    
+                    ChallengeListView(
+                        challengeController: challengeController,
+                        width: geometry.size.width/2,
+                        height: geometry.size.height/2,
+                        closeButtonAction: toggleChallengesShowing
+                    )
                 }
             }
         }.environmentObject(helpController)
@@ -89,6 +95,9 @@ struct LittleSwiftComputerView: View {
             Text("Created by Caleb Wilson.")
                 .font(.footnote)
             Spacer()
+            Button(action : toggleChallengesShowing) {
+                Text("Show Challenges")
+            }.buttonStyle(ShowChallengesButtonStyle())
         }.padding(.leading, 20)
         .padding(.bottom, 10)
     }
@@ -175,6 +184,16 @@ struct LittleSwiftComputerView: View {
     private func assignSoundEffectControllerToOtherControllers() {
         helpController.soundEffectController = soundEffectController
         executionController.soundEffectController = soundEffectController
+    }
+    
+    private var popoverShowing : Bool {
+        helpController.isShowingHelp || challengeController.showingChallenges
+    }
+    
+    private func toggleChallengesShowing() {
+        withAnimation {
+            self.challengeController.showingChallenges.toggle()
+        }
     }
     
 }
