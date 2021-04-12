@@ -11,8 +11,8 @@ class ChallengeContainer : ObservableObject {
     let challengeTitle : String
     let description : String
     let exampleSolution : String
-    let id = UUID()
     let tip : String?
+    let id = UUID()
     @Published var hasBeenCompleted = false
 
     init(challengeTitle: String, description: String, exampleSolutionFileName: String, tip : String? = nil) {

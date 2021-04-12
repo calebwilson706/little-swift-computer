@@ -11,7 +11,8 @@ public extension String {
     func scrambledText() -> String {
         return self.reduce("", { reworkedString, char in
             let newChar = Character(UnicodeScalar(Int.random(in: 65...122))!)
-            return reworkedString + String(newChar.isLetter && char != " " ? newChar : char)
+            let isNewCharacterInvalid = !newChar.isLetter || char == " " || char == "."
+            return reworkedString + String( isNewCharacterInvalid ? char : newChar )
         })
     }
 }

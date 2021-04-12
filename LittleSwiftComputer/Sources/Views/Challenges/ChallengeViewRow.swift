@@ -11,6 +11,7 @@ struct ChallengeViewRow: View {
     @ObservedObject var challenge : ChallengeContainer
     @State var isShowingSolution = false
     @State var isShowingTip = false
+    
     let listHeight : CGFloat
     
     var body: some View {
@@ -65,8 +66,7 @@ struct ChallengeViewRow: View {
             if let tip = challenge.tip {
                 Text("Tip: ")
                 Text(isShowingTip ? tip : tip.scrambledText())
-                    .onTapGesture(perform: toggleTipShowing)
-                    .foregroundColor(isShowingTip ? .white : .gray)
+                    .tipTextStyle(onTap: toggleTipShowing, isShowingTip: isShowingTip)
                 Spacer()
             }
         }

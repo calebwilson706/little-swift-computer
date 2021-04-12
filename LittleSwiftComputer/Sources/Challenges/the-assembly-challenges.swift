@@ -11,7 +11,7 @@ let assemblyCodeInitialChallenges = [
     
     ChallengeContainer(
         challengeTitle: "Multiples of A Positive",
-        description: "Write some assembly code to output the multiples of a positive input number up until another positive input number",
+        description: "Write some assembly code to output the multiples of a positive input number up until another positive input number.",
         exampleSolutionFileName: "multiples-solution"
     ),
     
@@ -19,7 +19,7 @@ let assemblyCodeInitialChallenges = [
         challengeTitle: "Multiply Two Positive Numbers",
         description: "Write some assembly code to multiply two positive numbers together.",
         exampleSolutionFileName: "multiply-two-numbers-solution",
-        tip: "3 + 3 + 3 + 3 is the same as 3x4"
+        tip: "3 + 3 + 3 + 3 is the same as 3x4."
     ),
     
     ChallengeContainer(
@@ -31,7 +31,7 @@ let assemblyCodeInitialChallenges = [
     
     ChallengeContainer(
         challengeTitle: "Square A Number",
-        description: "Write some assembly code to square a positive number which is input",
+        description: "Write some assembly code to square a positive number which is input.",
         exampleSolutionFileName: "square-number-solution"
     ),
     
