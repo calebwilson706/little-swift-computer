@@ -18,8 +18,11 @@ struct ChallengeListView: View {
             if challengeController.showingChallenges {
                 VStack {
                     header
-                    ForEach(challengeController.challenges, id : \.id){
-                        ChallengeViewRow(challenge: $0)
+                    ScrollView {
+                        ForEach(challengeController.challenges, id : \.id){
+                            ChallengeViewRow(challenge: $0, listHeight: height)
+                            Divider()
+                        }
                     }
                     Spacer()
                 }.frame(width: width, height: height)

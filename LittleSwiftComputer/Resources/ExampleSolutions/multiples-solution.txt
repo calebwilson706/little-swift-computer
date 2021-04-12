@@ -1,0 +1,13 @@
+inp
+sta value
+sta total
+inp
+add value
+sta max
+top lda total
+out
+add value
+sta total
+lda max
+sub total
+brp top
