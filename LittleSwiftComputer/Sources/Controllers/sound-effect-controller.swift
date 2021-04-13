@@ -19,7 +19,6 @@ class SoundEffectController : ObservableObject {
         myAudioPlayer?.stop()
         
         guard let filePath = Bundle.main.path(forResource: fileName, ofType: nil) else {
-            print(fileName)
             return
         }
         

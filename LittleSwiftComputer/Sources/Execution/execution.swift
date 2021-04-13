@@ -89,9 +89,9 @@ extension ExecutionController {
     }
     
     func pause() {
-        soundEffectController?.playSound(fileName: "pause-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
         self.isPaused = true
         executionTimer.invalidate()
+        soundEffectController?.playSound(fileName: "pause-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
     }
     
     func resumeAfterInput(inputNumber : Int, optionsController : OptionsController) {
