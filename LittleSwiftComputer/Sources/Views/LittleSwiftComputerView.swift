@@ -144,7 +144,7 @@ struct LittleSwiftComputerView: View {
     var cancelButton : some View {
         DynamicButtonView(
             dynamicLabel: dynamicLabels.cancelButtonLabel,
-            action: executionController.resetProgram,
+            action: stopExecution,
             isDisabled: !executionController.canStopProgram,
             component: .cancelButton
         )
@@ -168,10 +168,15 @@ struct LittleSwiftComputerView: View {
     
     private func resumeExecution() {
         executionController.resume(optionsController: optionsController)
-        
+        soundEffectController.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: optionsController.shouldPlaySoundEffects)
         withAnimation {
             dynamicLabels.resumeButtonLabel.buttonLabelString = ""
         }
+    }
+    
+    private func stopExecution() {
+        soundEffectController.playSound(fileName: "stop-execution-sound.mp3", shouldPlay: optionsController.shouldPlaySoundEffects)
+        executionController.resetProgram()
     }
     
     private func showCodeEditorHelp() {
