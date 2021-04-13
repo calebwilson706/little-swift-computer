@@ -110,6 +110,7 @@ extension ExecutionController {
         }
         
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
+        soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
         
         startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
