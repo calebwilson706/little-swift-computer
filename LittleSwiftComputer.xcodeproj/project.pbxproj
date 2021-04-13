@@ -45,6 +45,7 @@
 		AB5F7CB626262D63006CE1EF /* close-help-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7CB426262D63006CE1EF /* close-help-sound.mp3 */; };
 		AB5F7CBE26262DA0006CE1EF /* no-code-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7CBD26262DA0006CE1EF /* no-code-error-sound.mp3 */; };
 		AB5F7CC426262DAD006CE1EF /* input-required-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7CC326262DAD006CE1EF /* input-required-sound.mp3 */; };
+		AB5F7CCA2626431E006CE1EF /* negatives-multiplication-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7CC92626431E006CE1EF /* negatives-multiplication-solution.txt */; };
 		AB62057626233CD400C65EB7 /* declaration-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */; };
 		AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */; };
 		AB62058626233CF900C65EB7 /* assembly-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62058526233CF900C65EB7 /* assembly-error-sound.mp3 */; };
@@ -149,6 +150,7 @@
 		AB5F7CB426262D63006CE1EF /* close-help-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "close-help-sound.mp3"; sourceTree = "<group>"; };
 		AB5F7CBD26262DA0006CE1EF /* no-code-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "no-code-error-sound.mp3"; sourceTree = "<group>"; };
 		AB5F7CC326262DAD006CE1EF /* input-required-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "input-required-sound.mp3"; sourceTree = "<group>"; };
+		AB5F7CC92626431E006CE1EF /* negatives-multiplication-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "negatives-multiplication-solution.txt"; sourceTree = "<group>"; };
 		AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "declaration-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "run-time-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62058526233CF900C65EB7 /* assembly-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "assembly-error-sound.mp3"; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				AB6311DB2624ABFF0089E1C2 /* square-number-solution.txt */,
 				AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */,
 				AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */,
+				AB5F7CC92626431E006CE1EF /* negatives-multiplication-solution.txt */,
 			);
 			path = ExampleSolutions;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				AB5F7CC426262DAD006CE1EF /* input-required-sound.mp3 in Resources */,
 				AB91D5032624542D00550D65 /* divide-two-numbers-solution.txt in Resources */,
 				AB91D4FD262451DE00550D65 /* multiply-two-numbers-solution.txt in Resources */,
+				AB5F7CCA2626431E006CE1EF /* negatives-multiplication-solution.txt in Resources */,
 				AB26C4AD261DCC6C007E6C85 /* registers-help.txt in Resources */,
 				AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */,
 				AB6BE4262624D6EF00405D3A /* challenges-help.txt in Resources */,

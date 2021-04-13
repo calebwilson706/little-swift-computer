@@ -39,6 +39,13 @@ let assemblyCodeInitialChallenges = [
         challengeTitle: "Fibonacci",
         description: "Write some assembly code to output the first 10 numbers in the Fibonacci sequence. \nFeel free to do some more work and allow input to determine the amount of elements output.",
         exampleSolutionFileName: "fibonacci-solution"
+    ),
+    
+    ChallengeContainer(
+        challengeTitle: "Negative Number Fun Part 1 😱",
+        description: "Write some assembly code to multiply two input numbers, however allow for negative input as well as positive!",
+        exampleSolutionFileName: "negatives-multiplication-solution",
+        tip: "The way I would do this is by manipulating the input and changing the final answer if necessary. Don't forget that 'positive X negative = negative' and 'negative X negative = positive'."
     )
 
 ]
