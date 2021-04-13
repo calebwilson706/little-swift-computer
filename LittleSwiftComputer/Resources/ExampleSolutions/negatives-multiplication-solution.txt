@@ -56,7 +56,6 @@ sta total
 
 outputStatement out total
 
-
 __________
 
 dat one 1
