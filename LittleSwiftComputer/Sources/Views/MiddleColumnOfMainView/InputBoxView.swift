@@ -15,7 +15,8 @@ struct InputBoxView: View {
     let isDisabled : Bool
     
     var parsedInput : Int {
-        Int(inputString.filter { $0.isNumber }) ?? 0
+        let absoluteValue = Int(inputString.filter { $0.isNumber }) ?? 0
+        return absoluteValue * ((inputString.first == "-") ? -1 : 1)
     }
     
     @EnvironmentObject var helpController : HelpController
