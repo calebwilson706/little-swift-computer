@@ -6,7 +6,11 @@ bra firstNumberNegativeLoop
 firstNumberPositiveLoop inp
 sta counter
 brp bothPositiveLoop
-bra secondOnlyPositive
+bra secondNegative
+
+secondNegative lda minusOne
+sta decrement
+bra bothPositiveLoop
 
 firstNumberNegativeLoop inp
 sta counter
@@ -33,7 +37,7 @@ bra bothPositiveLoop
 
 bothPositiveLoop add zero
 top lda counter
-sub one
+sub decrement
 sta counter
 lda total
 add number
@@ -52,10 +56,12 @@ sta total
 
 outputStatement out total
 
+
 __________
 
-
 dat one 1
+dat decrement 1
 dat zero
 dat total
+dat minusOne -1
 dat needsToChange 0
