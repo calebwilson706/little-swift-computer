@@ -18,6 +18,7 @@ extension ExecutionController {
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
         
         fillRegistersWithInitialValues(variables: assembledCode.initializedVariables)
+        soundEffectController?.playSound(fileName: "start-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
         startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
     
@@ -82,11 +83,13 @@ extension ExecutionController {
     func resume(optionsController : OptionsController) {
         self.isPaused = false
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
+        soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
         
         startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
     
     func pause() {
+        soundEffectController?.playSound(fileName: "pause-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
         self.isPaused = true
         executionTimer.invalidate()
     }

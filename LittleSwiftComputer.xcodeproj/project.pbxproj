@@ -39,6 +39,10 @@
 		AB3FA99C261A305200EAC84A /* InputBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FA99B261A305200EAC84A /* InputBoxView.swift */; };
 		AB5C843D262382F100A58FC2 /* open-help-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5C843C262382F100A58FC2 /* open-help-sound.mp3 */; };
 		AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5C8440262382FC00A58FC2 /* close-help-sound.mp3 */; };
+		AB5F7C8426261FBE006CE1EF /* start-execution-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7C8026261FBE006CE1EF /* start-execution-sound.mp3 */; };
+		AB5F7C8526261FBE006CE1EF /* resume-execution-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7C8126261FBE006CE1EF /* resume-execution-sound.mp3 */; };
+		AB5F7C8626261FBE006CE1EF /* stop-execution-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7C8226261FBE006CE1EF /* stop-execution-sound.mp3 */; };
+		AB5F7C8A2626223F006CE1EF /* pause-execution-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB5F7C892626223F006CE1EF /* pause-execution-sound.mp3 */; };
 		AB62057626233CD400C65EB7 /* declaration-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */; };
 		AB62057A26233CE400C65EB7 /* run-time-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */; };
 		AB62058226233CF200C65EB7 /* no-code-error-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB62058126233CF200C65EB7 /* no-code-error-sound.mp3 */; };
@@ -139,6 +143,10 @@
 		AB3FA99B261A305200EAC84A /* InputBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBoxView.swift; sourceTree = "<group>"; };
 		AB5C843C262382F100A58FC2 /* open-help-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "open-help-sound.mp3"; sourceTree = "<group>"; };
 		AB5C8440262382FC00A58FC2 /* close-help-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "close-help-sound.mp3"; sourceTree = "<group>"; };
+		AB5F7C8026261FBE006CE1EF /* start-execution-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "start-execution-sound.mp3"; sourceTree = "<group>"; };
+		AB5F7C8126261FBE006CE1EF /* resume-execution-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "resume-execution-sound.mp3"; sourceTree = "<group>"; };
+		AB5F7C8226261FBE006CE1EF /* stop-execution-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "stop-execution-sound.mp3"; sourceTree = "<group>"; };
+		AB5F7C892626223F006CE1EF /* pause-execution-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "pause-execution-sound.mp3"; path = "../../../../../../../Desktop/pause-execution-sound.mp3"; sourceTree = "<group>"; };
 		AB62057526233CD400C65EB7 /* declaration-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "declaration-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "run-time-error-sound.mp3"; sourceTree = "<group>"; };
 		AB62058126233CF200C65EB7 /* no-code-error-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "no-code-error-sound.mp3"; sourceTree = "<group>"; };
@@ -332,9 +340,21 @@
 			path = HelpSounds;
 			sourceTree = "<group>";
 		};
+		AB5F7C7E26261FAD006CE1EF /* StartStopPauseSounds */ = {
+			isa = PBXGroup;
+			children = (
+				AB5F7C892626223F006CE1EF /* pause-execution-sound.mp3 */,
+				AB5F7C8126261FBE006CE1EF /* resume-execution-sound.mp3 */,
+				AB5F7C8026261FBE006CE1EF /* start-execution-sound.mp3 */,
+				AB5F7C8226261FBE006CE1EF /* stop-execution-sound.mp3 */,
+			);
+			path = StartStopPauseSounds;
+			sourceTree = "<group>";
+		};
 		AB62057426233CC300C65EB7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				AB5F7C7E26261FAD006CE1EF /* StartStopPauseSounds */,
 				AB5C843B262382DE00A58FC2 /* HelpSounds */,
 				AB5C843A262382D300A58FC2 /* ExecutionSounds */,
 				AB5C8439262382C000A58FC2 /* AssemblySounds */,
@@ -691,6 +711,7 @@
 				AB08BCBE261F468E00F26480 /* instruction-set-help.txt in Resources */,
 				ABBC7EF02613B3AA003C6047 /* Assets.xcassets in Resources */,
 				AB6205A126235ED900C65EB7 /* input-required-sound.mp3 in Resources */,
+				AB5F7C8626261FBE006CE1EF /* stop-execution-sound.mp3 in Resources */,
 				AB62058226233CF200C65EB7 /* no-code-error-sound.mp3 in Resources */,
 				AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */,
 				AB91D5032624542D00550D65 /* divide-two-numbers-solution.txt in Resources */,
@@ -700,7 +721,10 @@
 				AB5C8441262382FC00A58FC2 /* close-help-sound.mp3 in Resources */,
 				AB6BE4262624D6EF00405D3A /* challenges-help.txt in Resources */,
 				AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */,
+				AB5F7C8426261FBE006CE1EF /* start-execution-sound.mp3 in Resources */,
+				AB5F7C8A2626223F006CE1EF /* pause-execution-sound.mp3 in Resources */,
 				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
+				AB5F7C8526261FBE006CE1EF /* resume-execution-sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
