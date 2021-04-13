@@ -12,6 +12,8 @@ If you place a ['#'] before a line it will be ignored.
 
 A few things to note:
 
+When error messages are shown the line where the error occurs refers to the line of code (white space and comments will not be included).
+
 For instructions which require an operand make sure it comes after the operator such as:
 
 [add myVariable] or

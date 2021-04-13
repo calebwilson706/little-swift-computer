@@ -42,13 +42,11 @@ struct ChallengeViewRow: View {
     var solutionText : some View {
         HStack {
             if isShowingSolution {
-                ScrollView {
-                    Text(challenge.exampleSolution)
+                Text(challenge.exampleSolution)
                         .foregroundColor(Color.white)
-                }
                 Spacer()
             }
-        }
+        }.padding(.top)
     }
     
     var descriptionAndShowSolutionButton : some View {

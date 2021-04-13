@@ -1,0 +1,66 @@
+inp
+sta number
+brp firstNumberPositiveLoop
+bra firstNumberNegativeLoop
+
+firstNumberPositiveLoop inp
+sta counter
+brp bothPositiveLoop
+bra secondNegative
+
+secondNegative lda minusOne
+sta decrement
+bra bothPositiveLoop
+
+firstNumberNegativeLoop inp
+sta counter
+brp secondOnlyPositive
+bra alterValuesBeforeMainLoop
+
+secondOnlyPositive lda number
+sub number
+sub number
+sta number
+lda one
+sta needsToChange
+bra bothPositiveLoop
+
+alterValuesBeforeMainLoop lda counter
+sub counter
+sub counter
+sta counter
+lda number
+sub number
+sub number
+sta number
+bra bothPositiveLoop
+
+bothPositiveLoop add zero
+top lda counter
+sub decrement
+sta counter
+lda total
+add number
+sta total
+lda counter
+brz end
+bra top
+
+end lda needsToChange
+brz outputStatement
+
+lda total
+sub total
+sub total
+sta total
+
+outputStatement out total
+
+__________
+
+dat one 1
+dat decrement 1
+dat zero
+dat total
+dat minusOne -1
+dat needsToChange 0
