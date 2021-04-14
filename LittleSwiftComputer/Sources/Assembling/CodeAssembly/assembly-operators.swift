@@ -25,5 +25,19 @@ enum AssemblyOperators : String, CaseIterable {
     func requiresIncrementation() -> Bool {
         [.add, .subtract, .store, .load, .output].contains(self)
     }
-         
+    
+    func isBranchStatement() -> Bool {
+        [.branch_if_positive ,.branch_if_zero, .branch_always].contains(self)
+    }
+    
+    func branchStatementCondition(accumulator : Int) -> Bool {
+        switch self {
+        case .branch_if_zero:
+            return (accumulator == 0)
+        case .branch_if_positive:
+            return (accumulator > 0)
+        default:
+            return true
+        }
+    }
 }

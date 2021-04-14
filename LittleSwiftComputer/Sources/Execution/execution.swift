@@ -52,12 +52,12 @@ extension ExecutionController {
             case .halt:
                 indexOfCurrentInstruction = codeLines.count
                 return
-            case .branch_always:
-                self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: true, placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
-            case .branch_if_zero:
-                self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator == 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
-            case .branch_if_positive:
-                self.indexOfCurrentInstruction = try getNextIndexFromBranch(condition: (accumulator > 0), placeholder: currentInstruction.theOperand, placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches)
+            case .branch_if_zero, .branch_if_positive, .branch_always:
+                self.indexOfCurrentInstruction = try getNextIndexFromBranch(
+                    condition: currentInstruction.theOperator.branchStatementCondition(accumulator: accumulator),
+                    placeholder: currentInstruction.theOperand,
+                    placeholderDictionary: assembledCode.mainCodeBlock.placeholdersForBranches
+                )
             case .input:
                 self.requiresInput = true
                 throw ExecutionErrors.requiresInput
@@ -111,12 +111,10 @@ extension ExecutionController {
         }
         
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
-        let nextOperator = codeLines?[safe: indexOfCurrentInstruction]?.theOperator
         
-        let operatorsToAllowPlayingOfSubmitSound : [AssemblyOperators?] = [.add,.subtract,.output,.store,.load]
-        if operatorsToAllowPlayingOfSubmitSound.contains(nextOperator) {
-            soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
-        }
+        let nextOperator = codeLines?[safe: indexOfCurrentInstruction]?.theOperator
+        playInputSubmitSoundIfAllowed(nextOperator: nextOperator)
+        
         
         startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
@@ -187,4 +185,38 @@ extension ExecutionController {
             value: newValue
         )
     }
+    
+    private func playInputSubmitSoundIfAllowed(nextOperator : AssemblyOperators?) {
+        //I don't want input submit sound to play right before another input
+        guard nextOperator != .some(.input) else {
+            return
+        }
+        
+        if nextOperator?.isBranchStatement() ?? false {
+            if shouldPlayInputSoundWhenBranch() {
+                return
+            }
+        }
+        
+        soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
+        
+    }
+    
+    private func shouldPlayInputSoundWhenBranch() -> Bool {
+        let codeLines = assembledCodeSource?.mainCodeBlock.lines
+        let nextInstructionLocationLine = codeLines?[safe :indexOfCurrentInstruction]
+        let nextInstructionLocationPlaceholder = nextInstructionLocationLine?.theOperand
+        
+        guard let indexOfNextInstruction = try? getNextIndexFromBranch(
+                condition: nextInstructionLocationLine?.theOperator.branchStatementCondition(accumulator: accumulator) ?? false,
+                placeholder: nextInstructionLocationPlaceholder,
+                placeholderDictionary: assembledCodeSource?.mainCodeBlock.placeholdersForBranches ?? [:])
+        else {
+            return false
+        }
+        
+        return codeLines?[safe: indexOfNextInstruction]?.theOperator != .some(.input)
+    
+    }
+
 }
