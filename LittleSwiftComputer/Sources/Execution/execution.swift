@@ -95,8 +95,9 @@ extension ExecutionController {
     }
     
     func resumeAfterInput(inputNumber : Int, optionsController : OptionsController) {
+        let codeLines = assembledCodeSource?.mainCodeBlock.lines
         
-        if let registerName = assembledCodeSource?.mainCodeBlock.lines[indexOfCurrentInstruction].theOperand {
+        if let registerName = codeLines?[indexOfCurrentInstruction].theOperand {
             self.registers[registerName] = replaceRegisterWithNewValue(name: registerName, newValue: inputNumber)
         } else {
             self.accumulator = inputNumber
@@ -110,7 +111,10 @@ extension ExecutionController {
         }
         
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
-        soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
+        
+        if codeLines?[safe: indexOfCurrentInstruction]?.theOperator != .input {
+            soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
+        }
         
         startTimer(timeInterval: optionsController.selectedSpeedOption.rawValue)
     }
