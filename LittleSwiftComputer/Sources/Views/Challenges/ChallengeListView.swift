@@ -21,7 +21,7 @@ struct ChallengeListView: View {
                     ScrollView {
                         ScrollViewReader { scrollViewProxy in
                             ForEach(challengeController.challenges, id : \.id){
-                                ChallengeViewRow(challenge: $0, overhangingScroller: scrollViewProxy, listHeight: height)
+                                ChallengeViewRow(challenge: $0, parentViewScrollViewReader: scrollViewProxy, listHeight: height)
                                 Divider()
                             }
                         }

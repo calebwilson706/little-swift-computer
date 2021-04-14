@@ -31,4 +31,12 @@ public extension Text {
             .onTapGesture(perform: toggleTipStatus)
     }
     
+    func exampleSolutionTextStyle() -> some View {
+        self
+            .padding(.top)
+            .foregroundColor(Color.white)
+            .fixedSize(horizontal: false, vertical: true)
+        
+    }
+    
 }

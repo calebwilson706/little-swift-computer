@@ -12,7 +12,7 @@ struct ChallengeViewRow: View {
     @State var isShowingSolution = false
     @State var isShowingTip = false
     
-    let overhangingScroller : ScrollViewProxy
+    let parentViewScrollViewReader : ScrollViewProxy
     let listHeight : CGFloat
     
     var body: some View {
@@ -44,10 +44,7 @@ struct ChallengeViewRow: View {
         HStack {
             if isShowingSolution {
                     Text(challenge.exampleSolution)
-                        .padding(.top)
-                        .foregroundColor(Color.white)
-                        .fixedSize(horizontal: false, vertical: true)
-                
+                        .exampleSolutionTextStyle()
                 Spacer()
             }
         }
@@ -76,7 +73,7 @@ struct ChallengeViewRow: View {
     
     func toggleSolutionShowing() {
         withAnimation {
-            overhangingScroller.scrollTo(challenge.id, anchor: .center)
+            parentViewScrollViewReader.scrollTo(challenge.id, anchor: .center)
             self.isShowingSolution.toggle()
         }
     }

@@ -1,51 +1,51 @@
 inp
-sta number
+sta numerator
 brp firstNumberPositiveLoop
 bra firstNumberNegativeLoop
 
 firstNumberPositiveLoop inp
-sta secondNumber
+sta denominator
 brp bothPositiveLoop
 bra secondNegative
 
 firstNumberNegativeLoop inp
-sta secondNumber
+sta denominator
 brp secondOnlyPositive
 bra alterValuesBeforeMainLoop
 
-secondOnlyPositive lda number
-sub number
-sub number
-sta number
+secondOnlyPositive lda numerator
+sub numerator
+sub numerator
+sta numerator
 lda one
 sta needsToChange
 bra bothPositiveLoop
 
-secondNegative lda secondNumber
-sub secondNumber
-sub secondNumber
-sta secondNumber
+secondNegative lda denominator
+sub denominator
+sub denominator
+sta denominator
 lda one
 sta needsToChange
 bra bothPositiveLoop
 
-alterValuesBeforeMainLoop lda secondNumber
-sub secondNumber
-sub secondNumber
-sta secondNumber
-lda number
-sub number
-sub number
-sta number
+alterValuesBeforeMainLoop lda denominator
+sub denominator
+sub denominator
+sta denominator
+lda numerator
+sub numerator
+sub numerator
+sta numerator
 bra bothPositiveLoop
 
 bothPositiveLoop add zero
 top lda counter
 add one
 sta counter
-lda number
-sub secondNumber
-sta number
+lda numerator
+sub denominator
+sta numerator
 brp top
 
 end lda needsToChange

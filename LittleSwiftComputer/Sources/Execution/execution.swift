@@ -111,8 +111,10 @@ extension ExecutionController {
         }
         
         self.shouldPlaySoundEffects = optionsController.shouldPlaySoundEffects
+        let nextOperator = codeLines?[safe: indexOfCurrentInstruction]?.theOperator
         
-        if codeLines?[safe: indexOfCurrentInstruction]?.theOperator != .input {
+        let operatorsToAllowPlayingOfSubmitSound : [AssemblyOperators?] = [.add,.subtract,.output,.store,.load]
+        if operatorsToAllowPlayingOfSubmitSound.contains(nextOperator) {
             soundEffectController?.playSound(fileName: "resume-execution-sound.mp3", shouldPlay: shouldPlaySoundEffects)
         }
         
