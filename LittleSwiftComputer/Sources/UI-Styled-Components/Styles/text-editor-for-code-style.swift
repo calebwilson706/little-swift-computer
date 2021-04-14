@@ -11,7 +11,7 @@ import SwiftUI
 extension TextEditor {
     func codeEditor() -> some View {
         self
-            .font(.title2)
+            .font(.title3)
             .cornerRadius(10)
     }
 }

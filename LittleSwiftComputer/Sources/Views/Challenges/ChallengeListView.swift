@@ -19,9 +19,11 @@ struct ChallengeListView: View {
                 VStack {
                     header
                     ScrollView {
-                        ForEach(challengeController.challenges, id : \.id){
-                            ChallengeViewRow(challenge: $0, listHeight: height)
-                            Divider()
+                        ScrollViewReader { scrollViewProxy in
+                            ForEach(challengeController.challenges, id : \.id){
+                                ChallengeViewRow(challenge: $0, parentViewScrollViewReader: scrollViewProxy, listHeight: height)
+                                Divider()
+                            }
                         }
                     }
                     Spacer()

@@ -54,11 +54,11 @@ struct LittleSwiftComputerView: View {
                     .blur(radius: popoverShowing ? 20 : 0)
                     .disabled(popoverShowing)
                     
-                    HelpAlertView(widthAndHeight: geometry.size.width/4)
+                    HelpAlertView(widthAndHeight: geometry.size.width*0.25)
                     ChallengeListView(
                         challengeController: challengeController,
-                        width: geometry.size.width/2,
-                        height: geometry.size.height/2,
+                        width: geometry.size.width*0.6,
+                        height: geometry.size.height*0.6,
                         closeButtonAction: toggleChallengesShowing
                     )
                 }

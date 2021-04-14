@@ -12,6 +12,7 @@ class ChallengeContainer : ObservableObject {
     let description : String
     let exampleSolution : String
     let tip : String?
+    let scrambledTip : String
     let id = UUID()
     @Published var hasBeenCompleted = false
 
@@ -20,6 +21,7 @@ class ChallengeContainer : ObservableObject {
         self.description = description
         self.exampleSolution = loadTextFile(fileName: exampleSolutionFileName)
         self.tip = tip
+        self.scrambledTip = tip?.scrambledText() ?? ""
     }
     
 }

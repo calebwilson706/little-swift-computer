@@ -1,0 +1,66 @@
+inp
+sta numerator
+brp firstNumberPositiveLoop
+bra firstNumberNegativeLoop
+
+firstNumberPositiveLoop inp
+sta denominator
+brp bothPositiveLoop
+bra secondNegative
+
+firstNumberNegativeLoop inp
+sta denominator
+brp secondOnlyPositive
+bra alterValuesBeforeMainLoop
+
+secondOnlyPositive lda numerator
+sub numerator
+sub numerator
+sta numerator
+lda one
+sta needsToChange
+bra bothPositiveLoop
+
+secondNegative lda denominator
+sub denominator
+sub denominator
+sta denominator
+lda one
+sta needsToChange
+bra bothPositiveLoop
+
+alterValuesBeforeMainLoop lda denominator
+sub denominator
+sub denominator
+sta denominator
+lda numerator
+sub numerator
+sub numerator
+sta numerator
+bra bothPositiveLoop
+
+bothPositiveLoop add zero
+top lda counter
+add one
+sta counter
+lda numerator
+sub denominator
+sta numerator
+brp top
+
+end lda needsToChange
+brz outputStatement
+
+lda counter
+sub counter
+sub counter
+sta counter
+
+outputStatement out counter
+
+__________
+
+dat needsToChange 0
+dat one 1
+dat counter
+dat zero 0
