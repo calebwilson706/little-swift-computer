@@ -25,6 +25,8 @@ public extension Text {
     
     func tipTextStyle(onTap toggleTipStatus : @escaping () -> Void, isShowingTip : Bool) -> some View {
         self
+            .padding(.trailing)
+            .frame(minHeight : 50)
             .foregroundColor(isShowingTip ? .white : .gray)
             .onTapGesture(perform: toggleTipStatus)
     }

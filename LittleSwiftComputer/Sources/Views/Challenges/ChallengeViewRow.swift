@@ -12,6 +12,7 @@ struct ChallengeViewRow: View {
     @State var isShowingSolution = false
     @State var isShowingTip = false
     
+    let overhangingScroller : ScrollViewProxy
     let listHeight : CGFloat
     
     var body: some View {
@@ -42,11 +43,14 @@ struct ChallengeViewRow: View {
     var solutionText : some View {
         HStack {
             if isShowingSolution {
-                Text(challenge.exampleSolution)
+                    Text(challenge.exampleSolution)
+                        .padding(.top)
                         .foregroundColor(Color.white)
+                        .fixedSize(horizontal: false, vertical: true)
+                
                 Spacer()
             }
-        }.padding(.top)
+        }
     }
     
     var descriptionAndShowSolutionButton : some View {
@@ -63,7 +67,7 @@ struct ChallengeViewRow: View {
         HStack(spacing: 0) {
             if let tip = challenge.tip {
                 Text("Tip: ")
-                Text(isShowingTip ? tip : tip.scrambledText())
+                Text(isShowingTip ? tip : challenge.scrambledTip)
                     .tipTextStyle(onTap: toggleTipShowing, isShowingTip: isShowingTip)
                 Spacer()
             }
@@ -72,6 +76,7 @@ struct ChallengeViewRow: View {
     
     func toggleSolutionShowing() {
         withAnimation {
+            overhangingScroller.scrollTo(challenge.id, anchor: .center)
             self.isShowingSolution.toggle()
         }
     }
@@ -82,10 +87,4 @@ struct ChallengeViewRow: View {
         }
     }
     
-}
-
-struct ChallengeViewRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeViewRow(challenge: assemblyCodeInitialChallenges.first!, listHeight: 500)
-    }
 }

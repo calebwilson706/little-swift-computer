@@ -15,6 +15,7 @@
 		AB08BCB3261F414D00F26480 /* show-help-styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BCB2261F414D00F26480 /* show-help-styles.swift */; };
 		AB08BCBA261F44E300F26480 /* ShowHelpHeaderButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB08BCB9261F44E300F26480 /* ShowHelpHeaderButtonView.swift */; };
 		AB08BCBE261F468E00F26480 /* instruction-set-help.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB08BCBD261F468E00F26480 /* instruction-set-help.txt */; };
+		AB186ED42626FFFE00570081 /* negatives-division-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB186ED32626FFFE00570081 /* negatives-division-solution.txt */; };
 		AB1B9016261B91E80092CA63 /* AccumulatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9015261B91E80092CA63 /* AccumulatorView.swift */; };
 		AB1B901A261B92900092CA63 /* meta-data-for-components.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B9019261B92900092CA63 /* meta-data-for-components.swift */; };
 		AB1B9020261B96CB0092CA63 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B901F261B96CB0092CA63 /* RegisterView.swift */; };
@@ -120,6 +121,7 @@
 		AB08BCB2261F414D00F26480 /* show-help-styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "show-help-styles.swift"; sourceTree = "<group>"; };
 		AB08BCB9261F44E300F26480 /* ShowHelpHeaderButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHelpHeaderButtonView.swift; sourceTree = "<group>"; };
 		AB08BCBD261F468E00F26480 /* instruction-set-help.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "instruction-set-help.txt"; sourceTree = "<group>"; };
+		AB186ED32626FFFE00570081 /* negatives-division-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "negatives-division-solution.txt"; sourceTree = "<group>"; };
 		AB1B9015261B91E80092CA63 /* AccumulatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorView.swift; sourceTree = "<group>"; };
 		AB1B9019261B92900092CA63 /* meta-data-for-components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "meta-data-for-components.swift"; sourceTree = "<group>"; };
 		AB1B901F261B96CB0092CA63 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				AB6311DF2624C2D50089E1C2 /* multiples-solution.txt */,
 				AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */,
 				AB5F7CC92626431E006CE1EF /* negatives-multiplication-solution.txt */,
+				AB186ED32626FFFE00570081 /* negatives-division-solution.txt */,
 			);
 			path = ExampleSolutions;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */,
 				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
 				AB5F7CAD26262D1D006CE1EF /* resume-execution-sound.mp3 in Resources */,
+				AB186ED42626FFFE00570081 /* negatives-division-solution.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

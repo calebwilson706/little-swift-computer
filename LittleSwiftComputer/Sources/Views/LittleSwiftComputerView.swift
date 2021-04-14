@@ -57,8 +57,8 @@ struct LittleSwiftComputerView: View {
                     HelpAlertView(widthAndHeight: geometry.size.width/4)
                     ChallengeListView(
                         challengeController: challengeController,
-                        width: geometry.size.width/2,
-                        height: geometry.size.height/2,
+                        width: geometry.size.width*0.6,
+                        height: geometry.size.height*0.6,
                         closeButtonAction: toggleChallengesShowing
                     )
                 }
