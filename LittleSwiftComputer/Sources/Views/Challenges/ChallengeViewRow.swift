@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ChallengeViewRow: View {
     @ObservedObject var challenge : ChallengeContainer
+    @ObservedObject var soundEffectController : SoundEffectController
     @State var isShowingSolution = false
     @State var isShowingTip = false
     
     let parentViewScrollViewReader : ScrollViewProxy
     let listHeight : CGFloat
+    let shouldPlaySounds : Bool
     
     var body: some View {
         VStack {
@@ -32,6 +34,7 @@ struct ChallengeViewRow: View {
             Text("completed:")
                 .challengeCompletionToggleLabel()
             Toggle("", isOn: $challenge.hasBeenCompleted)
+                .onChange(of: challenge.hasBeenCompleted, perform: playSoundAfterChangeOfStatus)
                 
         }
     }
@@ -82,6 +85,14 @@ struct ChallengeViewRow: View {
         withAnimation {
             self.isShowingTip.toggle()
         }
+    }
+    
+    func playSoundAfterChangeOfStatus(isCompleted : Bool) {
+        let soundFileHeader = isCompleted ? "complete-challenge" : "reset-challenge-completion"
+        soundEffectController.playSound(
+            fileName: soundFileHeader + "-sound.mp3",
+            shouldPlay: shouldPlaySounds
+        )
     }
     
 }
