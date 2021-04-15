@@ -85,6 +85,7 @@
 		ABA412F12628E4EA00F72891 /* close-challenges-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412ED2628E4EA00F72891 /* close-challenges-sound.mp3 */; };
 		ABA412F22628E4EA00F72891 /* complete-challenge-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412EE2628E4EA00F72891 /* complete-challenge-sound.mp3 */; };
 		ABA412F32628E4EA00F72891 /* reset-challenge-completion-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412EF2628E4EA00F72891 /* reset-challenge-completion-sound.mp3 */; };
+		ABA412FD2628E96300F72891 /* output-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412FC2628E96300F72891 /* output-sound.mp3 */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
 		ABA880A32615CF730001817C /* assembly-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880A22615CF730001817C /* assembly-controller.swift */; };
@@ -197,6 +198,7 @@
 		ABA412ED2628E4EA00F72891 /* close-challenges-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "close-challenges-sound.mp3"; sourceTree = "<group>"; };
 		ABA412EE2628E4EA00F72891 /* complete-challenge-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "complete-challenge-sound.mp3"; sourceTree = "<group>"; };
 		ABA412EF2628E4EA00F72891 /* reset-challenge-completion-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "reset-challenge-completion-sound.mp3"; sourceTree = "<group>"; };
+		ABA412FC2628E96300F72891 /* output-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "output-sound.mp3"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
 		ABA880A22615CF730001817C /* assembly-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-controller.swift"; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		AB5C843A262382D300A58FC2 /* ExecutionSounds */ = {
 			isa = PBXGroup;
 			children = (
+				ABA412FC2628E96300F72891 /* output-sound.mp3 */,
 				AB5F7CC326262DAD006CE1EF /* input-required-sound.mp3 */,
 				AB62057926233CE400C65EB7 /* run-time-error-sound.mp3 */,
 			);
@@ -762,6 +765,7 @@
 				AB6BE4262624D6EF00405D3A /* challenges-help.txt in Resources */,
 				AB5F7CB626262D63006CE1EF /* close-help-sound.mp3 in Resources */,
 				AB6311E62624C8550089E1C2 /* fibonacci-solution.txt in Resources */,
+				ABA412FD2628E96300F72891 /* output-sound.mp3 in Resources */,
 				AB08BCAD261F3FC100F26480 /* assembly-code-help.txt in Resources */,
 				AB5F7CAD26262D1D006CE1EF /* resume-execution-sound.mp3 in Resources */,
 				AB186ED42626FFFE00570081 /* negatives-division-solution.txt in Resources */,

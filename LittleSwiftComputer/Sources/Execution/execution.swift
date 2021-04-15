@@ -145,6 +145,7 @@ extension ExecutionController {
             }
             self.outputs.append(accumulator)
         }
+        soundEffectController?.playSound(fileName: "output-sound.mp3", shouldPlay: shouldPlaySoundEffects)
     }
     
     private func fillRegistersWithInitialValues(variables : [DeclaredVariable]) {
