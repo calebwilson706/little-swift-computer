@@ -68,6 +68,7 @@
 		AB728C18261CEE0B0078E0B0 /* help-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C17261CEE0B0078E0B0 /* help-controller.swift */; };
 		AB728C1C261CEE720078E0B0 /* help-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C1B261CEE720078E0B0 /* help-messages.swift */; };
 		AB728C26261CF5320078E0B0 /* HelpAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB728C25261CF5320078E0B0 /* HelpAlertView.swift */; };
+		AB830CA8262823160045F061 /* optimised-multiplication-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB830CA7262823160045F061 /* optimised-multiplication-solution.txt */; };
 		AB91D4F226244F8C00550D65 /* challenge-container.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D4F126244F8C00550D65 /* challenge-container.swift */; };
 		AB91D4F82624502200550D65 /* the-assembly-challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D4F72624502200550D65 /* the-assembly-challenges.swift */; };
 		AB91D4FD262451DE00550D65 /* multiply-two-numbers-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB91D4FC262451DE00550D65 /* multiply-two-numbers-solution.txt */; };
@@ -174,6 +175,7 @@
 		AB728C17261CEE0B0078E0B0 /* help-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-controller.swift"; sourceTree = "<group>"; };
 		AB728C1B261CEE720078E0B0 /* help-messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "help-messages.swift"; sourceTree = "<group>"; };
 		AB728C25261CF5320078E0B0 /* HelpAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAlertView.swift; sourceTree = "<group>"; };
+		AB830CA7262823160045F061 /* optimised-multiplication-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "optimised-multiplication-solution.txt"; sourceTree = "<group>"; };
 		AB91D4F126244F8C00550D65 /* challenge-container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "challenge-container.swift"; sourceTree = "<group>"; };
 		AB91D4F72624502200550D65 /* the-assembly-challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "the-assembly-challenges.swift"; sourceTree = "<group>"; };
 		AB91D4FC262451DE00550D65 /* multiply-two-numbers-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "multiply-two-numbers-solution.txt"; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				AB6311E52624C8550089E1C2 /* fibonacci-solution.txt */,
 				AB5F7CC92626431E006CE1EF /* negatives-multiplication-solution.txt */,
 				AB186ED32626FFFE00570081 /* negatives-division-solution.txt */,
+				AB830CA7262823160045F061 /* optimised-multiplication-solution.txt */,
 			);
 			path = ExampleSolutions;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB830CA8262823160045F061 /* optimised-multiplication-solution.txt in Resources */,
 				AB62057626233CD400C65EB7 /* declaration-error-sound.mp3 in Resources */,
 				AB6311E02624C2D50089E1C2 /* multiples-solution.txt in Resources */,
 				AB26C495261DCA8D007E6C85 /* output-help.txt in Resources */,

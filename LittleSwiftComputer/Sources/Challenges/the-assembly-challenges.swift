@@ -53,6 +53,13 @@ let assemblyCodeInitialChallenges = [
         description: "Write some assembly code to divide two input numbers, however allow for negative input as well as positive!",
         exampleSolutionFileName: "negatives-division-solution",
         tip: "Similar to the previous challenge you need to manipulate the input to prevent an infinite loop!"
+    ),
+    
+    ChallengeContainer(
+        challengeTitle: "Optimised Multiplication",
+        description: "Come up with a way to optimise your assembly code for multiplication, my example solution is just for positives but you could try optimise the negative multiplication code also!",
+        exampleSolutionFileName: "optimised-multiplication-solution",
+        tip: "3 + 3 + 3 + 3 + 3 is the same as 5 + 5 + 5, Which one would take longer?"
     )
 
 ]

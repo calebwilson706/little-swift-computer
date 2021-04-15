@@ -1,0 +1,30 @@
+inp number
+inp counter
+lda number
+sub counter
+brp top
+
+#swap values
+lda number
+sta temp
+lda counter
+sta number
+lda temp
+sta counter
+
+
+top lda counter
+sub one
+sta counter
+lda total
+add number
+sta total
+lda counter
+brp top
+lda total
+out
+
+__________
+
+dat one 1
+dat total
