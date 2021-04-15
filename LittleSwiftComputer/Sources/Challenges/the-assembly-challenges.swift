@@ -37,7 +37,7 @@ let assemblyCodeInitialChallenges = [
     
     ChallengeContainer(
         challengeTitle: "Fibonacci",
-        description: "Write some assembly code to output the first 10 numbers in the Fibonacci sequence. \nFeel free to do some more work and allow input to determine the amount of elements output.",
+        description: "Write some assembly code to output the first 10 numbers in the Fibonacci sequence. \nFeel free to do some more work and allow input to determine the amount of elements that are output.",
         exampleSolutionFileName: "fibonacci-solution"
     ),
     
@@ -53,6 +53,20 @@ let assemblyCodeInitialChallenges = [
         description: "Write some assembly code to divide two input numbers, however allow for negative input as well as positive!",
         exampleSolutionFileName: "negatives-division-solution",
         tip: "Similar to the previous challenge you need to manipulate the input to prevent an infinite loop!"
+    ),
+    
+    ChallengeContainer(
+        challengeTitle: "Optimised Multiplication",
+        description: "Come up with a way to optimise your assembly code for multiplication, my example solution is just for positives but you could try optimise the negative multiplication code also!",
+        exampleSolutionFileName: "optimised-multiplication-solution",
+        tip: "3 + 3 + 3 + 3 + 3 is the same as 5 + 5 + 5, Which one would take longer?"
+    ),
+    
+    ChallengeContainer(
+        challengeTitle: "Factorial",
+        description: "Calculate the factorial of an input number.",
+        exampleSolutionFileName: "factorial-solution",
+        tip: "You can use your multiplication code! Remember that 5! = 5 x 4 x 3 x 2 x 1"
     )
 
 ]

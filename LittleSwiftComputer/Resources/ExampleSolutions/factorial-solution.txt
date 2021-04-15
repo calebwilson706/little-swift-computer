@@ -1,0 +1,34 @@
+inp
+sta number
+sub one
+sta counter
+sta previous
+
+top lda counter
+sub one
+sta counter
+lda total
+add number
+sta total
+lda counter
+brp top
+
+lda previous
+sub one
+sta counter
+sta previous
+brz end
+lda total
+sta number
+lda zero
+sta total
+bra top
+
+end lda total
+out
+
+__________
+
+dat one 1
+dat total
+dat zero 0
