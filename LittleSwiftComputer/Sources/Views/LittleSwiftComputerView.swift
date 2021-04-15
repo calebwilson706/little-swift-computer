@@ -56,11 +56,12 @@ struct LittleSwiftComputerView: View {
                     
                     HelpAlertView(widthAndHeight: geometry.size.width*0.25)
                     ChallengeListView(
-                        challengeController: challengeController, soundEffectController : soundEffectController,
+                        challengeController: challengeController,
+                        soundEffectController : soundEffectController,
+                        shouldPlaySounds: optionsController.shouldPlaySoundEffects,
                         width: geometry.size.width*0.6,
                         height: geometry.size.height*0.6,
-                        closeButtonAction: toggleChallengesShowing,
-                        shouldPlaySounds: optionsController.shouldPlaySoundEffects
+                        closeButtonAction: toggleChallengesShowing
                     )
                 }
             }
@@ -207,8 +208,12 @@ struct LittleSwiftComputerView: View {
         withAnimation {
             self.challengeController.showingChallenges.toggle()
         }
+        
+        let soundFileHeader = self.challengeController.showingChallenges ? "open" : "close"
+        let soundFileFooter = "-challenges-sound.mp3"
+        
         soundEffectController.playSound(
-            fileName: "\(self.challengeController.showingChallenges ? "open" : "close")-challenges-sound.mp3",
+            fileName: soundFileHeader + soundFileFooter,
             shouldPlay: optionsController.shouldPlaySoundEffects
         )
     }

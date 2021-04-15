@@ -10,10 +10,10 @@ import SwiftUI
 struct ChallengeListView: View {
     @ObservedObject var challengeController : ChallengeController
     @ObservedObject var soundEffectController : SoundEffectController
+    let shouldPlaySounds : Bool
     let width : CGFloat
     let height : CGFloat
     let closeButtonAction : () -> Void
-    let shouldPlaySounds : Bool
     
     var body: some View {
         ZStack {
@@ -26,9 +26,9 @@ struct ChallengeListView: View {
                                 ChallengeViewRow(
                                     challenge: $0,
                                     soundEffectController: soundEffectController,
+                                    shouldPlaySounds : shouldPlaySounds,
                                     parentViewScrollViewReader: scrollViewProxy,
-                                    listHeight: height,
-                                    shouldPlaySounds : shouldPlaySounds
+                                    listHeight: height
                                 )
                                 Divider()
                             }

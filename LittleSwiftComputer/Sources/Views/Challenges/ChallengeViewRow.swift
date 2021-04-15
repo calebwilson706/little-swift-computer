@@ -10,12 +10,14 @@ import SwiftUI
 struct ChallengeViewRow: View {
     @ObservedObject var challenge : ChallengeContainer
     @ObservedObject var soundEffectController : SoundEffectController
+    let shouldPlaySounds : Bool
+    
     @State var isShowingSolution = false
     @State var isShowingTip = false
     
     let parentViewScrollViewReader : ScrollViewProxy
     let listHeight : CGFloat
-    let shouldPlaySounds : Bool
+    
     
     var body: some View {
         VStack {
@@ -89,8 +91,9 @@ struct ChallengeViewRow: View {
     
     func playSoundAfterChangeOfStatus(isCompleted : Bool) {
         let soundFileHeader = isCompleted ? "complete-challenge" : "reset-challenge-completion"
+        let soundFileFooter = "-sound.mp3"
         soundEffectController.playSound(
-            fileName: soundFileHeader + "-sound.mp3",
+            fileName: soundFileHeader + soundFileFooter,
             shouldPlay: shouldPlaySounds
         )
     }
