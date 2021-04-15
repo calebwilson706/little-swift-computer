@@ -81,6 +81,10 @@
 		AB91D5262624636D00550D65 /* show-challenges-button.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D5252624636D00550D65 /* show-challenges-button.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
 		ABA12ADD26287EFB0012C0B1 /* factorial-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = ABA12ADC26287EFB0012C0B1 /* factorial-solution.txt */; };
+		ABA412F02628E4EA00F72891 /* open-challenges-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412EC2628E4EA00F72891 /* open-challenges-sound.mp3 */; };
+		ABA412F12628E4EA00F72891 /* close-challenges-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412ED2628E4EA00F72891 /* close-challenges-sound.mp3 */; };
+		ABA412F22628E4EA00F72891 /* complete-challenge-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412EE2628E4EA00F72891 /* complete-challenge-sound.mp3 */; };
+		ABA412F32628E4EA00F72891 /* reset-challenge-completion-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ABA412EF2628E4EA00F72891 /* reset-challenge-completion-sound.mp3 */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
 		ABA880A32615CF730001817C /* assembly-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880A22615CF730001817C /* assembly-controller.swift */; };
@@ -189,6 +193,10 @@
 		AB91D5252624636D00550D65 /* show-challenges-button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "show-challenges-button.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
 		ABA12ADC26287EFB0012C0B1 /* factorial-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "factorial-solution.txt"; sourceTree = "<group>"; };
+		ABA412EC2628E4EA00F72891 /* open-challenges-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "open-challenges-sound.mp3"; sourceTree = "<group>"; };
+		ABA412ED2628E4EA00F72891 /* close-challenges-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "close-challenges-sound.mp3"; sourceTree = "<group>"; };
+		ABA412EE2628E4EA00F72891 /* complete-challenge-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "complete-challenge-sound.mp3"; sourceTree = "<group>"; };
+		ABA412EF2628E4EA00F72891 /* reset-challenge-completion-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "reset-challenge-completion-sound.mp3"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
 		ABA880A22615CF730001817C /* assembly-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-controller.swift"; sourceTree = "<group>"; };
@@ -362,6 +370,7 @@
 		AB62057426233CC300C65EB7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				ABA412EB2628E4DD00F72891 /* Challenges */,
 				AB5F7C7E26261FAD006CE1EF /* StartStopPauseSounds */,
 				AB5C843B262382DE00A58FC2 /* HelpSounds */,
 				AB5C843A262382D300A58FC2 /* ExecutionSounds */,
@@ -481,6 +490,17 @@
 				AB91D50E262457A200550D65 /* show-solution-button.swift */,
 				AB91D5152624583300550D65 /* challenge-text-styles.swift */,
 				AB91D5252624636D00550D65 /* show-challenges-button.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		ABA412EB2628E4DD00F72891 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				ABA412ED2628E4EA00F72891 /* close-challenges-sound.mp3 */,
+				ABA412EE2628E4EA00F72891 /* complete-challenge-sound.mp3 */,
+				ABA412EC2628E4EA00F72891 /* open-challenges-sound.mp3 */,
+				ABA412EF2628E4EA00F72891 /* reset-challenge-completion-sound.mp3 */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
@@ -714,13 +734,16 @@
 				AB6311E02624C2D50089E1C2 /* multiples-solution.txt in Resources */,
 				ABA12ADD26287EFB0012C0B1 /* factorial-solution.txt in Resources */,
 				AB26C495261DCA8D007E6C85 /* output-help.txt in Resources */,
+				ABA412F12628E4EA00F72891 /* close-challenges-sound.mp3 in Resources */,
 				AB26C499261DCABA007E6C85 /* assembly-code-editor-help.txt in Resources */,
 				AB62058626233CF900C65EB7 /* assembly-error-sound.mp3 in Resources */,
+				ABA412F02628E4EA00F72891 /* open-challenges-sound.mp3 in Resources */,
 				ABBC7EF32613B3AA003C6047 /* Preview Assets.xcassets in Resources */,
 				AB26C49F261DCB86007E6C85 /* declarations-editor-help.txt in Resources */,
 				AB5F7CB526262D63006CE1EF /* open-help-sound.mp3 in Resources */,
 				AB6311DC2624ABFF0089E1C2 /* square-number-solution.txt in Resources */,
 				AB26C4A3261DCBFD007E6C85 /* input-help.txt in Resources */,
+				ABA412F22628E4EA00F72891 /* complete-challenge-sound.mp3 in Resources */,
 				AB26C4A9261DCC4E007E6C85 /* extra-settings-help.txt in Resources */,
 				AB08BCBE261F468E00F26480 /* instruction-set-help.txt in Resources */,
 				AB5F7CAE26262D1D006CE1EF /* start-execution-sound.mp3 in Resources */,
@@ -730,6 +753,7 @@
 				AB5F7C98262626EA006CE1EF /* pause-execution-sound.mp3 in Resources */,
 				AB26C491261DC828007E6C85 /* accumulator-help.txt in Resources */,
 				AB5F7CC426262DAD006CE1EF /* input-required-sound.mp3 in Resources */,
+				ABA412F32628E4EA00F72891 /* reset-challenge-completion-sound.mp3 in Resources */,
 				AB91D5032624542D00550D65 /* divide-two-numbers-solution.txt in Resources */,
 				AB91D4FD262451DE00550D65 /* multiply-two-numbers-solution.txt in Resources */,
 				AB5F7CCA2626431E006CE1EF /* negatives-multiplication-solution.txt in Resources */,

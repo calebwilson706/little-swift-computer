@@ -57,6 +57,8 @@ struct LittleSwiftComputerView: View {
                     HelpAlertView(widthAndHeight: geometry.size.width*0.25)
                     ChallengeListView(
                         challengeController: challengeController,
+                        soundEffectController : soundEffectController,
+                        shouldPlaySounds: optionsController.shouldPlaySoundEffects,
                         width: geometry.size.width*0.6,
                         height: geometry.size.height*0.6,
                         closeButtonAction: toggleChallengesShowing
@@ -95,10 +97,12 @@ struct LittleSwiftComputerView: View {
             Text("Created by Caleb Wilson.")
                 .font(.footnote)
             Spacer()
-            ShowHelpButtonView(action: showChallengesHelp)
-            Button(action : toggleChallengesShowing) {
-                Text("Show Challenges")
-            }.buttonStyle(ShowChallengesButtonStyle())
+            if !executionController.isRunning {
+                ShowHelpButtonView(action: showChallengesHelp)
+                Button(action : toggleChallengesShowing) {
+                    Text("Show Challenges")
+                }.buttonStyle(ShowChallengesButtonStyle())
+            }
         }.padding(.leading, 20)
         .padding(.bottom, 10)
     }
@@ -204,6 +208,14 @@ struct LittleSwiftComputerView: View {
         withAnimation {
             self.challengeController.showingChallenges.toggle()
         }
+        
+        let soundFileHeader = self.challengeController.showingChallenges ? "open" : "close"
+        let soundFileFooter = "-challenges-sound.mp3"
+        
+        soundEffectController.playSound(
+            fileName: soundFileHeader + soundFileFooter,
+            shouldPlay: optionsController.shouldPlaySoundEffects
+        )
     }
     
 }

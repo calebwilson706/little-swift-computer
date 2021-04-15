@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChallengeListView: View {
     @ObservedObject var challengeController : ChallengeController
+    @ObservedObject var soundEffectController : SoundEffectController
+    let shouldPlaySounds : Bool
     let width : CGFloat
     let height : CGFloat
     let closeButtonAction : () -> Void
@@ -21,7 +23,13 @@ struct ChallengeListView: View {
                     ScrollView {
                         ScrollViewReader { scrollViewProxy in
                             ForEach(challengeController.challenges, id : \.id){
-                                ChallengeViewRow(challenge: $0, parentViewScrollViewReader: scrollViewProxy, listHeight: height)
+                                ChallengeViewRow(
+                                    challenge: $0,
+                                    soundEffectController: soundEffectController,
+                                    shouldPlaySounds : shouldPlaySounds,
+                                    parentViewScrollViewReader: scrollViewProxy,
+                                    listHeight: height
+                                )
                                 Divider()
                             }
                         }
@@ -45,13 +53,5 @@ struct ChallengeListView: View {
                 Image(systemName: "xmark.circle")
             }.buttonStyle(ShowHelpButtonStyle())
         }.padding()
-    }
-}
-
-struct ChallengeListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChallengeListView(challengeController: ChallengeController(), width : 100, height : 100, closeButtonAction: {
-            
-        })
     }
 }
