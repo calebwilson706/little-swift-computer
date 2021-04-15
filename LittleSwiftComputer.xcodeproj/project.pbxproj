@@ -80,6 +80,7 @@
 		AB91D52226245DC800550D65 /* ChallengeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D52126245DC800550D65 /* ChallengeListView.swift */; };
 		AB91D5262624636D00550D65 /* show-challenges-button.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91D5252624636D00550D65 /* show-challenges-button.swift */; };
 		AB9D50C52616034500AE7B6B /* register-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D50C42616034500AE7B6B /* register-data.swift */; };
+		ABA12ADD26287EFB0012C0B1 /* factorial-solution.txt in Resources */ = {isa = PBXBuildFile; fileRef = ABA12ADC26287EFB0012C0B1 /* factorial-solution.txt */; };
 		ABA880932615C98D0001817C /* assembly-services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880922615C98D0001817C /* assembly-services.swift */; };
 		ABA8809B2615CA160001817C /* prepared-and-assembled-code.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */; };
 		ABA880A32615CF730001817C /* assembly-controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA880A22615CF730001817C /* assembly-controller.swift */; };
@@ -187,6 +188,7 @@
 		AB91D52126245DC800550D65 /* ChallengeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListView.swift; sourceTree = "<group>"; };
 		AB91D5252624636D00550D65 /* show-challenges-button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "show-challenges-button.swift"; sourceTree = "<group>"; };
 		AB9D50C42616034500AE7B6B /* register-data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "register-data.swift"; sourceTree = "<group>"; };
+		ABA12ADC26287EFB0012C0B1 /* factorial-solution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "factorial-solution.txt"; sourceTree = "<group>"; };
 		ABA880922615C98D0001817C /* assembly-services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-services.swift"; sourceTree = "<group>"; };
 		ABA8809A2615CA160001817C /* prepared-and-assembled-code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepared-and-assembled-code.swift"; sourceTree = "<group>"; };
 		ABA880A22615CF730001817C /* assembly-controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "assembly-controller.swift"; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				AB5F7CC92626431E006CE1EF /* negatives-multiplication-solution.txt */,
 				AB186ED32626FFFE00570081 /* negatives-division-solution.txt */,
 				AB830CA7262823160045F061 /* optimised-multiplication-solution.txt */,
+				ABA12ADC26287EFB0012C0B1 /* factorial-solution.txt */,
 			);
 			path = ExampleSolutions;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				AB830CA8262823160045F061 /* optimised-multiplication-solution.txt in Resources */,
 				AB62057626233CD400C65EB7 /* declaration-error-sound.mp3 in Resources */,
 				AB6311E02624C2D50089E1C2 /* multiples-solution.txt in Resources */,
+				ABA12ADD26287EFB0012C0B1 /* factorial-solution.txt in Resources */,
 				AB26C495261DCA8D007E6C85 /* output-help.txt in Resources */,
 				AB26C499261DCABA007E6C85 /* assembly-code-editor-help.txt in Resources */,
 				AB62058626233CF900C65EB7 /* assembly-error-sound.mp3 in Resources */,
